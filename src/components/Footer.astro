@@ -1,42 +1,36 @@
 ---
 import site from "../content/site.json";
-import { getNavigationPages } from "../lib/pages";
+import SmartLink from "./SmartLink.astro";
+import { resolveUrl } from "../lib/urls";
 
-const base = import.meta.env.BASE_URL;
-const localUrl = (path: string) => `${base}${path}`.replace(/\/{2,}/g, "/");
 const year = new Date().getFullYear();
-const navigation = [
-  { label: "Accueil", url: "" },
-  ...(await getNavigationPages()).map(({ entry, slug }) => ({
-    label: entry.data.navigationLabel || entry.data.title,
-    url: `${slug}/`,
-  })),
-];
 ---
 
 <footer class="site-footer">
   <div class="container footer-main">
     <div class="footer-brand">
-      <img src={localUrl(site.logo)} width="400" height="111" alt="" />
+      <img src={resolveUrl(site.logo, import.meta.env.BASE_URL)} width="400" height="111" alt="" />
       <p>{site.tagline}</p>
     </div>
     <div>
-      <h2>Navigation</h2>
-      <ul>
-        {navigation.map((item) => <li><a href={localUrl(item.url)}>{item.label}</a></li>)}
-      </ul>
+      <h2>Rubriques</h2>
+      <ul>{site.navigation.map((item) => <li><SmartLink href={item.url}>{item.label}</SmartLink></li>)}</ul>
     </div>
     <div>
-      <h2>Suivre la Fédération</h2>
-      <ul>
-        {site.socialLinks.map((item) => (
-          <li><a href={item.url} target="_blank" rel="noreferrer">{item.label}<span class="sr-only"> (nouvel onglet)</span></a></li>
-        ))}
-      </ul>
+      <h2>Nous contacter</h2>
+      <address>
+        <SmartLink href={site.contact.phoneUrl}>{site.contact.phoneLabel}</SmartLink><br />
+        <SmartLink href={`mailto:${site.contact.email}`}>{site.contact.email}</SmartLink><br />
+        {site.contact.address}
+      </address>
+    </div>
+    <div>
+      <h2>Réseaux sociaux</h2>
+      <ul>{site.socialLinks.map((item) => <li><SmartLink href={item.url}>{item.label}</SmartLink></li>)}</ul>
     </div>
   </div>
   <div class="container footer-bottom">
     <p>© {year} {site.footerText}</p>
-    <a href={site.sourceSite.url} target="_blank" rel="noreferrer">{site.sourceSite.label}<span class="sr-only"> (nouvel onglet)</span></a>
+    <SmartLink href="contact/">Contact</SmartLink>
   </div>
 </footer>

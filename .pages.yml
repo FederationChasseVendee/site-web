@@ -2,266 +2,437 @@ media:
   input: public/assets
   output: /assets
   rename: safe
-  categories: [image]
+  categories: [image, document]
 
 content:
   - name: home
-    label: Page d'accueil
+    label: Accueil
     type: file
     path: src/content/home.json
     format: json
-    operations:
-      create: false
-      rename: false
-      delete: false
+    operations: { create: false, rename: false, delete: false }
     fields:
       - name: seo
         label: Référencement
         type: object
         fields:
-          - { name: title, label: Titre SEO, type: string, required: true }
-          - { name: description, label: Description SEO, type: text, required: true }
+          - { name: title, label: Titre de la page, type: string, required: true }
+          - { name: description, label: Résumé pour les moteurs de recherche, type: text, required: true }
       - name: hero
-        label: En-tête principal
+        label: En-tête de l’accueil
         type: object
         fields:
-          - { name: eyebrow, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string, required: true }
+          - { name: eyebrow, label: Surtitre, type: string, required: true }
+          - { name: title, label: Titre principal, type: string, required: true }
           - { name: text, label: Introduction, type: text, required: true }
           - { name: image, label: Image, type: image, required: true }
-          - { name: imageAlt, label: Texte alternatif de l'image, type: string, required: true }
-          - { name: badgeNumber, label: Numéro du médaillon, type: string }
-          - { name: badgeLabel, label: Texte du médaillon, type: string }
-          - name: primaryAction
-            label: Bouton principal
-            type: object
-            fields:
-              - { name: label, label: Libellé, type: string }
-              - { name: url, label: URL, type: string }
-          - name: secondaryAction
-            label: Bouton secondaire
-            type: object
-            fields:
-              - { name: label, label: Libellé, type: string }
-              - { name: url, label: URL, type: string }
-      - name: quickAccess
-        label: Accès rapides
+          - { name: imageAlt, label: Description de l’image, type: string, required: true }
+      - name: tasks
+        label: Que souhaitez-vous faire ?
         type: object
         fields:
-          - { name: eyebrow, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string }
-          - { name: intro, label: Introduction, type: text }
+          - { name: title, label: Titre du bloc, type: string, required: true }
+          - { name: intro, label: Introduction, type: text, required: true }
           - name: items
-            label: Cartes
+            label: Actions fréquentes
             type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{title}"
+            list: { collapsible: { collapsed: true, summary: "{title}" } }
             fields:
-              - { name: title, label: Titre, type: string }
-              - { name: text, label: Texte, type: text }
-              - { name: url, label: URL, type: string }
-              - name: icon
-                label: Icône
-                type: select
-                options:
-                  values:
-                    - { value: permit, label: Permis }
-                    - { value: member, label: Adhérent }
-                    - { value: learn, label: Apprentissage }
-                    - { value: training, label: Formation }
-      - name: missions
-        label: Missions
+              - { name: title, label: Intitulé concret, type: string, required: true }
+              - { name: text, label: Explication, type: text, required: true }
+              - { name: url, label: Adresse du lien, type: string, required: true }
+      - name: news
+        label: Actualités importantes
         type: object
         fields:
-          - { name: eyebrow, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string }
-          - { name: intro, label: Introduction, type: text }
-          - name: items
-            label: Liste des missions
+          - { name: title, label: Titre, type: string, required: true }
+          - { name: intro, label: Introduction, type: text, required: true }
+          - name: action
+            label: Lien vers les actualités
             type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{number} — {title}"
             fields:
-              - { name: number, label: Numéro, type: string }
-              - { name: title, label: Titre, type: string }
-              - { name: text, label: Texte, type: text }
-      - name: information
-        label: Bloc d'information
+              - { name: label, label: Texte du lien, type: string, required: true }
+              - { name: url, label: Adresse, type: string, required: true }
+      - name: institution
+        label: Présentation de la Fédération
         type: object
         fields:
-          - { name: eyebrow, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string }
-          - { name: visualLabel, label: Texte du visuel, type: string }
-          - { name: text, label: Texte, type: text }
-          - name: link
+          - { name: title, label: Titre, type: string, required: true }
+          - { name: text, label: Texte, type: text, required: true }
+          - name: action
             label: Lien
             type: object
             fields:
-              - { name: label, label: Libellé, type: string }
-              - { name: url, label: URL, type: string }
-      - name: contactCallout
-        label: Appel au contact
-        type: object
-        fields:
-          - { name: eyebrow, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string }
-          - { name: text, label: Texte, type: text }
-          - { name: actionLabel, label: Libellé du bouton, type: string }
-          - { name: actionUrl, label: URL du bouton, type: string }
+              - { name: label, label: Texte du lien, type: string, required: true }
+              - { name: url, label: Adresse, type: string, required: true }
 
-  - name: pages
-    label: Pages secondaires
+  - name: standardPages
+    label: Pages standard
     type: collection
-    path: src/content/pages
+    path: src/content/standard-pages
     format: yaml-frontmatter
-    subfolders: false
-    filename:
-      template: "{primary}.md"
-      field: true
-    view:
-      primary: title
-      fields: [title, showInNavigation, navigationOrder]
-      sort: navigationOrder
-      order: asc
-    operations:
-      create: true
-      rename: true
-      delete: true
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: title, fields: [title, intro] }
     fields:
-      - name: title
-        label: Titre de la page
-        type: string
-        required: true
-        description: Sert aussi à proposer le nom de fichier et l'URL lors de la création.
-      - name: description
-        label: Description SEO
-        type: text
-        required: true
-        description: Résumé affiché par les moteurs de recherche.
-      - { name: eyebrow, label: Surtitre, type: string }
-      - name: intro
-        label: Introduction
-        type: text
-        required: true
-      - name: showInNavigation
-        label: Afficher dans le menu
-        type: boolean
-        default: true
-      - name: navigationLabel
-        label: Libellé dans le menu
-        type: string
-        description: Laisser vide pour reprendre le titre de la page.
-      - name: navigationOrder
-        label: Ordre dans le menu
-        type: number
-        default: 100
-        options:
-          min: 1
-          max: 999
-      - name: body
-        label: Contenu principal
-        type: rich-text
-        required: true
-        options:
-          format: markdown
-          switcher: false
-          media: false
-      - name: cards
-        label: Cartes pratiques (facultatif)
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label} — {title}"
-        fields:
-          - name: icon
-            label: Icône
-            type: select
-            options:
-              values:
-                - { value: pin, label: Adresse }
-                - { value: phone, label: Téléphone }
-                - { value: mail, label: Courriel }
-                - { value: learn, label: Information }
-                - { value: training, label: Formation }
-          - { name: label, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string }
-          - { name: lines, label: Lignes de détail, type: string, list: true }
-          - name: link
-            label: Lien facultatif
-            type: object
-            fields:
-              - { name: label, label: Libellé, type: string }
-              - { name: url, label: URL, type: string }
-      - name: schedule
-        label: Bloc horaires (facultatif)
+      - { name: title, label: Titre, type: string, required: true }
+      - { name: description, label: Résumé pour les moteurs de recherche, type: text, required: true }
+      - { name: intro, label: Introduction, type: text, required: true }
+      - name: hero
+        label: Image d’en-tête (facultative)
         type: object
         fields:
-          - { name: eyebrow, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string }
-          - name: rows
-            label: Lignes
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{label}"
-            fields:
-              - { name: label, label: Jours ou libellé, type: string }
-              - { name: value, label: Horaires ou valeur, type: string }
-          - { name: note, label: Note, type: text }
-      - name: callout
-        label: Appel à l'action (facultatif)
+          - { name: src, label: Image, type: image, required: true }
+          - { name: alt, label: Description de l’image, type: string }
+          - { name: decorative, label: Image uniquement décorative, type: boolean, default: false }
+      - name: navigation
+        label: Navigation
         type: object
         fields:
-          - { name: eyebrow, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string }
-          - { name: text, label: Texte, type: text }
+          - { name: show, label: Proposer dans une navigation automatique, type: boolean, default: false }
+          - { name: label, label: Libellé court, type: string }
+          - { name: order, label: Ordre, type: number, default: 100 }
+      - { name: body, label: Contenu principal, type: rich-text, required: true, options: { format: markdown, switcher: false } }
+      - name: documents
+        label: Documents à télécharger
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Nom du document, type: string, required: true }
+          - { name: url, label: Fichier ou adresse, type: string, required: true }
+          - { name: type, label: Type de fichier, type: string, default: Document }
+          - { name: size, label: Taille du fichier, type: string }
+      - name: links
+        label: Liens utiles
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Texte du lien, type: string, required: true }
+          - { name: url, label: Adresse, type: string, required: true }
+      - name: cta
+        label: Appel à l’action (facultatif)
+        type: object
+        fields:
+          - { name: title, label: Titre, type: string, required: true }
+          - { name: text, label: Explication, type: text }
           - name: action
             label: Bouton
             type: object
             fields:
-              - { name: label, label: Libellé, type: string }
-              - { name: url, label: URL, type: string }
+              - { name: label, label: Texte du bouton, type: string, required: true }
+              - { name: url, label: Adresse, type: string, required: true }
+
+  - name: crossroads
+    label: Pages carrefour
+    type: collection
+    path: src/content/crossroads
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: title, fields: [title] }
+    fields:
+      - { name: title, label: Titre, type: string, required: true }
+      - { name: description, label: Résumé pour les moteurs de recherche, type: text, required: true }
+      - { name: intro, label: Introduction, type: text, required: true }
+      - name: hero
+        label: Image d’en-tête (facultative)
+        type: object
+        fields:
+          - { name: src, label: Image, type: image, required: true }
+          - { name: alt, label: Description de l’image, type: string }
+          - { name: decorative, label: Image uniquement décorative, type: boolean, default: false }
+      - name: navigation
+        label: Navigation
+        type: object
+        fields:
+          - { name: show, label: Afficher dans le menu, type: boolean, default: false }
+          - { name: label, label: Libellé du menu, type: string }
+          - { name: order, label: Ordre, type: number, default: 100 }
+      - { name: body, label: Texte d’introduction complémentaire, type: rich-text, options: { format: markdown, switcher: false } }
+      - name: cards
+        label: Cartes ordonnées
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
+        fields:
+          - { name: title, label: Titre, type: string, required: true }
+          - { name: text, label: Explication, type: text, required: true }
+          - { name: url, label: Adresse, type: string, required: true }
+      - name: childrenFrom
+        label: Ajouter automatiquement les contenus
+        type: select
+        options:
+          clearable: true
+          values:
+            - { value: articles, label: Actualités }
+            - { value: species, label: Fiches espèces }
+            - { value: trainings, label: Formations }
+            - { value: indexes, label: Index enfants }
+
+  - name: articles
+    label: Actualités
+    type: collection
+    path: src/content/articles
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: title, fields: [title, date, category], sort: date, order: desc }
+    fields:
+      - { name: title, label: Titre, type: string, required: true }
+      - { name: description, label: Résumé pour les moteurs de recherche, type: text, required: true }
+      - { name: date, label: Date de publication, type: date, required: true }
+      - { name: category, label: Catégorie, type: string, required: true }
+      - { name: summary, label: Résumé visible dans les listes, type: text, required: true }
+      - name: image
+        label: Image (facultative)
+        type: object
+        fields:
+          - { name: src, label: Image, type: image, required: true }
+          - { name: alt, label: Description de l’image, type: string }
+          - { name: decorative, label: Image uniquement décorative, type: boolean, default: false }
+      - { name: body, label: Contenu de l’article, type: rich-text, required: true, options: { format: markdown, switcher: false } }
+      - name: documents
+        label: Documents associés
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Nom, type: string, required: true }
+          - { name: url, label: Fichier ou adresse, type: string, required: true }
+          - { name: type, label: Type, type: string, default: Document }
+          - { name: size, label: Taille, type: string }
+      - { name: expiresAt, label: Date d’expiration (facultative), type: date }
+      - { name: archived, label: Information archivée, type: boolean, default: false }
+
+  - name: species
+    label: Fiches espèces
+    type: collection
+    path: src/content/species
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: name, fields: [name, category] }
+    fields:
+      - { name: name, label: Nom de l’espèce, type: string, required: true }
+      - { name: description, label: Résumé pour les moteurs de recherche, type: text, required: true }
+      - { name: category, label: Catégorie, type: string, required: true }
+      - name: image
+        label: Image principale
+        type: object
+        fields:
+          - { name: src, label: Image, type: image, required: true }
+          - { name: alt, label: Description de l’image, type: string }
+          - { name: decorative, label: Image uniquement décorative, type: boolean, default: false }
+      - { name: identification, label: Identification, type: text, required: true }
+      - { name: habitat, label: Habitat, type: text, required: true }
+      - { name: diet, label: Alimentation, type: text, required: true }
+      - { name: reproduction, label: Reproduction, type: text, required: true }
+      - { name: distribution, label: Répartition, type: text, required: true }
+      - { name: statusAndThreats, label: Statut et menaces, type: text, required: true }
+      - name: gallery
+        label: Galerie (facultative)
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{alt}" } }
+        fields:
+          - { name: src, label: Image, type: image, required: true }
+          - { name: alt, label: Description de l’image, type: string }
+          - { name: decorative, label: Image uniquement décorative, type: boolean, default: false }
+
+  - name: trainings
+    label: Formations
+    type: collection
+    path: src/content/trainings
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: title, fields: [title, duration, location] }
+    fields:
+      - { name: title, label: Titre, type: string, required: true }
+      - { name: description, label: Résumé pour les moteurs de recherche, type: text, required: true }
+      - { name: summary, label: Présentation courte, type: text, required: true }
+      - { name: objectives, label: Objectifs, type: string, list: true, required: true }
+      - { name: audience, label: Public concerné, type: string, required: true }
+      - { name: prerequisites, label: Prérequis, type: string, default: Aucun prérequis }
+      - { name: program, label: Programme, type: string, list: true, required: true }
+      - { name: duration, label: Durée, type: string, required: true }
+      - { name: location, label: Lieu, type: string, required: true }
+      - { name: price, label: Tarif, type: string, required: true }
+      - name: dates
+        label: Dates proposées
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{date}" } }
+        fields:
+          - { name: date, label: Date de début, type: date, required: true }
+          - { name: endDate, label: Date de fin, type: date }
+          - { name: note, label: Précision, type: string }
+      - name: documents
+        label: Documents
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Nom, type: string, required: true }
+          - { name: url, label: Fichier ou adresse, type: string, required: true }
+          - { name: type, label: Type, type: string, default: Document }
+          - { name: size, label: Taille, type: string }
+      - { name: registrationUrl, label: Adresse d’inscription, type: string, required: true }
+
+  - name: indexes
+    label: Index et listes
+    type: collection
+    path: src/content/indexes
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: title, fields: [title, source, display] }
+    fields:
+      - { name: title, label: Titre, type: string, required: true }
+      - { name: description, label: Résumé pour les moteurs de recherche, type: text, required: true }
+      - { name: intro, label: Introduction, type: text, required: true }
+      - name: navigation
+        label: Navigation
+        type: object
+        fields:
+          - { name: show, label: Afficher dans le menu, type: boolean, default: false }
+          - { name: label, label: Libellé du menu, type: string }
+          - { name: order, label: Ordre, type: number, default: 100 }
+      - { name: body, label: Texte complémentaire, type: rich-text, options: { format: markdown, switcher: false } }
+      - name: source
+        label: Collection à afficher
+        type: select
+        required: true
+        options:
+          values:
+            - { value: articles, label: Actualités }
+            - { value: species, label: Fiches espèces }
+            - { value: trainings, label: Formations }
+            - { value: documents, label: Documents }
+            - { value: faqs, label: Questions fréquentes }
+            - { value: glossary, label: Glossaire }
+            - { value: directories, label: Annuaire }
+      - name: display
+        label: Présentation
+        type: select
+        default: cards
+        options:
+          values:
+            - { value: cards, label: Cartes }
+            - { value: list, label: Liste }
+      - { name: category, label: Limiter à cette catégorie, type: string }
+      - { name: emptyMessage, label: Message si la liste est vide, type: string, default: Aucun contenu n’est disponible pour le moment. }
+      - name: links
+        label: Liens vers d’autres ressources
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Texte du lien, type: string, required: true }
+          - { name: url, label: Adresse, type: string, required: true }
+
+  - name: documents
+    label: Documents
+    type: collection
+    path: src/content/documents
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: title, fields: [title, category, updatedAt] }
+    fields:
+      - { name: title, label: Nom du document, type: string, required: true }
+      - { name: description, label: Explication, type: text, required: true }
+      - { name: category, label: Catégorie, type: string, required: true }
+      - { name: file, label: Fichier ou adresse, type: string, required: true }
+      - { name: fileType, label: Type de fichier, type: string, default: Document }
+      - { name: fileSize, label: Taille du fichier, type: string }
+      - { name: updatedAt, label: Date de mise à jour, type: date }
+
+  - name: faqs
+    label: Questions fréquentes
+    type: collection
+    path: src/content/faqs
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: question, fields: [question, category, order], sort: order, order: asc }
+    fields:
+      - { name: question, label: Question, type: string, required: true }
+      - { name: answer, label: Réponse, type: text, required: true }
+      - { name: category, label: Catégorie, type: string, default: Général }
+      - { name: order, label: Ordre, type: number, default: 100 }
+
+  - name: glossary
+    label: Glossaire
+    type: collection
+    path: src/content/glossary
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: term, fields: [term], sort: term, order: asc }
+    fields:
+      - { name: term, label: Terme, type: string, required: true }
+      - { name: definition, label: Définition, type: text, required: true }
+
+  - name: directories
+    label: Annuaire
+    type: collection
+    path: src/content/directories
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: true, rename: true, delete: true }
+    view: { primary: name, fields: [name, category] }
+    fields:
+      - { name: name, label: Nom, type: string, required: true }
+      - { name: description, label: Rôle ou service, type: text, required: true }
+      - { name: category, label: Catégorie, type: string, required: true }
+      - { name: address, label: Adresse, type: text }
+      - { name: phone, label: Téléphone, type: string }
+      - { name: email, label: Courriel, type: string }
+      - { name: website, label: Site ou page de contact, type: string }
 
   - name: site
     label: Paramètres du site
     type: file
     path: src/content/site.json
     format: json
-    operations:
-      create: false
-      rename: false
-      delete: false
+    operations: { create: false, rename: false, delete: false }
     fields:
       - { name: name, label: Nom complet, type: string, required: true }
       - { name: shortName, label: Nom court, type: string, required: true }
-      - { name: tagline, label: Signature, type: string }
-      - { name: logo, label: Logo, type: image }
-      - name: headerAction
-        label: Bouton d'en-tête
+      - { name: tagline, label: Signature, type: string, required: true }
+      - { name: logo, label: Logo, type: image, required: true }
+      - name: navigation
+        label: Six rubriques principales
+        type: object
+        list: { min: 6, max: 6, collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Libellé, type: string, required: true }
+          - { name: url, label: Adresse interne, type: string, required: true }
+      - name: primaryActions
+        label: Actions prioritaires
+        type: object
+        list: { min: 2, max: 2, collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Libellé, type: string, required: true }
+          - { name: url, label: Adresse, type: string, required: true }
+      - name: contact
+        label: Coordonnées
         type: object
         fields:
-          - { name: label, label: Libellé, type: string }
-          - { name: url, label: URL, type: string }
-      - { name: footerText, label: Texte du pied de page, type: string }
-      - name: sourceSite
-        label: Site actuel
-        type: object
-        fields:
-          - { name: label, label: Libellé, type: string }
-          - { name: url, label: URL, type: string }
+          - { name: phoneLabel, label: Téléphone affiché, type: string, required: true }
+          - { name: phoneUrl, label: Lien d’appel, type: string, required: true }
+          - { name: email, label: Courriel, type: string, required: true }
+          - { name: address, label: Adresse, type: text, required: true }
+      - { name: footerText, label: Mention du pied de page, type: string, required: true }
       - name: socialLinks
         label: Réseaux sociaux
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
         fields:
-          - { name: label, label: Nom, type: string }
-          - { name: url, label: URL, type: string }
+          - { name: label, label: Nom, type: string, required: true }
+          - { name: url, label: Adresse, type: string, required: true }
