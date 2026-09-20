@@ -170,10 +170,21 @@ const directories = defineCollection({
     name: z.string().min(1),
     description: z.string().min(1),
     category: z.string().min(1),
+    role: z.string().optional(),
+    order: z.number().int().default(100),
     address: z.string().optional(),
     phone: z.string().optional(),
     email: z.email().optional(),
     website: z.string().optional(),
+  }),
+});
+
+const redirects = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/redirects" }),
+  schema: z.object({
+    title: z.string().min(1),
+    description: z.string().min(1),
+    destination: z.string().min(1),
   }),
 });
 
@@ -188,4 +199,5 @@ export const collections = {
   faqs,
   glossary,
   directories,
+  redirects,
 };

@@ -6,6 +6,7 @@ import IndexPage from "../templates/IndexPage.astro";
 import SpeciesPage from "../templates/SpeciesPage.astro";
 import StandardPage from "../templates/StandardPage.astro";
 import TrainingPage from "../templates/TrainingPage.astro";
+import RedirectPage from "../templates/RedirectPage.astro";
 import { descriptionForEntry, getTemplateEntries, titleForEntry, type TemplateEntry } from "../lib/content";
 
 interface Props {
@@ -23,13 +24,17 @@ export async function getStaticPaths() {
 const { item, slug } = Astro.props;
 const title = titleForEntry(item);
 const description = descriptionForEntry(item);
+const redirectTo = item.template === "redirect"
+  ? `${import.meta.env.BASE_URL}${item.entry.data.destination.replace(/^\/+/, "")}`
+  : undefined;
 ---
 
-<BaseLayout {title} {description}>
+<BaseLayout {title} {description} {redirectTo}>
   {item.template === "standard" && <StandardPage entry={item.entry} {slug} />}
   {item.template === "crossroads" && <CrossroadsPage entry={item.entry} {slug} />}
   {item.template === "article" && <ArticlePage entry={item.entry} {slug} />}
   {item.template === "species" && <SpeciesPage entry={item.entry} {slug} />}
   {item.template === "training" && <TrainingPage entry={item.entry} {slug} />}
   {item.template === "index" && <IndexPage entry={item.entry} {slug} />}
+  {item.template === "redirect" && <RedirectPage entry={item.entry} {slug} />}
 </BaseLayout>

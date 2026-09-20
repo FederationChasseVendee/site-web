@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PageHeader from "../components/PageHeader.astro";
+import SmartLink from "../components/SmartLink.astro";
+
+interface Props {
+  entry: CollectionEntry<"redirects">;
+  slug: string;
+}
+
+const { entry, slug } = Astro.props;
+---
+
+<PageHeader {slug} title={entry.data.title} intro={entry.data.description} />
+<div class="container content-layout">
+  <p>Cette page a changé d’adresse.</p>
+  <p><SmartLink class="button button-dark" href={entry.data.destination}>Continuer vers la nouvelle page</SmartLink></p>
+</div>
