@@ -570,6 +570,83 @@ a {
   background: var(--cream);
 }
 
+.page-content-section {
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.prose {
+  max-width: 780px;
+  font-size: 1.08rem;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose h2,
+.prose h3 {
+  color: var(--forest-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.prose h2 {
+  margin: 2.5rem 0 .8rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.prose h3 {
+  margin: 2rem 0 .6rem;
+  font-size: 1.5rem;
+}
+
+.prose p,
+.prose li {
+  color: var(--muted);
+}
+
+.prose a {
+  color: var(--forest-800);
+  font-weight: 700;
+  text-underline-offset: .25rem;
+}
+
+.page-cards-section {
+  padding-top: 0;
+  background: linear-gradient(var(--paper) 0 12%, var(--cream) 12%);
+}
+
+.page-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.dynamic-card {
+  min-height: 100%;
+  padding: clamp(1.6rem, 3vw, 2.25rem);
+}
+
+.dynamic-card .icon-wrap {
+  margin-bottom: 1.6rem;
+}
+
+.dynamic-card h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  overflow-wrap: anywhere;
+}
+
+.card-lines {
+  display: grid;
+  margin: -.4rem 0 1.2rem;
+  color: var(--muted);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
@@ -908,7 +985,8 @@ a {
   .info-grid,
   .page-hero-grid,
   .contact-grid,
-  .hours-grid {
+  .hours-grid,
+  .page-card-grid {
     grid-template-columns: 1fr;
   }
 

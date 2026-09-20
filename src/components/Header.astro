@@ -1,9 +1,17 @@
 ---
 import site from "../content/site.json";
+import { getNavigationPages } from "../lib/pages";
 
 const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 const localUrl = (path: string) => `${base}${path}`.replace(/\/{2,}/g, "/");
+const navigation = [
+  { label: "Accueil", url: "" },
+  ...(await getNavigationPages()).map(({ entry, slug }) => ({
+    label: entry.data.navigationLabel || entry.data.title,
+    url: `${slug}/`,
+  })),
+];
 ---
 
 <header class="site-header">
@@ -18,7 +26,7 @@ const localUrl = (path: string) => `${base}${path}`.replace(/\/{2,}/g, "/");
         <span class="menu-icon" aria-hidden="true"></span>
       </summary>
       <nav aria-label="Navigation principale">
-        {site.navigation.map((item) => {
+        {navigation.map((item) => {
           const href = localUrl(item.url);
           const isCurrent = item.url === "" ? currentPath === base : currentPath.startsWith(href);
           return <a href={href} aria-current={isCurrent ? "page" : undefined}>{item.label}</a>;
@@ -27,7 +35,7 @@ const localUrl = (path: string) => `${base}${path}`.replace(/\/{2,}/g, "/");
     </details>
 
     <nav class="desktop-nav" aria-label="Navigation principale">
-      {site.navigation.map((item) => {
+      {navigation.map((item) => {
         const href = localUrl(item.url);
         const isCurrent = item.url === "" ? currentPath === base : currentPath.startsWith(href);
         return <a href={href} aria-current={isCurrent ? "page" : undefined}>{item.label}</a>;

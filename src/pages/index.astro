@@ -98,7 +98,7 @@ const resolveUrl = (url: string) => /^https?:|^mailto:|^tel:/.test(url) ? url : 
         <h2>{home.contactCallout.title}</h2>
         <p>{home.contactCallout.text}</p>
       </div>
-      <a class="button button-light" href={localUrl("contact/")}>{home.contactCallout.actionLabel}<span aria-hidden="true"> →</span></a>
+      <a class="button button-light" href={resolveUrl(home.contactCallout.actionUrl)}>{home.contactCallout.actionLabel}<span aria-hidden="true"> →</span></a>
     </div>
   </section>
 </BaseLayout>
