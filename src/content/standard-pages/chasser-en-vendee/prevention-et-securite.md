@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Formation sécurité décennale
-    url: https://chasseur-vendeen.fr/je-suis-chasseur/se-former/
+    url: /permis-et-formations/formations/
   - label: Voir toutes les formations
     url: /permis-et-formations/formations/
 ---

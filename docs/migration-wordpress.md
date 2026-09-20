@@ -1,6 +1,9 @@
 # Matrice de migration WordPress
 
-Inventaire Établi le 20 septembre 2026 à partir des **89 pages publiées** du sitemap public. Les 86 actualités et les contenus techniques `dt_portfolio`, `dt_gallery`, `dt_testimonials` et `dt_slideshow` sont explicitement exclus de cette couche.
+Inventaire établi le 20 septembre 2026 à partir des **89 pages publiées** du sitemap public. Les contenus
+techniques `dt_portfolio`, `dt_gallery`, `dt_testimonials` et `dt_slideshow` sont explicitement exclus.
+Les 86 URL du sitemap des posts sont traitées séparément dans la
+[matrice des actualités](migration-actualites.md).
 
 | Ancienne URL | Traitement | Destination ou justification |
 | --- | --- | --- |
@@ -96,7 +99,7 @@ Inventaire Établi le 20 septembre 2026 à partir des **89 pages publiées** du 
 
 ## Contrôles de périmètre
 
-- Les actualités/articles restent dans la collection dédiée et ne sont pas migrés ici.
+- Les actualités/articles sont migrés dans la couche 3 et documentés dans `migration-actualites.md`.
 - Les pages de démonstration des types WordPress techniques sont exclues.
 - Les pages vides ont été fusionnées avec une destination utile plutôt que reproduites.
 - Les anciennes URL modifiées génèrent une page HTML statique avec redirection, lien visible et URL canonique.

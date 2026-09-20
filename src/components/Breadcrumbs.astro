@@ -11,6 +11,8 @@ const { slug, title } = Astro.props;
 const segments = slug.split("/");
 const entries = await getTemplateEntries();
 const labels = new Map(entries.map((item) => [item.slug, titleForEntry(item)]));
+labels.set("actualites", "Actualités");
+labels.set("actualites/archives", "Archives");
 const crumbs = segments.map((_, index) => {
   const path = segments.slice(0, index + 1).join("/");
   return { path, label: index === segments.length - 1 ? title : labels.get(path) ?? segments[index] };

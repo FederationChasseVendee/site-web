@@ -1,0 +1,68 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Breadcrumbs from "./Breadcrumbs.astro";
+import NewsCard from "./NewsCard.astro";
+import SmartLink from "./SmartLink.astro";
+
+interface Props {
+  articles: CollectionEntry<"articles">[];
+  page: number;
+  totalPages: number;
+  archived?: boolean;
+}
+
+const { articles, page, totalPages, archived = false } = Astro.props;
+const title = archived
+  ? `Archives des actualités${page > 1 ? ` — page ${page}` : ""}`
+  : `Actualités${page > 1 ? ` — page ${page}` : ""}`;
+const intro = archived
+  ? "Retrouvez les informations anciennes ou arrivées à expiration. Leur contenu est conservé pour mémoire et doit être vérifié avant utilisation."
+  : "Retrouvez les dernières informations pratiques, alertes et nouvelles de la Fédération.";
+const root = archived ? "actualites/archives/" : "actualites/";
+const pageUrl = (number: number) => number === 1 ? root : `${root}page/${number}/`;
+---
+
+<Breadcrumbs slug={archived ? "actualites/archives" : "actualites"} {title} />
+<header class="listing-header">
+  <div class="container">
+    <h1>{title}</h1>
+    <p>{intro}</p>
+    <SmartLink class="button button-outline" href={archived ? "actualites/" : "actualites/archives/"}>
+      {archived ? "Voir les actualités en cours" : "Consulter les archives"}
+    </SmartLink>
+  </div>
+</header>
+
+<div class="container news-listing">
+  {articles.length > 0 ? (
+    <div class="news-grid">
+      {articles.map((article) => <NewsCard {article} />)}
+    </div>
+  ) : (
+    <p class="empty-message">Aucune actualité n’est disponible dans cette liste.</p>
+  )}
+
+  {totalPages > 1 && (
+    <nav class="pagination" aria-label={archived ? "Pagination des archives" : "Pagination des actualités"}>
+      {page > 1 && (
+        <SmartLink href={pageUrl(page - 1)} aria-label={`Page précédente, page ${page - 1}`}>
+          Précédente
+        </SmartLink>
+      )}
+      <ol>
+        {Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => (
+          <li>
+            {number === page
+              ? <span aria-current="page">Page {number}</span>
+              : <SmartLink href={pageUrl(number)} aria-label={`Aller à la page ${number}`}>{number}</SmartLink>}
+          </li>
+        ))}
+      </ol>
+      {page < totalPages && (
+        <SmartLink href={pageUrl(page + 1)} aria-label={`Page suivante, page ${page + 1}`}>
+          Suivante
+        </SmartLink>
+      )}
+    </nav>
+  )}
+</div>

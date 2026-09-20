@@ -20,7 +20,7 @@ documents:
   - label: Demande d’inscription Cerfa n° 10804*03
     url: https://www.formulaires.service-public.gouv.fr/gf/cerfa_10804.do
     type: Formulaire en ligne
-registrationUrl: https://chasseur-vendeen.fr/58035-2/
+registrationUrl: /contact/
 ---
 
 Les prochaines sessions sont annoncées pour 2027. La Fédération adresse une convocation environ quinze jours à trois semaines avant la formation.

@@ -20,7 +20,7 @@ location: Lieu précisé sur la convocation de la FDC 85
 price: Se renseigner auprès de la FDC 85
 dates: []
 documents: []
-registrationUrl: https://chasseur-vendeen.fr/je-suis-chasseur/se-former/formation-chasse-au-vol/
+registrationUrl: /contact/
 ---
 
 Le nombre de participants est limité à vingt. Les dates et modalités d’inscription à jour sont publiées par la FDC 85.

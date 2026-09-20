@@ -18,7 +18,7 @@ location: Fédération Départementale des Chasseurs de la Vendée, La Roche-sur
 price: Gratuit ; chèque de caution de 50 € demandé
 dates: []
 documents: []
-registrationUrl: https://chasseur-vendeen.fr/58139-2/
+registrationUrl: /contact/
 ---
 
 Les groupes sont limités à environ vingt personnes. La priorité est donnée aux territoires dont le gibier est destiné à des repas de chasse ou associatifs.

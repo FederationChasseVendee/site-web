@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Démarches actualisées
-    url: https://chasseur-vendeen.fr/je-veux-devenir-chasseur/chasser-accompagne/
+    url: /permis-et-formations/chasse-accompagnee/
   - label: Voir les formations
     url: /permis-et-formations/formations/
 ---

@@ -171,7 +171,7 @@ content:
             - { value: indexes, label: Index enfants }
 
   - name: articles
-    label: Actualités
+    label: Articles
     type: collection
     path: src/content/articles
     format: yaml-frontmatter
@@ -183,7 +183,17 @@ content:
       - { name: title, label: Titre, type: string, required: true }
       - { name: description, label: Résumé pour les moteurs de recherche, type: text, required: true }
       - { name: date, label: Date de publication, type: date, required: true }
-      - { name: category, label: Catégorie, type: string, required: true }
+      - name: category
+        label: Catégorie
+        type: select
+        required: true
+        default: Fédération
+        options:
+          values:
+            - { value: Chasse, label: Chasse }
+            - { value: Environnement, label: Environnement }
+            - { value: Fédération, label: Fédération }
+            - { value: Alertes, label: Alertes }
       - { name: summary, label: Résumé visible dans les listes, type: text, required: true }
       - name: image
         label: Image (facultative)
@@ -192,6 +202,8 @@ content:
           - { name: src, label: Image, type: image, required: true }
           - { name: alt, label: Description de l’image, type: string }
           - { name: decorative, label: Image uniquement décorative, type: boolean, default: false }
+          - { name: width, label: Largeur en pixels, type: number }
+          - { name: height, label: Hauteur en pixels, type: number }
       - { name: body, label: Contenu de l’article, type: rich-text, required: true, options: { format: markdown, switcher: false } }
       - name: documents
         label: Documents associés

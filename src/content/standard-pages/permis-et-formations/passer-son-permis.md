@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Démarche et inscription actuelles
-    url: https://chasseur-vendeen.fr/je-veux-devenir-chasseur/passer-son-permis/
+    url: /permis-et-formations/passer-son-permis/
   - label: S’entraîner à l’examen
     url: /permis-et-formations/entrainement-examen/
   - label: Voir les formations

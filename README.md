@@ -20,9 +20,13 @@ npm run preview
 
 L’URL de production est `https://federationchassevendee.github.io/site-web/`. Astro génère donc tous les liens et médias sous le préfixe `/site-web/`.
 
-## Migration des contenus permanents
+## Migration WordPress
 
-La couche 2 reprend les **89 pages WordPress publiées** inventoriées le 20 septembre 2026 : chaque ancienne page est migrée, fusionnée, remplacée ou redirigée. Aucun des **86 posts d’actualité WordPress** n’est importé dans cette couche ; la collection et l’article témoin créés en couche 1 sont simplement conservés pour préparer la couche 3. Les contenus de démonstration des types `dt_portfolio`, `dt_gallery`, `dt_testimonials` et `dt_slideshow` sont exclus.
+Les couches 2 et 3 reprennent les contenus publiés inventoriés dans les sitemaps publics WordPress :
+
+- **89 pages permanentes**, chacune migrée, fusionnée, remplacée ou redirigée ;
+- **86 URL dans `post-sitemap.xml`** : la vraie archive `/actualites/` et **85 articles importés** ;
+- les contenus de démonstration des types `dt_portfolio`, `dt_gallery`, `dt_testimonials` et `dt_slideshow` restent exclus.
 
 Contenus structurés importés :
 
@@ -32,9 +36,11 @@ Contenus structurés importés :
 - 15 questions fréquentes et 116 termes de glossaire ;
 - 92 entrées d’annuaire : équipe, conseil d’administration, associations et partenaires ;
 - 42 pages éditoriales, 4 carrefours et 17 index automatiques ;
-- 85 redirections HTML statiques pour les anciennes adresses modifiées.
+- 90 redirections HTML statiques pour les anciennes adresses modifiées, dont trois slugs d’article avec emoji.
 
-La [matrice détaillée des 89 pages](docs/migration-wordpress.md) documente chaque décision et sa destination.
+La [matrice des pages permanentes](docs/migration-wordpress.md), la
+[matrice des 85 articles](docs/migration-actualites.md) et son
+[rapport machine](docs/migration-actualites.json) documentent chaque décision, média, catégorie et destination.
 
 ## Les 7 templates
 
@@ -58,7 +64,7 @@ Les schémas typés et leurs valeurs par défaut sont définis dans `src/content
 
 1. Ouvrir [Pages CMS](https://app.pagescms.org/) et choisir le dépôt `FederationChasseVendee/site-web`.
 2. Choisir la branche de travail appropriée.
-3. Ouvrir la collection correspondant au besoin : **Pages standard**, **Pages carrefour**, **Actualités**, **Fiches espèces**, **Formations**, **Index et listes**, ou une collection de ressources.
+3. Ouvrir la collection correspondant au besoin : **Pages standard**, **Pages carrefour**, **Articles**, **Fiches espèces**, **Formations**, **Index et listes**, ou une collection de ressources.
 4. Modifier les champs en français, enregistrer puis publier. Aucun Git ni HTML n’est demandé.
 
 Les collections autorisent explicitement création, renommage et suppression. **Accueil** et **Paramètres du site** sont protégés contre ces trois opérations. Les images et documents chargés dans la médiathèque sont enregistrés dans `public/assets/`.
@@ -72,7 +78,7 @@ Pour une image informative, renseigner une description utile. Pour une image pur
 Le nom de fichier devient l’URL. Par exemple :
 
 - `src/content/standard-pages/contact.md` → `/contact/` ;
-- `src/content/articles/actualites/mon-article.md` → `/actualites/mon-article/`.
+- `src/content/articles/mon-article.md` → `/mon-article/`.
 
 Les sous-dossiers servent à créer le fil d’Ariane. La page parente doit exister avant d’exposer un lien vers une page profonde.
 
@@ -85,6 +91,18 @@ Pour un index, choisir clairement sa **Collection à afficher**, sa présentatio
 Le menu principal est limité aux six rubriques conservées dans `src/content/site.json`. Le logo fournit le retour à l’accueil. **Valider mon permis** et **Contact** restent séparés comme actions prioritaires.
 
 Le socle vise WCAG 2.2 AA : landmarks, titre unique, lien d’évitement, fils d’Ariane, focus visible, navigation clavier, cibles d’au moins 44 px, menu mobile à état explicite, alternatives d’images, annonce des nouveaux onglets, mise en page responsive et respect de `prefers-reduced-motion`. Les tests statiques ne remplacent pas un audit manuel avec clavier, lecteur d’écran et zoom à 200 %.
+
+## Actualités, archives et référencement
+
+Les actualités en cours sont triées par date décroissante et paginées par 12. Les alertes actives disposent
+d’un bloc distinct sur l’accueil ; les actions prioritaires restent affichées avant toute actualité. Les
+contenus anciens ou temporaires expirés sont conservés dans les
+[archives](/site-web/actualites/archives/) avec un avertissement explicite.
+
+Le build génère `sitemap.xml`, `robots.txt` et un flux Atom `feed.xml` sous `/site-web/`. Chaque article
+possède une URL canonique, des métadonnées OpenGraph et `NewsArticle`. Les pages de redirection utilisent
+une canonique vers leur destination et `noindex, follow`. Le site n’utilise aucun outil de suivi et
+n’affiche donc pas de bannière de consentement inutile.
 
 ## Publication
 

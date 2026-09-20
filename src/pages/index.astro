@@ -4,10 +4,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SmartLink from "../components/SmartLink.astro";
 import home from "../content/home.json";
 import { normalizeSlug } from "../lib/content";
+import { formatFrenchDate, isArchivedArticle } from "../lib/news";
 import { resolveUrl } from "../lib/urls";
 
-const latestNews = (await getCollection("articles"))
+const currentArticles = (await getCollection("articles"))
+  .filter((article) => !isArchivedArticle(article))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+const activeAlerts = currentArticles
+  .filter((article) => article.data.category === "Alertes")
+  .slice(0, 3);
+const latestNews = currentArticles
+  .filter((article) => article.data.category !== "Alertes")
   .slice(0, 3);
 ---
 
@@ -43,6 +50,33 @@ const latestNews = (await getCollection("articles"))
     </div>
   </section>
 
+  {activeAlerts.length > 0 && (
+    <section class="section alerts-section" aria-labelledby="alerts-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">À vérifier en priorité</p>
+          <h2 id="alerts-title">Alertes en cours</h2>
+        </div>
+        <div class="card-grid">
+          {activeAlerts.map((article) => (
+            <article class="index-item alert-card">
+              <p class="news-date">
+                Publié le <time datetime={article.data.date.toISOString()}>{formatFrenchDate(article.data.date)}</time>
+              </p>
+              <h3>
+                <SmartLink href={`${normalizeSlug(article.id)}/`}>{article.data.title}</SmartLink>
+              </h3>
+              <p>{article.data.summary}</p>
+              <p class="read-more-row">
+                <SmartLink href={`${normalizeSlug(article.id)}/`}>Lire l’alerte : {article.data.title}</SmartLink>
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="section news-section" aria-labelledby="news-title">
     <div class="container">
       <div class="section-heading section-heading-row">
@@ -57,7 +91,13 @@ const latestNews = (await getCollection("articles"))
           <article class="index-item">
             <p class="eyebrow">{article.data.category}</p>
             <h3><SmartLink href={`${normalizeSlug(article.id)}/`}>{article.data.title}</SmartLink></h3>
+            <p class="news-date">
+              Publié le <time datetime={article.data.date.toISOString()}>{formatFrenchDate(article.data.date)}</time>
+            </p>
             <p>{article.data.summary}</p>
+            <p class="read-more-row">
+              <SmartLink href={`${normalizeSlug(article.id)}/`}>Lire l’article : {article.data.title}</SmartLink>
+            </p>
           </article>
         ))}
       </div>

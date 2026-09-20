@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Accéder à l’entraînement officiel
-    url: https://chasseur-vendeen.fr/je-veux-devenir-chasseur/sentrainer-a-lexamen/
+    url: /permis-et-formations/entrainement-examen/
   - label: Passer son permis
     url: /permis-et-formations/passer-son-permis/
 ---

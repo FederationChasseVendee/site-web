@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Accéder au service DECLADOM
-    url: https://chasseur-vendeen.fr/connaitre-la-reglementation/decladom/
+    url: /chasser-en-vendee/decladom/
   - label: Dégâts causés par la faune
     url: /chasser-en-vendee/degats-causes-par-la-faune/
 ---

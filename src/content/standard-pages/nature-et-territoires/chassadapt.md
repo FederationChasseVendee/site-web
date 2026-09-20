@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Informations actualisées sur ChassAdapt
-    url: https://chasseur-vendeen.fr/decouvrir/chassadapt/
+    url: /nature-et-territoires/chassadapt/
 ---
 
 Créée par la Fédération Nationale des Chasseurs, l’application mobile ChassAdapt permet de déclarer des prélèvements en temps réel, y compris sur le terrain sans réseau, puis de synchroniser les données.

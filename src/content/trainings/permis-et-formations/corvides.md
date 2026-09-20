@@ -24,7 +24,7 @@ documents:
     url: /assets/documents/reglementation/arrete-esod-2026-2029.pdf
     type: PDF
     size: 261 Ko
-registrationUrl: https://chasseur-vendeen.fr/formation-corvides/
+registrationUrl: /contact/
 ---
 
 Cette formation est recommandée mais non obligatoire. Les prochaines dates sont annoncées pour 2027 par la FDC 85.

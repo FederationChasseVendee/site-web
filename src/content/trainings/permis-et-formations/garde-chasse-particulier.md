@@ -23,7 +23,7 @@ documents:
     url: /assets/documents/formulaires/demande-agrement-garde-particulier-fontenay.pdf
     type: PDF
     size: 1,0 Mo
-registrationUrl: https://chasseur-vendeen.fr/formation-garde-chasse-particulier/
+registrationUrl: /contact/
 ---
 
 L’agrément est délivré par arrêté préfectoral pour cinq ans, renouvelables. Les prochaines dates sont annoncées pour 2027 par la FDC 85.

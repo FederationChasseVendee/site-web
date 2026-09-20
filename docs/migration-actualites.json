@@ -1,0 +1,2069 @@
+{
+  "generatedAt": "2026-09-20T22:44:19.942875+00:00",
+  "source": "https://chasseur-vendeen.fr/post-sitemap.xml",
+  "sitemapUrlCount": 86,
+  "archiveUrl": "https://chasseur-vendeen.fr/actualites/",
+  "articleCount": 85,
+  "importedCount": 85,
+  "errorCount": 0,
+  "categoryMapping": {
+    "actualites": "Fédération (catégorie générique ignorée si une catégorie précise existe)",
+    "chasse": "Chasse",
+    "environnement": "Environnement",
+    "federation": "Fédération",
+    "flash-infos": "Alertes",
+    "recrutement": "Fédération",
+    "non-classe": "Fédération"
+  },
+  "articles": [
+    {
+      "source": "https://chasseur-vendeen.fr/precisions-sur-la-pratique-de-la-chasse-apres-le-couvre-feu/",
+      "slug": "precisions-sur-la-pratique-de-la-chasse-apres-le-couvre-feu",
+      "file": "src/content/articles/precisions-sur-la-pratique-de-la-chasse-apres-le-couvre-feu.md",
+      "title": "Précisions sur la pratique de la chasse après le couvre-feu",
+      "published": "2021-01-25T12:45:40+00:00",
+      "wpCategories": [
+        "chasse"
+      ],
+      "category": "Chasse",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/precisions-sur-la-pratique-de-la-chasse-apres-le-couvre-feu/principale-1a0239b4.webp",
+        "alt": "Précisions sur la pratique de la chasse après le couvre-feu",
+        "width": 750,
+        "height": 541,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/01/78965.jpg"
+      },
+      "documents": [],
+      "warnings": [
+        "document http://www.chasse85.fr/images/decret_27.11.2020.pdf: 404 Client Error: Not Found for url: http://www.chasse85.fr/images/decret_27.11.2020.pdf"
+      ]
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/modalites-de-fin-de-chasse-retour-des-appelants-a-domicile/",
+      "slug": "modalites-de-fin-de-chasse-retour-des-appelants-a-domicile",
+      "file": "src/content/articles/modalites-de-fin-de-chasse-retour-des-appelants-a-domicile.md",
+      "title": "Modalités de fin de chasse : retour des appelants à domicile",
+      "published": "2021-02-01T11:51:08+00:00",
+      "wpCategories": [
+        "chasse"
+      ],
+      "category": "Chasse",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/modalites-de-fin-de-chasse-retour-des-appelants-a-domicile/principale-f376e44d.webp",
+        "alt": "Modalités de fin de chasse : retour des appelants à domicile",
+        "width": 750,
+        "height": 541,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/01/47851.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/la-chasse-coeur-de-biodiversite/",
+      "slug": "la-chasse-coeur-de-biodiversite",
+      "file": "src/content/articles/la-chasse-coeur-de-biodiversite.md",
+      "title": "La chasse, au cœur de la biodiversité",
+      "published": "2021-02-02T12:39:36+00:00",
+      "wpCategories": [
+        "environnement"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/la-chasse-coeur-de-biodiversite/principale-860d55b1.webp",
+        "alt": "La chasse, au cœur de la biodiversité",
+        "width": 750,
+        "height": 541,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/01/69851.jpg"
+      },
+      "documents": [
+        {
+          "label": "TÉLÉCHARGEZ LE MANIFESTE !",
+          "url": "/assets/documents/actualites/la-chasse-coeur-de-biodiversite/lachassecoeurdebiodiversitev1.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/assemblee-generale-2021/",
+      "slug": "assemblee-generale-2021",
+      "file": "src/content/articles/assemblee-generale-2021.md",
+      "title": "Vidéo de l'Assemblée Générale 2021",
+      "published": "2021-04-01T10:33:18+00:00",
+      "wpCategories": [
+        "federation"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2021-06-30",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/assemblee-generale-2021/principale-2271c1e2.webp",
+        "alt": "Vidéo de l'Assemblée Générale 2021",
+        "width": 750,
+        "height": 541,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/01/56982.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/la-lagune-de-bouin-labellisee-ens/",
+      "slug": "la-lagune-de-bouin-labellisee-ens",
+      "file": "src/content/articles/la-lagune-de-bouin-labellisee-ens.md",
+      "title": "Un label « Espace Naturel sensible » pour préserver la biodiversité vendéenne.",
+      "published": "2021-11-24T14:47:27+00:00",
+      "wpCategories": [
+        "environnement"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/la-lagune-de-bouin-labellisee-ens/principale-f207db59.webp",
+        "alt": "Un label « Espace Naturel sensible » pour préserver la biodiversité vendéenne.",
+        "width": 850,
+        "height": 567,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/11/photo_lagune_1.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/matinale-du-handicap/",
+      "slug": "matinale-du-handicap",
+      "file": "src/content/articles/matinale-du-handicap.md",
+      "title": "La matinale du handicap vous invite à la fête !",
+      "published": "2022-09-13T09:36:40+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2023-01-11",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/matinale-du-handicap/principale-0d3521e8.webp",
+        "alt": "La matinale du handicap vous invite à la fête !",
+        "width": 934,
+        "height": 1300,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2022/09/matinale-du-handicap-balltrap-2022-a5-2_page-0001.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/la-matinale-du-handicap/",
+      "slug": "la-matinale-du-handicap",
+      "file": "src/content/articles/la-matinale-du-handicap.md",
+      "title": "La Matinale du Handicap",
+      "published": "2022-10-03T11:00:00+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2023-01-31",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/la-matinale-du-handicap/principale-6e11b1ea.webp",
+        "alt": "La Matinale du Handicap",
+        "width": 1400,
+        "height": 1050,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2022/10/Banderole-la-Matinale-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/formation-securite-decennale/",
+      "slug": "formation-securite-decennale",
+      "file": "src/content/articles/formation-securite-decennale.md",
+      "title": "La Formation Sécurité Décennale",
+      "published": "2022-12-09T15:10:52+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse"
+      ],
+      "category": "Chasse",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/formation-securite-decennale/principale-4eee55c9.webp",
+        "alt": "La Formation Sécurité Décennale",
+        "width": 500,
+        "height": 333,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/03/15236.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/toujours-plus-de-haies-en-2022/",
+      "slug": "toujours-plus-de-haies-en-2022",
+      "file": "src/content/articles/toujours-plus-de-haies-en-2022.md",
+      "title": "Toujours plus de haies en 2022",
+      "published": "2022-12-19T08:00:00+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement",
+        "federation"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/toujours-plus-de-haies-en-2022/principale-be0c5e58.webp",
+        "alt": "Toujours plus de haies en 2022",
+        "width": 1400,
+        "height": 631,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2022/11/20220203_100056-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/des-plantations-sur-sainte-flaive-des-loups-et-les-achards/",
+      "slug": "des-plantations-sur-sainte-flaive-des-loups-et-les-achards",
+      "file": "src/content/articles/des-plantations-sur-sainte-flaive-des-loups-et-les-achards.md",
+      "title": "Encore des plantations",
+      "published": "2023-01-04T09:49:16+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement",
+        "federation"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/des-plantations-sur-sainte-flaive-des-loups-et-les-achards/principale-c73afe0c.webp",
+        "alt": "Encore des plantations",
+        "width": 1400,
+        "height": 1050,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/01/04-Preparation-plants-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/nouveau-logiciel-pour-le-permis-de-chasser/",
+      "slug": "nouveau-logiciel-pour-le-permis-de-chasser",
+      "file": "src/content/articles/nouveau-logiciel-pour-le-permis-de-chasser.md",
+      "title": "Nouveau logiciel pour le permis de chasser",
+      "published": "2023-01-09T08:55:34+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/nouveau-logiciel-pour-le-permis-de-chasser/principale-b8aae712.webp",
+        "alt": "Nouveau logiciel pour le permis de chasser",
+        "width": 1280,
+        "height": 853,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/01/student-g6892dc2f5_1280.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/sia-permanence-a-la-federation/",
+      "slug": "sia-permanence-a-la-federation",
+      "file": "src/content/articles/sia-permanence-a-la-federation.md",
+      "title": "SIA : permanence à la fédération !",
+      "published": "2023-02-01T11:35:51+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse",
+        "federation"
+      ],
+      "category": "Chasse",
+      "archived": true,
+      "expiresAt": "2023-05-02",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/sia-permanence-a-la-federation/principale-d1d2976f.webp",
+        "alt": "SIA : permanence à la fédération !",
+        "width": 1400,
+        "height": 1050,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/02/20230201_101852-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/les-bons-gestes-pour-reussir-sa-plantation/",
+      "slug": "les-bons-gestes-pour-reussir-sa-plantation",
+      "file": "src/content/articles/les-bons-gestes-pour-reussir-sa-plantation.md",
+      "title": "Les bons gestes pour réussir sa plantation",
+      "published": "2023-02-13T10:18:58+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement",
+        "federation"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/les-bons-gestes-pour-reussir-sa-plantation/principale-7955f681.webp",
+        "alt": "Les bons gestes pour réussir sa plantation",
+        "width": 1400,
+        "height": 1050,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/02/20230109_092527-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/grande-etude-chasse-2023/",
+      "slug": "grande-etude-chasse-2023",
+      "file": "src/content/articles/grande-etude-chasse-2023.md",
+      "title": "Grande étude chasse 2023",
+      "published": "2023-02-17T14:48:02+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse"
+      ],
+      "category": "Chasse",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/grande-etude-chasse-2023/principale-fee419a6.webp",
+        "alt": "Grande étude chasse 2023",
+        "width": 778,
+        "height": 1400,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/02/Grande_enquete_chasse_2023-Format_telephone.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/lagune-de-bouin/",
+      "slug": "lagune-de-bouin",
+      "file": "src/content/articles/lagune-de-bouin.md",
+      "title": "Opération nettoyage à la Lagune de Bouin",
+      "published": "2023-02-20T08:24:51+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement",
+        "federation"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/lagune-de-bouin/principale-3836066a.webp",
+        "alt": "Opération nettoyage à la Lagune de Bouin",
+        "width": 1400,
+        "height": 934,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/02/IMG_6597-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/clap-de-fin-pour-les-plantations/",
+      "slug": "clap-de-fin-pour-les-plantations",
+      "file": "src/content/articles/clap-de-fin-pour-les-plantations.md",
+      "title": "Clap de fin pour les plantations !",
+      "published": "2023-03-23T08:31:08+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/clap-de-fin-pour-les-plantations/principale-bcd1c6bf.webp",
+        "alt": "Clap de fin pour les plantations !",
+        "width": 1400,
+        "height": 1050,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/02/20230109_092245-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/lassemblee-generale-fete-son-centenaire/",
+      "slug": "lassemblee-generale-fete-son-centenaire",
+      "file": "src/content/articles/lassemblee-generale-fete-son-centenaire.md",
+      "title": "L'Assemblée Générale fête son centenaire !",
+      "published": "2023-04-21T08:20:17+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2023-07-20",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/lassemblee-generale-fete-son-centenaire/principale-e8ebeab6.webp",
+        "alt": "L'Assemblée Générale fête son centenaire !",
+        "width": 1350,
+        "height": 1400,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/04/100-ans-v5.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/votre-fdc-recrute-un-e-animateur-trice-en-cdd/",
+      "slug": "votre-fdc-recrute-un-e-animateur-trice-en-cdd",
+      "file": "src/content/articles/votre-fdc-recrute-un-e-animateur-trice-en-cdd.md",
+      "title": "Votre FDC recrute un.e animateur.trice en CDD !",
+      "published": "2023-06-07T09:12:18+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/votre-fdc-recrute-un-e-animateur-trice-en-cdd/principale-a90a97b5.webp",
+        "alt": "Votre FDC recrute un.e animateur.trice en CDD !",
+        "width": 1024,
+        "height": 576,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/06/Purple-Skyscraper-City-Blog-Banner-1024x576.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/tous-vers-le-sia/",
+      "slug": "tous-vers-le-sia",
+      "file": "src/content/articles/tous-vers-le-sia.md",
+      "title": "Tous vers le SIA",
+      "published": "2023-06-26T08:21:49+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2023-10-24",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/tous-vers-le-sia/principale-c8c9bd09.webp",
+        "alt": "Tous vers le SIA",
+        "width": 722,
+        "height": 1024,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/06/Flyer-Operation-Tous-vers-le-SIA_page-0001-722x1024.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/matinee-danimation-et-de-ramassage-de-dechets/",
+      "slug": "matinee-danimation-et-de-ramassage-de-dechets",
+      "file": "src/content/articles/matinee-danimation-et-de-ramassage-de-dechets.md",
+      "title": "Matinée d'animation et de ramassage de déchets",
+      "published": "2023-08-18T07:00:00+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/matinee-danimation-et-de-ramassage-de-dechets/principale-3c2327c7.webp",
+        "alt": "Matinée d'animation et de ramassage de déchets",
+        "width": 990,
+        "height": 1400,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/08/18082023-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/labellisee-rse/",
+      "slug": "labellisee-rse",
+      "file": "src/content/articles/labellisee-rse.md",
+      "title": "Labellisée RSE",
+      "published": "2023-10-02T12:28:06+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement",
+        "federation",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2024-01-30",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/labellisee-rse/principale-f547ccc3.webp",
+        "alt": "Labellisée RSE",
+        "width": 1024,
+        "height": 576,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2023/10/Design-sans-titre-1024x576.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/actions-terrain/",
+      "slug": "actions-terrain",
+      "file": "src/content/articles/actions-terrain.md",
+      "title": "Les actions sur le terrain",
+      "published": "2023-10-16T09:58:27+00:00",
+      "wpCategories": [
+        "environnement",
+        "federation"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/actions-terrain/principale-5dcec20d.webp",
+        "alt": "Les actions sur le terrain",
+        "width": 750,
+        "height": 541,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/04/5589.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/rediffusion-de-la-rencontre-homme-nature-4/",
+      "slug": "rediffusion-de-la-rencontre-homme-nature-4",
+      "file": "src/content/articles/rediffusion-de-la-rencontre-homme-nature-4.md",
+      "title": "Rediffusion de la rencontre Homme Nature #4",
+      "published": "2023-12-04T09:14:05+00:00",
+      "wpCategories": [
+        "actualites"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/rediffusion-de-la-rencontre-homme-nature-4/principale-8a50cfb8.webp",
+        "alt": "Rediffusion de la rencontre Homme Nature #4",
+        "width": 750,
+        "height": 541,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/03/23859.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/appel-a-la-mobilisation/",
+      "slug": "appel-a-la-mobilisation",
+      "file": "src/content/articles/appel-a-la-mobilisation.md",
+      "title": "Appel à la mobilisation",
+      "published": "2024-01-24T13:09:02+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": "2024-04-23",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/appel-a-la-mobilisation/principale-ef3465c1.webp",
+        "alt": "Appel à la mobilisation",
+        "width": 1080,
+        "height": 1080,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/01/Appel-a-la-mobilisation.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/livraison-des-plants/",
+      "slug": "livraison-des-plants",
+      "file": "src/content/articles/livraison-des-plants.md",
+      "title": "Livraison des plants !",
+      "published": "2024-01-26T14:26:01+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement",
+        "federation"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/livraison-des-plants/principale-e7cb6f10.webp",
+        "alt": "Livraison des plants !",
+        "width": 940,
+        "height": 788,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/01/Design-sans-titre-3.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/lancien-president-distingue-chevalier-de-lordre-du-merite-agricole/",
+      "slug": "lancien-president-distingue-chevalier-de-lordre-du-merite-agricole",
+      "file": "src/content/articles/lancien-president-distingue-chevalier-de-lordre-du-merite-agricole.md",
+      "title": "L'ancien président distingué Chevalier de l'Ordre du Mérite Agricole",
+      "published": "2024-01-31T10:30:52+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2024-05-30",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/lancien-president-distingue-chevalier-de-lordre-du-merite-agricole/principale-4361d5e1.webp",
+        "alt": "L'ancien président distingué Chevalier de l'Ordre du Mérite Agricole",
+        "width": 1400,
+        "height": 789,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/01/20240126_125536-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/jaime-la-nature-propre/",
+      "slug": "jaime-la-nature-propre",
+      "file": "src/content/articles/jaime-la-nature-propre.md",
+      "title": "J'aime la Nature Propre",
+      "published": "2024-03-21T13:19:20+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement",
+        "federation"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/jaime-la-nature-propre/principale-25f6bbd4.webp",
+        "alt": "J'aime la Nature Propre",
+        "width": 1400,
+        "height": 1143,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/03/JLNP-logo.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/assemblee-generale-2024/",
+      "slug": "assemblee-generale-2024",
+      "file": "src/content/articles/assemblee-generale-2024.md",
+      "title": "Assemblée Générale 2024",
+      "published": "2024-04-17T12:23:59+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2024-07-16",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/assemblee-generale-2024/principale-f1434ed7.webp",
+        "alt": "Assemblée Générale 2024",
+        "width": 1271,
+        "height": 711,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/04/Capture-decran-2024-04-17-141416.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/etude-chasse/",
+      "slug": "etude-chasse",
+      "file": "src/content/articles/etude-chasse.md",
+      "title": "Étude de la chasse en France",
+      "published": "2024-05-13T09:33:38+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/etude-chasse/principale-8cf176ce.webp",
+        "alt": "Étude de la chasse en France",
+        "width": 1400,
+        "height": 456,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/05/AdobeStock_293956607-1-scaled.jpeg"
+      },
+      "documents": [
+        {
+          "label": "Télécharger l’étude",
+          "url": "/assets/documents/actualites/etude-chasse/etude-fnc-propo-finale-web.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/votre-validation-en-ligne-fait-peau-neuve/",
+      "slug": "votre-validation-en-ligne-fait-peau-neuve",
+      "file": "src/content/articles/votre-validation-en-ligne-fait-peau-neuve.md",
+      "title": "Votre validation en ligne fait peau neuve !",
+      "published": "2024-05-22T13:35:15+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2024-09-19",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/votre-validation-en-ligne-fait-peau-neuve/principale-1da7c2a6.webp",
+        "alt": "Votre validation en ligne fait peau neuve !",
+        "width": 940,
+        "height": 788,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/05/20242025.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/rejoignez-les-lieutenants-de-louveterie/",
+      "slug": "rejoignez-les-lieutenants-de-louveterie",
+      "file": "src/content/articles/rejoignez-les-lieutenants-de-louveterie.md",
+      "title": "Rejoignez les Lieutenants de Louveterie",
+      "published": "2024-08-12T13:29:47+00:00",
+      "wpCategories": [
+        "actualites"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/rejoignez-les-lieutenants-de-louveterie/principale-fac5752a.webp",
+        "alt": "Rejoignez les Lieutenants de Louveterie",
+        "width": 827,
+        "height": 827,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/04/louveterie.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/passation-de-direction-a-la-federation-des-chasseurs-de-la-vendee/",
+      "slug": "passation-de-direction-a-la-federation-des-chasseurs-de-la-vendee",
+      "file": "src/content/articles/passation-de-direction-a-la-federation-des-chasseurs-de-la-vendee.md",
+      "title": "Passation de direction à la Fédération des Chasseurs de la Vendée",
+      "published": "2024-09-27T07:53:58+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2025-01-25",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/passation-de-direction-a-la-federation-des-chasseurs-de-la-vendee/principale-5084e92d.webp",
+        "alt": "Passation de direction à la Fédération des Chasseurs de la Vendée",
+        "width": 1400,
+        "height": 1050,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/09/26-09-24-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/sia/",
+      "slug": "sia",
+      "file": "src/content/articles/sia.md",
+      "title": "Ouverture des comptes SIA pour les chasseurs",
+      "published": "2024-10-09T12:22:34+00:00",
+      "wpCategories": [
+        "actualites"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/sia/principale-c23c3adf.webp",
+        "alt": "Ouverture des comptes SIA pour les chasseurs",
+        "width": 724,
+        "height": 1024,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/10/CLIN-DOEIL-RELANCE-CHASSEURS-SIA-MI-724x1024.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/je-participe-a-la-recolte-dailes/",
+      "slug": "je-participe-a-la-recolte-dailes",
+      "file": "src/content/articles/je-participe-a-la-recolte-dailes.md",
+      "title": "Je participe à la récolte d'ailes",
+      "published": "2024-10-18T13:00:31+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse"
+      ],
+      "category": "Chasse",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/je-participe-a-la-recolte-dailes/principale-7f45e959.webp",
+        "alt": "Je participe à la récolte d'ailes",
+        "width": 722,
+        "height": 1024,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/10/Flyer-A5-Autowing-Canard-BD_Page_1-722x1024.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/ouverture-compte-sia/",
+      "slug": "ouverture-compte-sia",
+      "file": "src/content/articles/ouverture-compte-sia.md",
+      "title": "La FDC85 vous aide à ouvrir votre compte SIA",
+      "published": "2024-10-18T14:42:47+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/ouverture-compte-sia/principale-13400e3c.webp",
+        "alt": "La FDC85 vous aide à ouvrir votre compte SIA",
+        "width": 940,
+        "height": 788,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/10/Permanence-SIA-1.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/61157-2/",
+      "slug": "61157-2",
+      "file": "src/content/articles/61157-2.md",
+      "title": "INFLUENZA AVIAIRE - PASSAGE RISQUE ÉLEVÉ",
+      "published": "2024-11-12T12:36:06+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2025-02-10",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/61157-2/principale-1f5b3e86.webp",
+        "alt": "INFLUENZA AVIAIRE - PASSAGE RISQUE ÉLEVÉ",
+        "width": 1288,
+        "height": 892,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/11/Influenza-aviaire-au-09.11.24-1.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/recrute-secretaire-comptable/",
+      "slug": "recrute-secretaire-comptable",
+      "file": "src/content/articles/recrute-secretaire-comptable.md",
+      "title": "Votre FDC 85 recrute un·e secrétaire comptable",
+      "published": "2024-11-25T15:05:09+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation",
+        "recrutement"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/recrute-secretaire-comptable/principale-1d693494.webp",
+        "alt": "Votre FDC 85 recrute un·e secrétaire comptable",
+        "width": 1024,
+        "height": 576,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/10/Purple-Skyscraper-City-Blog-Banner-2-1024x576.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/recrute-agent-de-developpement/",
+      "slug": "recrute-agent-de-developpement",
+      "file": "src/content/articles/recrute-agent-de-developpement.md",
+      "title": "Votre FDC recrute un·e agent de développement",
+      "published": "2024-11-25T15:18:21+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation",
+        "recrutement"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/recrute-agent-de-developpement/principale-1d693494.webp",
+        "alt": "Votre FDC recrute un·e agent de développement",
+        "width": 1024,
+        "height": 576,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/10/Purple-Skyscraper-City-Blog-Banner-2-1024x576.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/gestions-canards/",
+      "slug": "gestions-canards",
+      "file": "src/content/articles/gestions-canards.md",
+      "title": "Recommandations sur la gestion de cinq espèces de canards",
+      "published": "2024-12-04T11:52:20+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse"
+      ],
+      "category": "Chasse",
+      "archived": true,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/gestions-canards/principale-bebfa5a7.webp",
+        "alt": "Recommandations sur la gestion de cinq espèces de canards",
+        "width": 1024,
+        "height": 717,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/12/Canard-siffleur-Dominique-Gest-1-1024x717.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/service-civique-jmlnp/",
+      "slug": "service-civique-jmlnp",
+      "file": "src/content/articles/service-civique-jmlnp.md",
+      "title": "Votre FDC recrute un service civique \"J'aime la Nature Propre\"",
+      "published": "2024-12-04T14:22:30+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation",
+        "recrutement"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2025-03-04",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/service-civique-jmlnp/principale-1d693494.webp",
+        "alt": "Votre FDC recrute un service civique \"J'aime la Nature Propre\"",
+        "width": 1024,
+        "height": 576,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/10/Purple-Skyscraper-City-Blog-Banner-2-1024x576.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/un-service-civique-bocage/",
+      "slug": "un-service-civique-bocage",
+      "file": "src/content/articles/un-service-civique-bocage.md",
+      "title": "Votre FDC recrute un service civique restauration bocagère",
+      "published": "2024-12-04T14:39:21+00:00",
+      "wpCategories": [
+        "actualites",
+        "federation",
+        "recrutement"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2025-03-04",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/un-service-civique-bocage/principale-1d693494.webp",
+        "alt": "Votre FDC recrute un service civique restauration bocagère",
+        "width": 1024,
+        "height": 576,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/10/Purple-Skyscraper-City-Blog-Banner-2-1024x576.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/inscription-entretien-de-la-lagune-de-bouin/",
+      "slug": "inscription-entretien-de-la-lagune-de-bouin",
+      "file": "src/content/articles/inscription-entretien-de-la-lagune-de-bouin.md",
+      "title": "Inscription : entretien de la Lagune de Bouin",
+      "published": "2025-01-09T11:42:25+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": "2025-04-09",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/inscription-entretien-de-la-lagune-de-bouin/principale-bf448125.webp",
+        "alt": "Inscription : entretien de la Lagune de Bouin",
+        "width": 1400,
+        "height": 1050,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/01/DJI_0183-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/mortalite-inhabituelle-des-ruminants-sauvages-en-france-la-vendee-nest-pas-epargnee-quelles-sont-les-explications-de-ces-mortalites/",
+      "slug": "mortalite-inhabituelle-des-ruminants-sauvages-en-france-la-vendee-nest-pas-epargnee-quelles-sont-les-explications-de-ces-mortalites",
+      "file": "src/content/articles/mortalite-inhabituelle-des-ruminants-sauvages-en-france-la-vendee-nest-pas-epargnee-quelles-sont-les-explications-de-ces-mortalites.md",
+      "title": "Mortalité inhabituelle des ruminants sauvages en France",
+      "published": "2025-02-03T13:03:31+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2025-06-03",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/mortalite-inhabituelle-des-ruminants-sauvages-en-france-la-v-4658f77b9b/principale-fce9b8d2.webp",
+        "alt": "Mortalité inhabituelle des ruminants sauvages en France",
+        "width": 750,
+        "height": 541,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/04/56983.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/les-chasseurs-continuent-de-planter-cet-hiver/",
+      "slug": "les-chasseurs-continuent-de-planter-cet-hiver",
+      "file": "src/content/articles/les-chasseurs-continuent-de-planter-cet-hiver.md",
+      "title": "Les Chasseurs continuent de planter cet hiver",
+      "published": "2025-02-17T10:53:12+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement"
+      ],
+      "category": "Environnement",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/les-chasseurs-continuent-de-planter-cet-hiver/principale-d23f6c4b.webp",
+        "alt": "Les Chasseurs continuent de planter cet hiver",
+        "width": 204,
+        "height": 192,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/01/logo-FV.png"
+      },
+      "documents": [
+        {
+          "label": "Télécharger le communiqué de presse",
+          "url": "/assets/documents/actualites/les-chasseurs-continuent-de-planter-cet-hiver/cp-plantation-janv-2025.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/lagune-de-bouin-une-mobilisation-exemplaire-pour-preserver-un-site-naturel-dexception/",
+      "slug": "lagune-de-bouin-une-mobilisation-exemplaire-pour-preserver-un-site-naturel-dexception",
+      "file": "src/content/articles/lagune-de-bouin-une-mobilisation-exemplaire-pour-preserver-un-site-naturel-dexception.md",
+      "title": "Lagune de Bouin : une mobilisation exemplaire",
+      "published": "2025-03-03T08:23:53+00:00",
+      "wpCategories": [
+        "actualites",
+        "environnement"
+      ],
+      "category": "Environnement",
+      "archived": true,
+      "expiresAt": "2025-06-01",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/lagune-de-bouin-une-mobilisation-exemplaire-pour-preserver-u-c36234a2db/principale-3f38f32d.webp",
+        "alt": "Lagune de Bouin : une mobilisation exemplaire",
+        "width": 1400,
+        "height": 934,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/03/IMG_7176-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/vigifaune-une-application-essentielle/",
+      "slug": "vigifaune-une-application-essentielle",
+      "file": "src/content/articles/vigifaune-une-application-essentielle.md",
+      "title": "Vigifaune",
+      "published": "2025-03-03T15:17:49+00:00",
+      "wpCategories": [
+        "actualites"
+      ],
+      "category": "Fédération",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/vigifaune-une-application-essentielle/principale-091e3621.webp",
+        "alt": "Vigifaune",
+        "width": 1024,
+        "height": 512,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/03/Vigifaune.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/jaime-la-nature-propre-revient/",
+      "slug": "jaime-la-nature-propre-revient",
+      "file": "src/content/articles/jaime-la-nature-propre-revient.md",
+      "title": "J’aime la Nature Propre revient en Vendée les 14, 15 et 16 mars !",
+      "published": "2025-03-06T07:18:50+00:00",
+      "wpCategories": [
+        "non-classe"
+      ],
+      "category": "Fédération",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/jaime-la-nature-propre-revient/principale-6abae8b2.webp",
+        "alt": "J’aime la Nature Propre revient en Vendée les 14, 15 et 16 mars !",
+        "width": 1024,
+        "height": 512,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/03/JMLNP-2.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/bilans-de-plan-de-chasse/",
+      "slug": "bilans-de-plan-de-chasse",
+      "file": "src/content/articles/bilans-de-plan-de-chasse.md",
+      "title": "Bilans de plan de chasse",
+      "published": "2025-04-04T06:56:18+00:00",
+      "wpCategories": [
+        "actualites",
+        "chasse"
+      ],
+      "category": "Chasse",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/bilans-de-plan-de-chasse/principale-104ab694.webp",
+        "alt": "Bilans de plan de chasse",
+        "width": 515,
+        "height": 304,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/04/cerf-scaled-515x304-c-default.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/la-chasse-a-lapproche-et-a-laffut-du-sanglier/",
+      "slug": "la-chasse-a-lapproche-et-a-laffut-du-sanglier",
+      "file": "src/content/articles/la-chasse-a-lapproche-et-a-laffut-du-sanglier.md",
+      "title": "La chasse à l'approche et à l'affût du sanglier",
+      "published": "2025-04-14T13:45:01+00:00",
+      "wpCategories": [
+        "chasse"
+      ],
+      "category": "Chasse",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/la-chasse-a-lapproche-et-a-laffut-du-sanglier/principale-110c3c3a.webp",
+        "alt": "La chasse à l'approche et à l'affût du sanglier",
+        "width": 515,
+        "height": 304,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/04/sanglier-515x304-c-default.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/attention-au-faux-site-dinscription/",
+      "slug": "attention-au-faux-site-dinscription",
+      "file": "src/content/articles/attention-au-faux-site-dinscription.md",
+      "title": "⚠️ Attention au faux site d’inscription au permis de chasser",
+      "published": "2025-04-16T09:45:38+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2025-08-14",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/attention-au-faux-site-dinscription/principale-d8509b8c.webp",
+        "alt": "⚠️ Attention au faux site d’inscription au permis de chasser",
+        "width": 1024,
+        "height": 576,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/04/Bleu-Plongee-Photo-Blog-Banniere-1024x576.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/assemblee-generale-2025-300-chasseurs-reunis-pour-echanger-et-construire-lavenir/",
+      "slug": "assemblee-generale-2025-300-chasseurs-reunis-pour-echanger-et-construire-lavenir",
+      "file": "src/content/articles/assemblee-generale-2025-300-chasseurs-reunis-pour-echanger-et-construire-lavenir.md",
+      "title": "Assemblée Générale 2025",
+      "published": "2025-04-29T11:40:48+00:00",
+      "wpCategories": [
+        "non-classe"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2025-07-28",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/assemblee-generale-2025-300-chasseurs-reunis-pour-echanger-e-5c261ad6a9/principale-db982983.webp",
+        "alt": "Assemblée Générale 2025",
+        "width": 1400,
+        "height": 788,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/04/rapport-dactivite-1.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/ouverture-et-fermeture-de-la-chasse-en-vendee-larrete-prefectoral-2025-2026-est-publie/",
+      "slug": "ouverture-et-fermeture-de-la-chasse-en-vendee-larrete-prefectoral-2025-2026-est-publie",
+      "file": "src/content/articles/ouverture-et-fermeture-de-la-chasse-en-vendee-larrete-prefectoral-2025-2026-est-publie.md",
+      "title": "Ouverture et Fermeture de la Chasse en Vendée : L'Arrêté Préfectoral 2025-2026 est Publié !",
+      "published": "2025-06-11T14:19:48+00:00",
+      "wpCategories": [
+        "non-classe"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2026-06-30",
+      "archiveReason": "fin de saison mentionnée dans le titre",
+      "mainImage": null,
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/le-conseil-detat-annule-la-possibilite-de-tir-autour-des-parcelles-en-cours-de-recolte/",
+      "slug": "le-conseil-detat-annule-la-possibilite-de-tir-autour-des-parcelles-en-cours-de-recolte",
+      "file": "src/content/articles/le-conseil-detat-annule-la-possibilite-de-tir-autour-des-parcelles-en-cours-de-recolte.md",
+      "title": "Le Conseil d'État annule la possibilité de tir autour des parcelles en cours de récolte.",
+      "published": "2025-06-23T07:57:01+00:00",
+      "wpCategories": [
+        "non-classe"
+      ],
+      "category": "Fédération",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": null,
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/communique-de-presse-attaques-contre-la-chasse/",
+      "slug": "communique-de-presse-attaques-contre-la-chasse",
+      "file": "src/content/articles/communique-de-presse-attaques-contre-la-chasse.md",
+      "title": "COMMUNIQUÉ DE PRESSE - Attaques contre la chasse",
+      "published": "2025-06-25T13:37:52+00:00",
+      "wpCategories": [
+        "actualites"
+      ],
+      "category": "Fédération",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": null,
+      "documents": [
+        {
+          "label": "Lire le communiqué",
+          "url": "/assets/documents/actualites/communique-de-presse-attaques-contre-la-chasse/communique-attaques-contre-la-chasse.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/communique-menaces-sur-la-chasse-du-gibier-deau/",
+      "slug": "communique-menaces-sur-la-chasse-du-gibier-deau",
+      "file": "src/content/articles/communique-menaces-sur-la-chasse-du-gibier-deau.md",
+      "title": "COMMUNIQUÉ - Menaces sur la chasse du gibier d'eau",
+      "published": "2025-06-27T09:32:01+00:00",
+      "wpCategories": [
+        "non-classe"
+      ],
+      "category": "Fédération",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": null,
+      "documents": [
+        {
+          "label": "Lire le communiqué",
+          "url": "/assets/documents/actualites/communique-menaces-sur-la-chasse-du-gibier-deau/communique-giber-eau.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/interdiction-temporaire-de-lusage-darmes-a-feu-dans-les-forets-prevention-incendie/",
+      "slug": "interdiction-temporaire-de-lusage-darmes-a-feu-dans-les-forets-prevention-incendie",
+      "file": "src/content/articles/interdiction-temporaire-de-lusage-darmes-a-feu-dans-les-forets-prevention-incendie.md",
+      "title": "Interdiction temporaire de l’usage d’armes à feu dans les forêts – Prévention incendie",
+      "published": "2025-07-11T14:20:49+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2025-11-08",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": null,
+      "documents": [
+        {
+          "label": "Lire l’arrêté",
+          "url": "/assets/documents/actualites/interdiction-temporaire-de-lusage-darmes-a-feu-dans-les-forets-prevention-incendie/recueil-85-2025-121.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/actualites-sur-la-chasse-du-gibier-deau/",
+      "slug": "actualites-sur-la-chasse-du-gibier-deau",
+      "file": "src/content/articles/actualites-sur-la-chasse-du-gibier-deau.md",
+      "title": "Actualités sur la chasse du Gibier d'eau",
+      "published": "2025-07-22T08:29:02+00:00",
+      "wpCategories": [
+        "non-classe"
+      ],
+      "category": "Fédération",
+      "archived": false,
+      "expiresAt": null,
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/actualites-sur-la-chasse-du-gibier-deau/principale-5dbac3d2.webp",
+        "alt": "Actualités sur la chasse du Gibier d'eau",
+        "width": 1024,
+        "height": 739,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/07/f2e1aba9-6374-4192-ad9e-b4597ce45b6f_opt_95bef529c9.png"
+      },
+      "documents": [
+        {
+          "label": "F.A.Q ChassAdapt",
+          "url": "/assets/documents/actualites/actualites-sur-la-chasse-du-gibier-deau/pj4-faq-chassadapt.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/ouverture-du-gibier-deau-et-de-la-caille-des-bles-saison-2025-2026/",
+      "slug": "ouverture-du-gibier-deau-et-de-la-caille-des-bles-saison-2025-2026",
+      "file": "src/content/articles/ouverture-du-gibier-deau-et-de-la-caille-des-bles-saison-2025-2026.md",
+      "title": "Ouverture du Gibier d'eau et de la Caille des Blés - Saison 2025/2026",
+      "published": "2025-08-29T10:16:25+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2025-12-27",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/ouverture-du-gibier-deau-et-de-la-caille-des-bles-saison-2025-2026/principale-43be66ba.webp",
+        "alt": "Ouverture du Gibier d'eau et de la Caille des Blés - Saison 2025/2026",
+        "width": 1400,
+        "height": 980,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2024/12/CANARD2-scaled.jpg"
+      },
+      "documents": [
+        {
+          "label": "Carnet prélèvement 2025-2026",
+          "url": "/assets/documents/actualites/ouverture-du-gibier-deau-et-de-la-caille-des-bles-saison-2025-2026/carnet-prelevement-2025-2026.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/fash-info-plusieurs-foyers-de-grippe-aviaire-en-vendee/",
+      "slug": "fash-info-plusieurs-foyers-de-grippe-aviaire-en-vendee",
+      "file": "src/content/articles/fash-info-plusieurs-foyers-de-grippe-aviaire-en-vendee.md",
+      "title": "Fash Info - plusieurs foyers de grippe aviaire en Vendée !",
+      "published": "2025-10-22T06:58:23+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-02-19",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/fash-info-plusieurs-foyers-de-grippe-aviaire-en-vendee/principale-e2392ffb.webp",
+        "alt": "Fash Info - plusieurs foyers de grippe aviaire en Vendée !",
+        "width": 720,
+        "height": 503,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2018/08/prolongation-des-moratoires-pour-la-barge-a-queue-noire-et-le-courlis-cendre-m.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/nouveau-foyer-de-grippe-aviaire-en-vendee/",
+      "slug": "nouveau-foyer-de-grippe-aviaire-en-vendee",
+      "file": "src/content/articles/nouveau-foyer-de-grippe-aviaire-en-vendee.md",
+      "title": "Nouveau Foyer de Grippe Aviaire en Vendée",
+      "published": "2025-10-31T15:18:45+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-02-28",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": null,
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/nouveau-foyer-de-grippe-aviaire-saint-fulgent/",
+      "slug": "nouveau-foyer-de-grippe-aviaire-saint-fulgent",
+      "file": "src/content/articles/nouveau-foyer-de-grippe-aviaire-saint-fulgent.md",
+      "title": "Nouveau Foyer de Grippe Aviaire - Saint Fulgent",
+      "published": "2025-11-04T19:46:57+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-03-04",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/nouveau-foyer-de-grippe-aviaire-saint-fulgent/principale-77681853.webp",
+        "alt": "Nouveau Foyer de Grippe Aviaire - Saint Fulgent",
+        "width": 1400,
+        "height": 989,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/11/Grippe-aviaire-2025-Saint-Fulgent_page-0001.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/synthese-des-mesures-prefectorales-iahp-mises-en-place-dans-le-departement/",
+      "slug": "synthese-des-mesures-prefectorales-iahp-mises-en-place-dans-le-departement",
+      "file": "src/content/articles/synthese-des-mesures-prefectorales-iahp-mises-en-place-dans-le-departement.md",
+      "title": "Synthèse des mesures préfectorales IAHP mises en place dans le Département",
+      "published": "2025-11-14T16:56:29+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos",
+        "non-classe"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-03-14",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/synthese-des-mesures-prefectorales-iahp-mises-en-place-dans-f222d6f310/principale-0242f2f5.webp",
+        "alt": "Synthèse des mesures préfectorales IAHP mises en place dans le Département",
+        "width": 1400,
+        "height": 833,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/11/annexe3_apddpp25_0183.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/levee-des-mesures-de-restrictions-liees-a-la-chasse-du-gibier-deau-et-du-gibier-a-plumes-autour-des-foyers-de-grippe-aviaire-sur-vix-et-rives-dautise/",
+      "slug": "levee-des-mesures-de-restrictions-liees-a-la-chasse-du-gibier-deau-et-du-gibier-a-plumes-autour-des-foyers-de-grippe-aviaire-sur-vix-et-rives-dautise",
+      "file": "src/content/articles/levee-des-mesures-de-restrictions-liees-a-la-chasse-du-gibier-deau-et-du-gibier-a-plumes-autour-des-foyers-de-grippe-aviaire-sur-vix-et-rives-dautise.md",
+      "title": "Levée des mesures de restrictions liées à la chasse du gibier d'eau et du gibier à plumes autour des foyers de grippe aviaire sur Vix et Rives d'Autise",
+      "published": "2025-11-14T17:00:10+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-03-14",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/levee-des-mesures-de-restrictions-liees-a-la-chasse-du-gibie-753af6c5ee/principale-40fa48ea.webp",
+        "alt": "Levée des mesures de restrictions liées à la chasse du gibier d'eau et du gibier à plumes autour des foyers de grippe aviaire sur Vix et Rives d'Autise",
+        "width": 1400,
+        "height": 844,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/11/annexe3_apddpp25_0194-RA-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/nouveau-foyer-de-grippe-aviaire-a-moutiers-sur-le-lay/",
+      "slug": "nouveau-foyer-de-grippe-aviaire-a-moutiers-sur-le-lay",
+      "file": "src/content/articles/nouveau-foyer-de-grippe-aviaire-a-moutiers-sur-le-lay.md",
+      "title": "Nouveau foyer de Grippe Aviaire à MOUTIERS SUR LE LAY",
+      "published": "2025-11-21T10:04:29+00:00",
+      "wpCategories": [
+        "non-classe"
+      ],
+      "category": "Fédération",
+      "archived": true,
+      "expiresAt": "2026-02-19",
+      "archiveReason": "information temporaire ou événement daté",
+      "mainImage": {
+        "src": "/assets/articles/nouveau-foyer-de-grippe-aviaire-a-moutiers-sur-le-lay/principale-10c3cdc5.webp",
+        "alt": "Nouveau foyer de Grippe Aviaire à MOUTIERS SUR LE LAY",
+        "width": 793,
+        "height": 784,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/11/image.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/nouveaux-foyers-sur-sallertaine-et-apremonts/",
+      "slug": "nouveaux-foyers-sur-sallertaine-et-apremonts",
+      "file": "src/content/articles/nouveaux-foyers-sur-sallertaine-et-apremonts.md",
+      "title": "Nouveaux foyers sur SALLERTAINE et APREMONTS",
+      "published": "2025-11-24T12:40:48+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-03-24",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/nouveaux-foyers-sur-sallertaine-et-apremonts/principale-79fb3ad5.webp",
+        "alt": "Nouveaux foyers sur SALLERTAINE et APREMONTS",
+        "width": 1024,
+        "height": 724,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2025/11/Grippe-aviaire-2025-11-24-Fusion-3-cartes_compressed_page-0001-1024x724.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/communique-de-presse-situation-de-la-chasse-durant-la-grippe-aviaire/",
+      "slug": "communique-de-presse-situation-de-la-chasse-durant-la-grippe-aviaire",
+      "file": "src/content/articles/communique-de-presse-situation-de-la-chasse-durant-la-grippe-aviaire.md",
+      "title": "Communiqué de presse - Situation de la chasse durant la grippe aviaire",
+      "published": "2025-12-04T09:34:57+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-04-03",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": null,
+      "documents": [
+        {
+          "label": "CP_IAHP2025",
+          "url": "/assets/documents/actualites/communique-de-presse-situation-de-la-chasse-durant-la-grippe-aviaire/cp-iahp2025.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/levee-des-restrictions-autour-de-laiguillon-givrand-bretignolles-et-la-chaize-giraud/",
+      "slug": "levee-des-restrictions-autour-de-laiguillon-givrand-bretignolles-et-la-chaize-giraud",
+      "file": "src/content/articles/levee-des-restrictions-autour-de-laiguillon-givrand-bretignolles-et-la-chaize-giraud.md",
+      "title": "Levée des restrictions autour de l'Aiguillon, Givrand, Brétignolles et la Chaize Giraud",
+      "published": "2025-12-08T08:50:45+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-04-07",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": null,
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/levee-des-restrictions-sur-la-zone-reglementee-de-vaire-et-st-mathurin/",
+      "slug": "levee-des-restrictions-sur-la-zone-reglementee-de-vaire-et-st-mathurin",
+      "file": "src/content/articles/levee-des-restrictions-sur-la-zone-reglementee-de-vaire-et-st-mathurin.md",
+      "title": "Levée des restrictions sur la zone règlementée de Vairé et St Mathurin",
+      "published": "2025-12-16T14:31:10+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-04-15",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": null,
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/chasse-en-temps-de-neige-rappel/",
+      "slug": "chasse-en-temps-de-neige-rappel",
+      "file": "src/content/articles/chasse-en-temps-de-neige-rappel.md",
+      "title": "Chasse en temps de neige - Rappel",
+      "published": "2026-01-05T14:57:30+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-05-05",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/chasse-en-temps-de-neige-rappel/principale-60dc8cce.webp",
+        "alt": "Chasse en temps de neige - Rappel",
+        "width": 1400,
+        "height": 980,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/01/chevreuils_fnc_dgestim201714-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/nouveau-cas-de-grippe-aviaire-st-christophe-du-ligneron/",
+      "slug": "nouveau-cas-de-grippe-aviaire-st-christophe-du-ligneron",
+      "file": "src/content/articles/nouveau-cas-de-grippe-aviaire-st-christophe-du-ligneron.md",
+      "title": "Nouveau Cas de Grippe Aviaire - St Christophe du Ligneron",
+      "published": "2026-01-16T19:07:55+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-05-16",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/nouveau-cas-de-grippe-aviaire-st-christophe-du-ligneron/principale-51f6b0e9.webp",
+        "alt": "Nouveau Cas de Grippe Aviaire - St Christophe du Ligneron",
+        "width": 989,
+        "height": 1400,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/01/Grippe-aviaire-2026-01-16_page-0001.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/consultation-publique-blaireau-mobilisation-indispensable-de-tous/",
+      "slug": "consultation-publique-blaireau-mobilisation-indispensable-de-tous",
+      "file": "src/content/articles/consultation-publique-blaireau-mobilisation-indispensable-de-tous.md",
+      "title": "Consultation publique Blaireau – mobilisation indispensable de tous",
+      "published": "2026-01-23T10:36:21+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-05-23",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/consultation-publique-blaireau-mobilisation-indispensable-de-tous/principale-2e2ad1ad.webp",
+        "alt": "Consultation publique Blaireau – mobilisation indispensable de tous",
+        "width": 1400,
+        "height": 934,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/01/mamm_divers_DGest_fnc20230011-scaled.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/le-site-de-la-federation-nationale-des-chasseurs-victime-dune-cyber-attaque/",
+      "slug": "le-site-de-la-federation-nationale-des-chasseurs-victime-dune-cyber-attaque",
+      "file": "src/content/articles/le-site-de-la-federation-nationale-des-chasseurs-victime-dune-cyber-attaque.md",
+      "title": "Le site de la Fédération Nationale des Chasseurs Victime d'une Cyber Attaque",
+      "published": "2026-01-26T09:26:47+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-05-26",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/le-site-de-la-federation-nationale-des-chasseurs-victime-dun-7e3dee2855/principale-54a27edf.webp",
+        "alt": "Le site de la Fédération Nationale des Chasseurs Victime d'une Cyber Attaque",
+        "width": 1400,
+        "height": 687,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/01/Capture-decran-2026-01-26-102526.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/jaime-la-nature-propre-revient-en-2026/",
+      "slug": "jaime-la-nature-propre-revient-en-2026",
+      "file": "src/content/articles/jaime-la-nature-propre-revient-en-2026.md",
+      "title": "J'aime la Nature Propre revient en 2026 !",
+      "published": "2026-02-27T08:15:56+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-06-27",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/jaime-la-nature-propre-revient-en-2026/principale-7e373fd5.webp",
+        "alt": "J'aime la Nature Propre revient en 2026 !",
+        "width": 1024,
+        "height": 954,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/02/JAIME-LA-NATURE-PROPRE-LOGO-1024x954-1.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/approche-affut-battues-possibles-des-le-1er-avril/",
+      "slug": "approche-affut-battues-possibles-des-le-1er-avril",
+      "file": "src/content/articles/approche-affut-battues-possibles-des-le-1er-avril.md",
+      "title": "Approche / Affût / Battues possibles dès le 1er avril",
+      "published": "2026-04-02T14:52:29+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-07-31",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": null,
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/%f0%9f%93%a2-securite-et-chasse-une-convention-renforcee-avec-la-gendarmerie/",
+      "slug": "📢-securite-et-chasse-une-convention-renforcee-avec-la-gendarmerie",
+      "file": "src/content/articles/securite-et-chasse-une-convention-renforcee-avec-la-gendarmerie.md",
+      "title": "📢 Sécurité et chasse : une convention renforcée avec la gendarmerie",
+      "published": "2026-04-13T13:05:07+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-08-11",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/securite-et-chasse-une-convention-renforcee-avec-la-gendarmerie/principale-af1747bd.webp",
+        "alt": "📢 Sécurité et chasse : une convention renforcée avec la gendarmerie",
+        "width": 436,
+        "height": 518,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/04/Gendarmerie.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/compte-rendu-de-lassemblee-generale/",
+      "slug": "compte-rendu-de-lassemblee-generale",
+      "file": "src/content/articles/compte-rendu-de-lassemblee-generale.md",
+      "title": "Compte-rendu de l'Assemblée Générale",
+      "published": "2026-04-15T12:52:24+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": true,
+      "expiresAt": "2026-08-13",
+      "archiveReason": "alerte valable 120 jours par défaut",
+      "mainImage": {
+        "src": "/assets/articles/compte-rendu-de-lassemblee-generale/principale-236e0839.webp",
+        "alt": "Compte-rendu de l'Assemblée Générale",
+        "width": 1400,
+        "height": 646,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/04/20260410_100934.jpeg"
+      },
+      "documents": [
+        {
+          "label": "Rapport AG 2026",
+          "url": "/assets/documents/actualites/compte-rendu-de-lassemblee-generale/rapport-ag-2026.pdf",
+          "type": "PDF"
+        },
+        {
+          "label": "2025-06 – Rapport CAC – FDC85 signé",
+          "url": "/assets/documents/actualites/compte-rendu-de-lassemblee-generale/2025-06-rapport-cac-fdc85-signe.pdf",
+          "type": "PDF"
+        },
+        {
+          "label": "Rapport d’activité 2025-2026",
+          "url": "/assets/documents/actualites/compte-rendu-de-lassemblee-generale/rapport-dactivite-2025-2026.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/%f0%9f%9f%a2-ouverture-des-validations-du-permis-de-chasser-2026-2027-%f0%9f%9f%a2/",
+      "slug": "🟢-ouverture-des-validations-du-permis-de-chasser-2026-2027-🟢",
+      "file": "src/content/articles/ouverture-des-validations-du-permis-de-chasser-2026-2027.md",
+      "title": "🟢 Ouverture des validations du permis de chasser 2026-2027 🟢",
+      "published": "2026-05-26T15:13:57+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2027-06-30",
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/ouverture-des-validations-du-permis-de-chasser-2026-2027/principale-730a29bb.webp",
+        "alt": "🟢 Ouverture des validations du permis de chasser 2026-2027 🟢",
+        "width": 1061,
+        "height": 837,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-26-171041.jpg"
+      },
+      "documents": [
+        {
+          "label": "Notice_GU_2026-2027",
+          "url": "/assets/documents/actualites/ouverture-des-validations-du-permis-de-chasser-2026-2027/notice-gu-2026-2027.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/risque-incendie-nouvelles-mesures-applicables/",
+      "slug": "risque-incendie-nouvelles-mesures-applicables",
+      "file": "src/content/articles/risque-incendie-nouvelles-mesures-applicables.md",
+      "title": "RISQUE INCENDIE : NOUVELLES MESURES APPLICABLES",
+      "published": "2026-06-18T07:17:52+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2026-10-16",
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/risque-incendie-nouvelles-mesures-applicables/principale-cb2a604e.webp",
+        "alt": "RISQUE INCENDIE : NOUVELLES MESURES APPLICABLES",
+        "width": 16,
+        "height": 16,
+        "source": "https://static.xx.fbcdn.net/images/emoji.php/v9/t50/1/16/1f525.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/suspension-des-operations-de-regulation-des-esod-au-1er-juillet-2026/",
+      "slug": "suspension-des-operations-de-regulation-des-esod-au-1er-juillet-2026",
+      "file": "src/content/articles/suspension-des-operations-de-regulation-des-esod-au-1er-juillet-2026.md",
+      "title": "Suspension des opérations de régulation des ESOD au 1er Juillet 2026",
+      "published": "2026-07-01T14:03:49+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2026-10-29",
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/suspension-des-operations-de-regulation-des-esod-au-1er-juillet-2026/principale-703eb365.webp",
+        "alt": "Suspension des opérations de régulation des ESOD au 1er Juillet 2026",
+        "width": 1400,
+        "height": 991,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2026/07/ESOD.png"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/prolongation-arrete-incendie/",
+      "slug": "prolongation-arrete-incendie",
+      "file": "src/content/articles/prolongation-arrete-incendie.md",
+      "title": "Arrêté Incendie jusqu'au 20 Août 2026 inclus",
+      "published": "2026-08-11T07:00:00+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2026-12-09",
+      "archiveReason": "active",
+      "mainImage": null,
+      "documents": [
+        {
+          "label": "2026.08.17_AP risques éleve Orange Feux de forets",
+          "url": "/assets/documents/actualites/prolongation-arrete-incendie/2026-08-17-ap-risques-eleve-orange-feux-de-forets.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/ouverture-gibier-deau-2026-2027/",
+      "slug": "ouverture-gibier-deau-2026-2027",
+      "file": "src/content/articles/ouverture-gibier-deau-2026-2027.md",
+      "title": "Ouverture Gibier d'eau 2026/2027",
+      "published": "2026-08-20T15:02:01+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2026-12-18",
+      "archiveReason": "active",
+      "mainImage": null,
+      "documents": [
+        {
+          "label": "Carnet_prelevement_Gibier_Deau_26_27-1.png\t(752 téléchargements\t)",
+          "url": "/assets/documents/actualites/ouverture-gibier-deau-2026-2027/62026.png",
+          "type": "PNG"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/larrete-esod-2026-2029-est-paru/",
+      "slug": "larrete-esod-2026-2029-est-paru",
+      "file": "src/content/articles/larrete-esod-2026-2029-est-paru.md",
+      "title": "L'arrêté ESOD 2026-2029 est paru !",
+      "published": "2026-08-21T07:30:35+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2029-06-30",
+      "archiveReason": "active",
+      "mainImage": null,
+      "documents": [
+        {
+          "label": "joe_20260821_0194_0007",
+          "url": "/assets/documents/actualites/larrete-esod-2026-2029-est-paru/joe-20260821-0194-0007.pdf",
+          "type": "PDF"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/ouverture-de-la-caille-des-bles-tourterelle-des-bois/",
+      "slug": "ouverture-de-la-caille-des-bles-tourterelle-des-bois",
+      "file": "src/content/articles/ouverture-de-la-caille-des-bles-tourterelle-des-bois.md",
+      "title": "OUVERTURE DE LA CAILLE DES BLÉS & TOURTERELLE DES BOIS",
+      "published": "2026-08-28T07:30:43+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2026-12-26",
+      "archiveReason": "active",
+      "mainImage": null,
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/%f0%9f%95%8a%ef%b8%8f-tourterelle-des-bois-ouverture-dimanche-30-aout/",
+      "slug": "🕊️-tourterelle-des-bois-ouverture-dimanche-30-aout",
+      "file": "src/content/articles/tourterelle-des-bois-ouverture-dimanche-30-aout.md",
+      "title": "🕊️ TOURTERELLE DES BOIS – OUVERTURE DIMANCHE 30 AOÛT",
+      "published": "2026-08-29T10:32:32+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2026-12-27",
+      "archiveReason": "active",
+      "mainImage": {
+        "src": "/assets/articles/tourterelle-des-bois-ouverture-dimanche-30-aout/principale-cf4bdd67.webp",
+        "alt": "🕊️ TOURTERELLE DES BOIS – OUVERTURE DIMANCHE 30 AOÛT",
+        "width": 515,
+        "height": 304,
+        "source": "https://chasseur-vendeen.fr/wp-content/uploads/2021/04/tourterellebois-515x304-c-default.jpg"
+      },
+      "documents": [],
+      "warnings": []
+    },
+    {
+      "source": "https://chasseur-vendeen.fr/mise-a-jour-guides-iahp/",
+      "slug": "mise-a-jour-guides-iahp",
+      "file": "src/content/articles/mise-a-jour-guides-iahp.md",
+      "title": "MISE À JOUR GUIDES IAHP",
+      "published": "2026-09-07T10:36:04+00:00",
+      "wpCategories": [
+        "actualites",
+        "flash-infos"
+      ],
+      "category": "Alertes",
+      "archived": false,
+      "expiresAt": "2027-01-05",
+      "archiveReason": "active",
+      "mainImage": null,
+      "documents": [],
+      "warnings": []
+    }
+  ],
+  "errors": []
+}

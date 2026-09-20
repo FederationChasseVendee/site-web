@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Ouvrir la visite virtuelle
-    url: https://chasseur-vendeen.fr/agir-pour-lenvironnement/les-territoires/visite-virtuelle-du-marais-de-lieu-dieu/
+    url: /nature-et-territoires/marais-de-lieu-dieu/
 ---
 
 La visite met en valeur les paysages, la faune et la flore du marais. Elle permet de découvrir le site à distance sans perturber les espèces et les habitats.
