@@ -12,8 +12,8 @@
     "badgeNumber": "85",
     "badgeLabel": "Vendée",
     "primaryAction": {
-      "label": "Nous contacter",
-      "url": "contact/"
+      "label": "Écrire à la Fédération",
+      "url": "mailto:fdc85@chasse85.fr"
     },
     "secondaryAction": {
       "label": "Découvrir la Fédération",
@@ -80,13 +80,14 @@
     "text": "Cette première version présente les futurs principes du site : des démarches faciles à trouver, des contenus lisibles et une consultation confortable sur mobile comme sur ordinateur.",
     "link": {
       "label": "Donner un retour",
-      "url": "contact/"
+      "url": "mailto:fdc85@chasse85.fr"
     }
   },
   "contactCallout": {
     "eyebrow": "Besoin d'aide ?",
     "title": "L'équipe de la Fédération vous répond",
     "text": "Une question sur une démarche, une formation ou la réglementation ? Retrouvez les coordonnées et horaires d'accueil.",
-    "actionLabel": "Voir les moyens de contact"
+    "actionLabel": "Écrire à la Fédération",
+    "actionUrl": "mailto:fdc85@chasse85.fr"
   }
 }

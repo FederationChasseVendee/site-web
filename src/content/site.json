@@ -3,16 +3,6 @@
   "shortName": "FDC 85",
   "tagline": "Chasser, connaître et préserver la nature vendéenne",
   "logo": "/assets/logo-fdc85.png",
-  "navigation": [
-    {
-      "label": "Accueil",
-      "url": ""
-    },
-    {
-      "label": "Contact",
-      "url": "contact/"
-    }
-  ],
   "headerAction": {
     "label": "Écrire à la FDC",
     "url": "mailto:fdc85@chasse85.fr"

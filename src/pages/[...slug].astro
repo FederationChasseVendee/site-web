@@ -1,0 +1,117 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import { getSitePages } from "../lib/pages";
+
+interface Props {
+  page: CollectionEntry<"pages">;
+}
+
+export async function getStaticPaths() {
+  return (await getSitePages()).map(({ entry, slug }) => ({
+    params: { slug },
+    props: { page: entry },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const { title, description, eyebrow, intro, cards, schedule, callout } = page.data;
+const isExternal = (url: string) => /^https?:\/\//.test(url);
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div>
+        <p class="eyebrow eyebrow-light">{eyebrow}</p>
+        <h1>{title}</h1>
+      </div>
+      <p>{intro}</p>
+    </div>
+  </section>
+
+  <div class="dynamic-page">
+    <section class="section page-content-section">
+      <div class="container prose">
+        <Content />
+      </div>
+    </section>
+
+    {cards.length > 0 && (
+      <section class="section page-cards-section" aria-label="Informations pratiques">
+        <div class="container page-card-grid">
+          {cards.map((card) => (
+            <article class="contact-card dynamic-card">
+              <span class="icon-wrap"><Icon name={card.icon} /></span>
+              <p class="eyebrow">{card.label}</p>
+              <h2>{card.title}</h2>
+              {card.lines.length > 0 && (
+                <div class="card-lines">
+                  {card.lines.map((line) => <span>{line}</span>)}
+                </div>
+              )}
+              {card.link && (
+                <a
+                  class="text-link"
+                  href={card.link.url}
+                  target={isExternal(card.link.url) ? "_blank" : undefined}
+                  rel={isExternal(card.link.url) ? "noreferrer" : undefined}
+                >
+                  {card.link.label}{isExternal(card.link.url) && <span aria-hidden="true"> ↗</span>}
+                  {isExternal(card.link.url) && <span class="sr-only"> (nouvel onglet)</span>}
+                </a>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {schedule && (
+      <section class="section hours-section" aria-labelledby="schedule-title">
+        <div class="container hours-grid">
+          <div class="hours-heading">
+            <span class="icon-wrap icon-wrap-light"><Icon name="clock" /></span>
+            <div>
+              <p class="eyebrow eyebrow-light">{schedule.eyebrow}</p>
+              <h2 id="schedule-title">{schedule.title}</h2>
+            </div>
+          </div>
+          <div>
+            <dl class="hours-list">
+              {schedule.rows.map((row) => (
+                <div>
+                  <dt>{row.label}</dt>
+                  <dd>{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+            {schedule.note && <p class="hours-note">{schedule.note}</p>}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {callout && (
+      <section class="section email-section">
+        <div class="container email-inner">
+          <div>
+            <p class="eyebrow">{callout.eyebrow}</p>
+            <h2>{callout.title}</h2>
+            <p>{callout.text}</p>
+          </div>
+          <a
+            class="button button-dark"
+            href={callout.action.url}
+            target={isExternal(callout.action.url) ? "_blank" : undefined}
+            rel={isExternal(callout.action.url) ? "noreferrer" : undefined}
+          >
+            {callout.action.label}
+          </a>
+        </div>
+      </section>
+    )}
+  </div>
+</BaseLayout>

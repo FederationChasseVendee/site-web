@@ -1,67 +1,35 @@
 media:
   input: public/assets
   output: /assets
+  rename: safe
+  categories: [image]
 
 content:
-  - name: site
-    label: Paramètres du site
-    type: file
-    path: src/content/site.json
-    format: json
-    fields:
-      - { name: name, label: Nom complet, type: string }
-      - { name: shortName, label: Nom court, type: string }
-      - { name: tagline, label: Signature, type: string }
-      - { name: logo, label: Logo, type: image }
-      - name: navigation
-        label: Navigation
-        type: object
-        list: true
-        fields:
-          - { name: label, label: Libellé, type: string }
-          - { name: url, label: URL relative, type: string }
-      - name: headerAction
-        label: Bouton d'en-tête
-        type: object
-        fields:
-          - { name: label, label: Libellé, type: string }
-          - { name: url, label: URL, type: string }
-      - { name: footerText, label: Texte du pied de page, type: string }
-      - name: sourceSite
-        label: Site actuel
-        type: object
-        fields:
-          - { name: label, label: Libellé, type: string }
-          - { name: url, label: URL, type: string }
-      - name: socialLinks
-        label: Réseaux sociaux
-        type: object
-        list: true
-        fields:
-          - { name: label, label: Nom, type: string }
-          - { name: url, label: URL, type: string }
-
   - name: home
     label: Page d'accueil
     type: file
     path: src/content/home.json
     format: json
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: seo
         label: Référencement
         type: object
         fields:
-          - { name: title, label: Titre SEO, type: string }
-          - { name: description, label: Description SEO, type: text }
+          - { name: title, label: Titre SEO, type: string, required: true }
+          - { name: description, label: Description SEO, type: text, required: true }
       - name: hero
         label: En-tête principal
         type: object
         fields:
           - { name: eyebrow, label: Surtitre, type: string }
-          - { name: title, label: Titre, type: string }
-          - { name: text, label: Introduction, type: text }
-          - { name: image, label: Image, type: image }
-          - { name: imageAlt, label: Texte alternatif de l'image, type: string }
+          - { name: title, label: Titre, type: string, required: true }
+          - { name: text, label: Introduction, type: text, required: true }
+          - { name: image, label: Image, type: image, required: true }
+          - { name: imageAlt, label: Texte alternatif de l'image, type: string, required: true }
           - { name: badgeNumber, label: Numéro du médaillon, type: string }
           - { name: badgeLabel, label: Texte du médaillon, type: string }
           - name: primaryAction
@@ -86,7 +54,10 @@ content:
           - name: items
             label: Cartes
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
             fields:
               - { name: title, label: Titre, type: string }
               - { name: text, label: Texte, type: text }
@@ -110,7 +81,10 @@ content:
           - name: items
             label: Liste des missions
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{number} — {title}"
             fields:
               - { name: number, label: Numéro, type: string }
               - { name: title, label: Titre, type: string }
@@ -137,60 +111,157 @@ content:
           - { name: title, label: Titre, type: string }
           - { name: text, label: Texte, type: text }
           - { name: actionLabel, label: Libellé du bouton, type: string }
+          - { name: actionUrl, label: URL du bouton, type: string }
 
-  - name: contact
-    label: Page contact
-    type: file
-    path: src/content/contact.json
-    format: json
+  - name: pages
+    label: Pages secondaires
+    type: collection
+    path: src/content/pages
+    format: yaml-frontmatter
+    subfolders: false
+    filename:
+      template: "{primary}.md"
+      field: true
+    view:
+      primary: title
+      fields: [title, showInNavigation, navigationOrder]
+      sort: navigationOrder
+      order: asc
+    operations:
+      create: true
+      rename: true
+      delete: true
     fields:
-      - name: seo
-        label: Référencement
+      - name: title
+        label: Titre de la page
+        type: string
+        required: true
+        description: Sert aussi à proposer le nom de fichier et l'URL lors de la création.
+      - name: description
+        label: Description SEO
+        type: text
+        required: true
+        description: Résumé affiché par les moteurs de recherche.
+      - { name: eyebrow, label: Surtitre, type: string }
+      - name: intro
+        label: Introduction
+        type: text
+        required: true
+      - name: showInNavigation
+        label: Afficher dans le menu
+        type: boolean
+        default: true
+      - name: navigationLabel
+        label: Libellé dans le menu
+        type: string
+        description: Laisser vide pour reprendre le titre de la page.
+      - name: navigationOrder
+        label: Ordre dans le menu
+        type: number
+        default: 100
+        options:
+          min: 1
+          max: 999
+      - name: body
+        label: Contenu principal
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          switcher: false
+          media: false
+      - name: cards
+        label: Cartes pratiques (facultatif)
         type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label} — {title}"
         fields:
-          - { name: title, label: Titre SEO, type: string }
-          - { name: description, label: Description SEO, type: text }
-      - name: header
-        label: En-tête
-        type: object
-        fields:
-          - { name: eyebrow, label: Surtitre, type: string }
+          - name: icon
+            label: Icône
+            type: select
+            options:
+              values:
+                - { value: pin, label: Adresse }
+                - { value: phone, label: Téléphone }
+                - { value: mail, label: Courriel }
+                - { value: learn, label: Information }
+                - { value: training, label: Formation }
+          - { name: label, label: Surtitre, type: string }
           - { name: title, label: Titre, type: string }
-          - { name: text, label: Introduction, type: text }
-      - name: contact
-        label: Coordonnées
-        type: object
-        fields:
-          - { name: postalLabel, label: Libellé adresse, type: string }
-          - { name: organization, label: Organisation, type: string }
-          - { name: addressLines, label: Lignes d'adresse, type: string, list: true }
-          - { name: phoneLabel, label: Libellé téléphone, type: string }
-          - { name: phoneDisplay, label: Téléphone affiché, type: string }
-          - { name: phoneUrl, label: Lien téléphone, type: string }
-          - { name: emailLabel, label: Libellé courriel, type: string }
-          - { name: email, label: Courriel affiché, type: string }
-          - { name: emailUrl, label: Lien courriel, type: string }
-          - { name: mapLabel, label: Libellé itinéraire, type: string }
-          - { name: mapUrl, label: URL de la carte, type: string }
-      - name: hours
-        label: Horaires
+          - { name: lines, label: Lignes de détail, type: string, list: true }
+          - name: link
+            label: Lien facultatif
+            type: object
+            fields:
+              - { name: label, label: Libellé, type: string }
+              - { name: url, label: URL, type: string }
+      - name: schedule
+        label: Bloc horaires (facultatif)
         type: object
         fields:
           - { name: eyebrow, label: Surtitre, type: string }
           - { name: title, label: Titre, type: string }
           - name: rows
-            label: Plages horaires
+            label: Lignes
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label}"
             fields:
-              - { name: days, label: Jours, type: string }
-              - { name: hours, label: Horaires, type: string }
+              - { name: label, label: Jours ou libellé, type: string }
+              - { name: value, label: Horaires ou valeur, type: string }
           - { name: note, label: Note, type: text }
-      - name: emailCallout
-        label: Bloc courriel
+      - name: callout
+        label: Appel à l'action (facultatif)
         type: object
         fields:
           - { name: eyebrow, label: Surtitre, type: string }
           - { name: title, label: Titre, type: string }
-          - { name: text, label: Explication, type: text }
-          - { name: buttonLabel, label: Libellé du bouton, type: string }
+          - { name: text, label: Texte, type: text }
+          - name: action
+            label: Bouton
+            type: object
+            fields:
+              - { name: label, label: Libellé, type: string }
+              - { name: url, label: URL, type: string }
+
+  - name: site
+    label: Paramètres du site
+    type: file
+    path: src/content/site.json
+    format: json
+    operations:
+      create: false
+      rename: false
+      delete: false
+    fields:
+      - { name: name, label: Nom complet, type: string, required: true }
+      - { name: shortName, label: Nom court, type: string, required: true }
+      - { name: tagline, label: Signature, type: string }
+      - { name: logo, label: Logo, type: image }
+      - name: headerAction
+        label: Bouton d'en-tête
+        type: object
+        fields:
+          - { name: label, label: Libellé, type: string }
+          - { name: url, label: URL, type: string }
+      - { name: footerText, label: Texte du pied de page, type: string }
+      - name: sourceSite
+        label: Site actuel
+        type: object
+        fields:
+          - { name: label, label: Libellé, type: string }
+          - { name: url, label: URL, type: string }
+      - name: socialLinks
+        label: Réseaux sociaux
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - { name: label, label: Nom, type: string }
+          - { name: url, label: URL, type: string }
