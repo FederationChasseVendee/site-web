@@ -7,11 +7,12 @@ import site from "../content/site.json";
 interface Props {
   title: string;
   description: string;
+  redirectTo?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, redirectTo } = Astro.props;
 const pageTitle = title === "Accueil" ? `${site.shortName} — ${site.tagline}` : `${title} — ${site.shortName}`;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonical = new URL(redirectTo ?? Astro.url.pathname, Astro.site);
 const favicon = `${import.meta.env.BASE_URL}favicon.svg`.replace(/\/{2,}/g, "/");
 ---
 
@@ -23,6 +24,7 @@ const favicon = `${import.meta.env.BASE_URL}favicon.svg`.replace(/\/{2,}/g, "/")
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#173f35" />
     <meta name="description" content={description} />
+    {redirectTo && <meta http-equiv="refresh" content={`0; url=${redirectTo}`} />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={favicon} />
     <meta property="og:type" content="website" />

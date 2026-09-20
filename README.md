@@ -20,6 +20,22 @@ npm run preview
 
 L’URL de production est `https://federationchassevendee.github.io/site-web/`. Astro génère donc tous les liens et médias sous le préfixe `/site-web/`.
 
+## Migration des contenus permanents
+
+La couche 2 reprend les **89 pages WordPress publiées** inventoriées le 20 septembre 2026 : chaque ancienne page est migrée, fusionnée, remplacée ou redirigée. Aucun des **86 posts d’actualité WordPress** n’est importé dans cette couche ; la collection et l’article témoin créés en couche 1 sont simplement conservés pour préparer la couche 3. Les contenus de démonstration des types `dt_portfolio`, `dt_gallery`, `dt_testimonials` et `dt_slideshow` sont exclus.
+
+Contenus structurés importés :
+
+- 16 fiches espèces et 16 images optimisées ;
+- 6 formations internes, sans date périmée ;
+- 47 ressources documentaires, dont le SDGC 2024-2030 et 2 guides sanitaires IAHP ;
+- 15 questions fréquentes et 116 termes de glossaire ;
+- 92 entrées d’annuaire : équipe, conseil d’administration, associations et partenaires ;
+- 42 pages éditoriales, 4 carrefours et 17 index automatiques ;
+- 85 redirections HTML statiques pour les anciennes adresses modifiées.
+
+La [matrice détaillée des 89 pages](docs/migration-wordpress.md) documente chaque décision et sa destination.
+
 ## Les 7 templates
 
 L’architecture reste volontairement limitée. Il n’y a pas de constructeur de page universel.
@@ -46,6 +62,8 @@ Les schémas typés et leurs valeurs par défaut sont définis dans `src/content
 4. Modifier les champs en français, enregistrer puis publier. Aucun Git ni HTML n’est demandé.
 
 Les collections autorisent explicitement création, renommage et suppression. **Accueil** et **Paramètres du site** sont protégés contre ces trois opérations. Les images et documents chargés dans la médiathèque sont enregistrés dans `public/assets/`.
+
+Les redirections d’anciennes adresses sont visibles mais protégées contre la création, le renommage et la suppression : elles font partie de la structure SEO du site.
 
 Pour une image informative, renseigner une description utile. Pour une image purement décorative, activer **Image uniquement décorative** et laisser sa description vide. Le build refuse une image qui n’est ni décrite ni déclarée décorative.
 

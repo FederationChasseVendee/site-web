@@ -12,7 +12,7 @@
     { "label": "Ressources", "url": "ressources/" }
   ],
   "primaryActions": [
-    { "label": "Valider mon permis", "url": "https://chasseur-vendeen.fr/je-valide-mon-permis/" },
+    { "label": "Valider mon permis", "url": "chasser-en-vendee/validation-du-permis/" },
     { "label": "Contact", "url": "contact/" }
   ],
   "contact": {

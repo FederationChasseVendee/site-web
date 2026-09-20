@@ -1,21 +1,23 @@
 ---
 title: Dates de chasse
-description: Accéder aux périodes d’ouverture et de fermeture de la chasse en Vendée.
-intro: Consultez les arrêtés et calendriers officiels avant toute sortie.
+description: Consulter les périodes d’ouverture et de fermeture de la chasse en Vendée.
+intro: Les dates dépendent des espèces, des modes de chasse et des arrêtés applicables.
 navigation:
   show: false
   order: 100
 links:
-  - label: Consulter les dates sur le site actuel
-    url: https://chasseur-vendeen.fr/je-suis-chasseur/les-dates-de-chasse/
+  - label: Consulter la page officielle des dates
+    url: https://chasseur-vendeen.fr/connaitre-la-reglementation/les-dates-de-chasse/
+  - label: Textes réglementaires
+    url: /ressources/reglementation/
 cta:
-  title: Un doute sur une date ?
-  text: La Fédération peut vous aider à identifier le texte applicable à votre situation.
+  title: Vérifiez avant chaque sortie
+  text: Consultez l’arrêté en vigueur et ses éventuelles modifications.
   action:
     label: Contacter la Fédération
-    url: contact/
+    url: /contact/
 ---
 
-Les périodes varient selon les espèces, les modes de chasse et les décisions préfectorales. Vérifiez toujours la version en vigueur de l’arrêté avant de chasser.
+Pour la saison **2026-2027**, l’ouverture générale en Vendée est fixée au **dimanche 20 septembre 2026** et la fermeture générale au **dimanche 28 février 2027**. À compter du 1er octobre, l’heure générale de début est fixée à **9 heures**.
 
-Cette première couche du nouveau site renvoie vers la page officielle existante. Les arrêtés seront intégrés à la collection de documents lors de la migration complète.
+Ces dates générales ne dispensent pas de vérifier les dispositions particulières à une espèce, un territoire ou un mode de chasse, ni les éventuelles modifications de l’arrêté préfectoral avant chaque sortie.

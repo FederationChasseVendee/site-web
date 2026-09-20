@@ -14,6 +14,9 @@ interface IndexItem {
   text: string;
   meta?: string;
   url?: string;
+  address?: string;
+  phone?: string;
+  email?: string;
 }
 
 const { entry, slug } = Astro.props;
@@ -48,11 +51,21 @@ if (data.source === "articles") {
     .sort((a, b) => a.data.term.localeCompare(b.data.term, "fr"))
     .map((item) => ({ title: item.data.term, text: item.data.definition })));
 } else {
-  items.push(...(await getCollection("directories")).map((item) => ({
+  const entries = await getCollection(
+    "directories",
+    ({ data: directory }) => !data.category
+      || directory.category.toLocaleLowerCase("fr").includes(data.category.toLocaleLowerCase("fr")),
+  );
+  items.push(...entries
+    .sort((a, b) => a.data.order - b.data.order || a.data.name.localeCompare(b.data.name, "fr"))
+    .map((item) => ({
     title: item.data.name,
     text: item.data.description,
-    meta: item.data.category,
+    meta: [item.data.role, item.data.category].filter(Boolean).join(" · "),
     url: item.data.website,
+    address: item.data.address,
+    phone: item.data.phone,
+    email: item.data.email,
   })));
 }
 ---
@@ -72,6 +85,14 @@ if (data.source === "articles") {
           {item.meta && <p class="eyebrow">{item.meta}</p>}
           <h2>{item.url ? <SmartLink href={item.url}>{item.title}</SmartLink> : item.title}</h2>
           <p>{item.text}</p>
+          {item.address && <p>{item.address}</p>}
+          {(item.phone || item.email) && (
+            <p class="directory-contacts">
+              {item.phone && <SmartLink href={`tel:${item.phone.replace(/[^\d+]/g, "")}`}>{item.phone}</SmartLink>}
+              {item.phone && item.email && <span aria-hidden="true"> · </span>}
+              {item.email && <SmartLink href={`mailto:${item.email}`}>{item.email}</SmartLink>}
+            </p>
+          )}
         </article>
       ))}
     </div>

@@ -1,21 +1,54 @@
 ---
 title: Chasser en Vendée
-description: Démarches, dates et informations pratiques pour chasser en Vendée.
-intro: Préparez votre saison et retrouvez rapidement les informations utiles.
+description: Démarches, réglementation et informations pratiques pour chasser en Vendée.
+intro: Retrouvez les repères utiles avant, pendant et après la saison.
 navigation:
   show: true
   label: Chasser en Vendée
   order: 20
 cards:
-  - title: Dates de chasse
-    text: Vérifier les périodes d’ouverture et de fermeture applicables.
-    url: chasser-en-vendee/dates-de-chasse/
   - title: Valider mon permis
-    text: Accéder au service officiel de validation du permis.
-    url: https://chasseur-vendeen.fr/je-valide-mon-permis/
+    text: Effectuer les démarches nécessaires avant de chasser.
+    url: /chasser-en-vendee/validation-du-permis/
+  - title: Dates de chasse
+    text: Consulter les périodes et les arrêtés en vigueur.
+    url: /chasser-en-vendee/dates-de-chasse/
+  - title: Réglementation
+    text: Connaître les règles applicables en Vendée.
+    url: /chasser-en-vendee/reglementation/
+  - title: Gestion cynégétique
+    text: Comprendre la gestion des espèces et des territoires.
+    url: /chasser-en-vendee/gestion-cynegetique/
+  - title: Prévention et sécurité
+    text: Retrouver les règles et les bons comportements.
+    url: /chasser-en-vendee/prevention-et-securite/
+  - title: Police de la chasse
+    text: Comprendre la surveillance des territoires.
+    url: /chasser-en-vendee/police-de-la-chasse/
+  - title: Dégâts causés par la faune
+    text: Prévenir, déclarer et comprendre l’indemnisation.
+    url: /chasser-en-vendee/degats-causes-par-la-faune/
+  - title: Collision avec la faune
+    text: Adopter les premiers réflexes après une collision.
+    url: /chasser-en-vendee/collision-avec-la-faune/
+  - title: Où chasser ?
+    text: Rechercher un territoire de chasse en Vendée.
+    url: /chasser-en-vendee/ou-chasser/
+  - title: Recherche d’animaux blessés
+    text: Faire appel à un conducteur de chien de sang.
+    url: /chasser-en-vendee/recherche-animaux-blesses/
+  - title: Associations de chasse
+    text: S’informer sur les structures associatives.
+    url: /chasser-en-vendee/associations-de-chasse/
+  - title: Types et modes de chasse
+    text: Découvrir la diversité des pratiques.
+    url: /chasser-en-vendee/types-et-modes-de-chasse/
+  - title: DECLADOM
+    text: Déclarer les dommages causés par certaines espèces.
+    url: /chasser-en-vendee/decladom/
   - title: Espace adhérent
-    text: Retrouver les services et démarches de votre espace RETRIEVER.
-    url: https://chasseur-vendeen.fr/espace-adherent-v2/
+    text: Accéder aux services réservés aux adhérents.
+    url: /chasser-en-vendee/espace-adherent/
 ---
 
-Cette rubrique rassemble les démarches indispensables avant et pendant la saison de chasse.
+Choisissez la démarche ou l’information recherchée.

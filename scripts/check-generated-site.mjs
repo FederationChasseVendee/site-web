@@ -22,6 +22,8 @@ function targetFor(url) {
 
 const htmlFiles = walk(distDirectory).filter((file) => extname(file) === ".html");
 const routeFiles = htmlFiles.filter((file) => !file.endsWith("404.html"));
+const documentFiles = walk(join(distDirectory, "assets", "documents"))
+  .filter((file) => extname(file).toLowerCase() === ".pdf");
 
 for (const htmlFile of htmlFiles) {
   const html = readFileSync(htmlFile, "utf8");
@@ -33,6 +35,9 @@ for (const htmlFile of htmlFiles) {
   }
   if (h1Count !== 1) {
     throw new Error(`${displayPath} doit contenir exactement un titre h1 (trouvé : ${h1Count}).`);
+  }
+  if (html.includes("\uFFFD")) {
+    throw new Error(`Caractère de remplacement Unicode détecté dans ${displayPath}.`);
   }
 
   for (const image of html.matchAll(/<img\b[^>]*>/g)) {
@@ -52,6 +57,37 @@ for (const htmlFile of htmlFiles) {
     if (!/\srel="[^"]*noreferrer[^"]*"/.test(anchor[0]) || !anchor[0].includes("nouvel onglet")) {
       throw new Error(`Lien externe non annoncé ou sans rel=noreferrer dans ${displayPath}`);
     }
+  }
+}
+
+for (const file of documentFiles) {
+  if (readFileSync(file).subarray(0, 4).toString("ascii") !== "%PDF") {
+    throw new Error(`Le document ${relative(distDirectory, file)} n’est pas un PDF valide.`);
+  }
+}
+
+const redirectDirectory = join("src", "content", "redirects");
+const redirectFiles = walk(redirectDirectory).filter((file) => extname(file) === ".md");
+for (const file of redirectFiles) {
+  const source = readFileSync(file, "utf8");
+  const destination = source.match(/^destination:\s*(.+)$/m)?.[1]?.trim();
+  if (!destination) {
+    throw new Error(`Destination absente dans ${file}.`);
+  }
+
+  const route = relative(redirectDirectory, file).replace(/\\/g, "/").replace(/\.md$/, "");
+  const html = readFileSync(join(distDirectory, ...route.split("/"), "index.html"), "utf8");
+  const resolvedDestination = `${base}${destination.replace(/^\/+/, "")}`;
+  const canonicalDestination = new URL(resolvedDestination, "https://federationchassevendee.github.io").href;
+
+  if (!html.includes(`content="0; url=${resolvedDestination}"`)) {
+    throw new Error(`Redirection HTML absente ou incorrecte pour /${route}/.`);
+  }
+  if (!html.includes(`rel="canonical" href="${canonicalDestination}"`)) {
+    throw new Error(`URL canonique incorrecte pour /${route}/.`);
+  }
+  if (!html.includes(`href="${resolvedDestination}"`)) {
+    throw new Error(`Lien de secours visible absent pour /${route}/.`);
   }
 }
 
@@ -89,5 +125,5 @@ for (const htmlFile of routeFiles) {
 }
 
 console.log(
-  `${routeFiles.length} routes, leurs liens, leurs médias et les repères d’accessibilité ont été vérifiés sous ${base}.`,
+  `${routeFiles.length} routes, ${redirectFiles.length} redirections, ${documentFiles.length} PDF, leurs liens, leurs médias et les repères d’accessibilité ont été vérifiés sous ${base}.`,
 );

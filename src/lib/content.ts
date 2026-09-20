@@ -6,7 +6,8 @@ export type TemplateEntry =
   | { template: "article"; entry: CollectionEntry<"articles"> }
   | { template: "species"; entry: CollectionEntry<"species"> }
   | { template: "training"; entry: CollectionEntry<"trainings"> }
-  | { template: "index"; entry: CollectionEntry<"indexes"> };
+  | { template: "index"; entry: CollectionEntry<"indexes"> }
+  | { template: "redirect"; entry: CollectionEntry<"redirects"> };
 
 const reservedSlugs = new Set(["404", "index"]);
 
@@ -19,13 +20,14 @@ export function normalizeSlug(id: string): string {
 }
 
 export async function getTemplateEntries(): Promise<Array<TemplateEntry & { slug: string }>> {
-  const [standardPages, crossroads, articles, species, trainings, indexes] = await Promise.all([
+  const [standardPages, crossroads, articles, species, trainings, indexes, redirects] = await Promise.all([
     getCollection("standardPages"),
     getCollection("crossroads"),
     getCollection("articles"),
     getCollection("species"),
     getCollection("trainings"),
     getCollection("indexes"),
+    getCollection("redirects"),
   ]);
 
   const entries: TemplateEntry[] = [
@@ -35,6 +37,7 @@ export async function getTemplateEntries(): Promise<Array<TemplateEntry & { slug
     ...species.map((entry) => ({ template: "species" as const, entry })),
     ...trainings.map((entry) => ({ template: "training" as const, entry })),
     ...indexes.map((entry) => ({ template: "index" as const, entry })),
+    ...redirects.map((entry) => ({ template: "redirect" as const, entry })),
   ];
   const seen = new Set<string>();
 

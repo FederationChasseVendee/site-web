@@ -385,15 +385,31 @@ content:
     subfolders: true
     filename: { template: "{primary}.md", field: true }
     operations: { create: true, rename: true, delete: true }
-    view: { primary: name, fields: [name, category] }
+    view: { primary: name, fields: [name, category, role, order] }
     fields:
       - { name: name, label: Nom, type: string, required: true }
       - { name: description, label: Rôle ou service, type: text, required: true }
       - { name: category, label: Catégorie, type: string, required: true }
+      - { name: role, label: Fonction ou territoire, type: string }
+      - { name: order, label: Ordre d’affichage, type: number, default: 100 }
       - { name: address, label: Adresse, type: text }
       - { name: phone, label: Téléphone, type: string }
       - { name: email, label: Courriel, type: string }
       - { name: website, label: Site ou page de contact, type: string }
+
+  - name: redirects
+    label: Redirections des anciennes adresses
+    type: collection
+    path: src/content/redirects
+    format: yaml-frontmatter
+    subfolders: true
+    filename: { template: "{primary}.md", field: true }
+    operations: { create: false, rename: false, delete: false }
+    view: { primary: title, fields: [title, destination] }
+    fields:
+      - { name: title, label: Titre de l’ancienne page, type: string, required: true }
+      - { name: description, label: Explication, type: text, required: true }
+      - { name: destination, label: Nouvelle adresse interne, type: string, required: true }
 
   - name: site
     label: Paramètres du site

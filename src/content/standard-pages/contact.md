@@ -36,3 +36,5 @@ Courriel : [fdc85@chasse85.fr](mailto:fdc85@chasse85.fr)
 - Mercredi : 8h30–12h30, fermé au public l’après-midi.
 
 Avant un déplacement, nous vous conseillons d’appeler la Fédération.
+
+Ce site ne propose pas de formulaire de contact. En utilisant le téléphone ou le courriel, vous communiquez directement avec la Fédération.

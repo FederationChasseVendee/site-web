@@ -12,13 +12,13 @@
   },
   "tasks": {
     "title": "Que souhaitez-vous faire ?",
-    "intro": "Choisissez votre démarche. Les services encore hébergés sur le site actuel sont signalés comme externes.",
+    "intro": "Choisissez votre démarche. Chaque page indique clairement lorsqu’un service sécurisé s’ouvre sur un autre site.",
     "items": [
-      { "title": "Valider mon permis", "text": "Accéder au service de validation du permis de chasser.", "url": "https://chasseur-vendeen.fr/je-valide-mon-permis/" },
+      { "title": "Valider mon permis", "text": "Préparer votre validation et accéder au service officiel.", "url": "chasser-en-vendee/validation-du-permis/" },
       { "title": "Voir les dates de chasse", "text": "Consulter les périodes d’ouverture et de fermeture.", "url": "chasser-en-vendee/dates-de-chasse/" },
       { "title": "Trouver un formulaire", "text": "Retrouver les formulaires et imprimés utiles.", "url": "ressources/formulaires-et-imprimes/" },
-      { "title": "Ouvrir mon espace adhérent", "text": "Accéder aux services de l’espace RETRIEVER.", "url": "https://chasseur-vendeen.fr/espace-adherent-v2/" },
-      { "title": "Passer le permis", "text": "Comprendre les étapes et préparer l’examen.", "url": "https://chasseur-vendeen.fr/je-veux-devenir-chasseur/" },
+      { "title": "Ouvrir mon espace adhérent", "text": "Choisir le service RETRIEVER adapté à votre situation.", "url": "chasser-en-vendee/espace-adherent/" },
+      { "title": "Passer le permis", "text": "Comprendre les étapes et préparer l’examen.", "url": "permis-et-formations/passer-son-permis/" },
       { "title": "Contacter la Fédération", "text": "Voir le téléphone, le courriel, l’adresse et les horaires.", "url": "contact/" }
     ]
   },
