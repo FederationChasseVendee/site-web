@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import contact from "../content/contact.json";
+---
+
+<BaseLayout title={contact.seo.title} description={contact.seo.description}>
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div>
+        <p class="eyebrow eyebrow-light">{contact.header.eyebrow}</p>
+        <h1>{contact.header.title}</h1>
+      </div>
+      <p>{contact.header.text}</p>
+    </div>
+  </section>
+
+  <section class="section contact-section" aria-label="Coordonnées">
+    <div class="container contact-grid">
+      <article class="contact-card contact-card-address">
+        <span class="icon-wrap"><Icon name="pin" /></span>
+        <p class="eyebrow">{contact.contact.postalLabel}</p>
+        <h2>{contact.contact.organization}</h2>
+        <address>
+          {contact.contact.addressLines.map((line) => <span>{line}</span>)}
+        </address>
+        <a class="text-link" href={contact.contact.mapUrl} target="_blank" rel="noreferrer">
+          {contact.contact.mapLabel}<span aria-hidden="true"> ↗</span>
+          <span class="sr-only"> (OpenStreetMap, nouvel onglet)</span>
+        </a>
+      </article>
+
+      <div class="contact-stack">
+        <article class="contact-card contact-card-small">
+          <span class="icon-wrap"><Icon name="phone" /></span>
+          <div>
+            <p class="eyebrow">{contact.contact.phoneLabel}</p>
+            <a class="contact-value" href={contact.contact.phoneUrl}>{contact.contact.phoneDisplay}</a>
+          </div>
+        </article>
+        <article class="contact-card contact-card-small">
+          <span class="icon-wrap"><Icon name="mail" /></span>
+          <div>
+            <p class="eyebrow">{contact.contact.emailLabel}</p>
+            <a class="contact-value" href={contact.contact.emailUrl}>{contact.contact.email}</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hours-section" aria-labelledby="hours-title">
+    <div class="container hours-grid">
+      <div class="hours-heading">
+        <span class="icon-wrap icon-wrap-light"><Icon name="clock" /></span>
+        <div>
+          <p class="eyebrow eyebrow-light">{contact.hours.eyebrow}</p>
+          <h2 id="hours-title">{contact.hours.title}</h2>
+        </div>
+      </div>
+      <div>
+        <dl class="hours-list">
+          {contact.hours.rows.map((row) => (
+            <div>
+              <dt>{row.days}</dt>
+              <dd>{row.hours}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="hours-note">{contact.hours.note}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section email-section">
+    <div class="container email-inner">
+      <div>
+        <p class="eyebrow">{contact.emailCallout.eyebrow}</p>
+        <h2>{contact.emailCallout.title}</h2>
+        <p>{contact.emailCallout.text}</p>
+      </div>
+      <a class="button button-dark" href={contact.contact.emailUrl}>
+        <Icon name="mail" /> {contact.emailCallout.buttonLabel}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

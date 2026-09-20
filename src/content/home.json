@@ -1,0 +1,92 @@
+{
+  "seo": {
+    "title": "Accueil",
+    "description": "La Fédération Départementale des Chasseurs de la Vendée accompagne les chasseurs et agit pour la gestion des espèces et des espaces naturels."
+  },
+  "hero": {
+    "eyebrow": "Fédération des chasseurs de la Vendée",
+    "title": "Au service des chasseurs et de la nature vendéenne",
+    "text": "Retrouvez les démarches essentielles, les informations pratiques et les actions menées en faveur des territoires et de la biodiversité.",
+    "image": "/assets/hero-faune.jpg",
+    "imageAlt": "Sanglier dans un sous-bois",
+    "badgeNumber": "85",
+    "badgeLabel": "Vendée",
+    "primaryAction": {
+      "label": "Nous contacter",
+      "url": "contact/"
+    },
+    "secondaryAction": {
+      "label": "Découvrir la Fédération",
+      "url": "https://chasseur-vendeen.fr/la-federation/nos-roles-et-nos-missions/"
+    }
+  },
+  "quickAccess": {
+    "eyebrow": "Vos démarches",
+    "title": "Accédez rapidement à l'essentiel",
+    "intro": "Les services ci-dessous restent hébergés sur le site actuel pendant la phase de prototype.",
+    "items": [
+      {
+        "title": "Valider mon permis",
+        "text": "Accéder au service de validation du permis de chasser.",
+        "url": "https://chasseur-vendeen.fr/je-valide-mon-permis/",
+        "icon": "permit"
+      },
+      {
+        "title": "Espace adhérent",
+        "text": "Retrouver les démarches et documents de votre espace RETRIEVER.",
+        "url": "https://chasseur-vendeen.fr/espace-adherent-v2/",
+        "icon": "member"
+      },
+      {
+        "title": "Devenir chasseur",
+        "text": "S'informer sur le permis, l'examen et la chasse accompagnée.",
+        "url": "https://chasseur-vendeen.fr/je-veux-devenir-chasseur/",
+        "icon": "learn"
+      },
+      {
+        "title": "Se former",
+        "text": "Découvrir les formations proposées par la Fédération.",
+        "url": "https://chasseur-vendeen.fr/je-suis-chasseur/se-former/",
+        "icon": "training"
+      }
+    ]
+  },
+  "missions": {
+    "eyebrow": "Nos missions",
+    "title": "Agir avec et pour le territoire",
+    "intro": "La Fédération rassemble les chasseurs du département et participe à la gestion des espèces et des espaces de Vendée.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Accompagner",
+        "text": "Informer les chasseurs, faciliter leurs démarches et proposer des formations adaptées."
+      },
+      {
+        "number": "02",
+        "title": "Gérer",
+        "text": "Contribuer à une gestion concertée de la faune sauvage et des territoires."
+      },
+      {
+        "number": "03",
+        "title": "Préserver",
+        "text": "Participer aux actions en faveur des milieux naturels et de la biodiversité."
+      }
+    ]
+  },
+  "information": {
+    "eyebrow": "Prototype en cours",
+    "title": "Un nouveau site simple et utile",
+    "visualLabel": "Un site plus clair",
+    "text": "Cette première version présente les futurs principes du site : des démarches faciles à trouver, des contenus lisibles et une consultation confortable sur mobile comme sur ordinateur.",
+    "link": {
+      "label": "Donner un retour",
+      "url": "contact/"
+    }
+  },
+  "contactCallout": {
+    "eyebrow": "Besoin d'aide ?",
+    "title": "L'équipe de la Fédération vous répond",
+    "text": "Une question sur une démarche, une formation ou la réglementation ? Retrouvez les coordonnées et horaires d'accueil.",
+    "actionLabel": "Voir les moyens de contact"
+  }
+}

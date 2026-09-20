@@ -1,0 +1,38 @@
+---
+import site from "../content/site.json";
+
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
+const localUrl = (path: string) => `${base}${path}`.replace(/\/{2,}/g, "/");
+---
+
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href={localUrl("")} aria-label={`${site.shortName} — Accueil`}>
+      <img src={localUrl(site.logo)} width="400" height="111" alt={site.name} />
+    </a>
+
+    <details class="mobile-menu">
+      <summary>
+        <span>Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </summary>
+      <nav aria-label="Navigation principale">
+        {site.navigation.map((item) => {
+          const href = localUrl(item.url);
+          const isCurrent = item.url === "" ? currentPath === base : currentPath.startsWith(href);
+          return <a href={href} aria-current={isCurrent ? "page" : undefined}>{item.label}</a>;
+        })}
+      </nav>
+    </details>
+
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      {site.navigation.map((item) => {
+        const href = localUrl(item.url);
+        const isCurrent = item.url === "" ? currentPath === base : currentPath.startsWith(href);
+        return <a href={href} aria-current={isCurrent ? "page" : undefined}>{item.label}</a>;
+      })}
+      <a class="nav-contact" href={site.headerAction.url}>{site.headerAction.label}</a>
+    </nav>
+  </div>
+</header>

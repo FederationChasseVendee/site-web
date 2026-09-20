@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const homeUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Page introuvable" description="Cette page n'existe pas ou a été déplacée.">
+  <section class="not-found">
+    <div class="container">
+      <p class="eyebrow">Erreur 404</p>
+      <h1>Cette page a quitté le sentier.</h1>
+      <p>Le contenu recherché n’existe pas ou a été déplacé.</p>
+      <a class="button button-dark" href={homeUrl}>Retour à l’accueil</a>
+    </div>
+  </section>
+</BaseLayout>
