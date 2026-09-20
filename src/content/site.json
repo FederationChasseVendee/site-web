@@ -22,6 +22,10 @@
     "address": "Les Minées – Route de Château-Fromage, 85010 La Roche-sur-Yon CEDEX"
   },
   "footerText": "Fédération Départementale des Chasseurs de la Vendée",
+  "analytics": {
+    "enabled": false,
+    "websiteId": ""
+  },
   "socialLinks": [
     { "label": "Facebook", "url": "https://www.facebook.com/chasse85" },
     { "label": "Instagram", "url": "https://www.instagram.com/fdcvendee/" },
