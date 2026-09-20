@@ -1,93 +1,35 @@
 {
   "seo": {
     "title": "Accueil",
-    "description": "La Fédération Départementale des Chasseurs de la Vendée accompagne les chasseurs et agit pour la gestion des espèces et des espaces naturels."
+    "description": "Démarches, actualités, formations et informations de la Fédération Départementale des Chasseurs de la Vendée."
   },
   "hero": {
     "eyebrow": "Fédération des chasseurs de la Vendée",
-    "title": "Au service des chasseurs et de la nature vendéenne",
-    "text": "Retrouvez les démarches essentielles, les informations pratiques et les actions menées en faveur des territoires et de la biodiversité.",
+    "title": "Vos démarches de chasse, simplement",
+    "text": "Accédez aux services essentiels, aux dates de chasse et aux informations de la Fédération.",
     "image": "/assets/hero-faune.jpg",
-    "imageAlt": "Sanglier dans un sous-bois",
-    "badgeNumber": "85",
-    "badgeLabel": "Vendée",
-    "primaryAction": {
-      "label": "Écrire à la Fédération",
-      "url": "mailto:fdc85@chasse85.fr"
-    },
-    "secondaryAction": {
-      "label": "Découvrir la Fédération",
-      "url": "https://chasseur-vendeen.fr/la-federation/nos-roles-et-nos-missions/"
-    }
+    "imageAlt": "Sanglier dans un sous-bois"
   },
-  "quickAccess": {
-    "eyebrow": "Vos démarches",
-    "title": "Accédez rapidement à l'essentiel",
-    "intro": "Les services ci-dessous restent hébergés sur le site actuel pendant la phase de prototype.",
+  "tasks": {
+    "title": "Que souhaitez-vous faire ?",
+    "intro": "Choisissez votre démarche. Les services encore hébergés sur le site actuel sont signalés comme externes.",
     "items": [
-      {
-        "title": "Valider mon permis",
-        "text": "Accéder au service de validation du permis de chasser.",
-        "url": "https://chasseur-vendeen.fr/je-valide-mon-permis/",
-        "icon": "permit"
-      },
-      {
-        "title": "Espace adhérent",
-        "text": "Retrouver les démarches et documents de votre espace RETRIEVER.",
-        "url": "https://chasseur-vendeen.fr/espace-adherent-v2/",
-        "icon": "member"
-      },
-      {
-        "title": "Devenir chasseur",
-        "text": "S'informer sur le permis, l'examen et la chasse accompagnée.",
-        "url": "https://chasseur-vendeen.fr/je-veux-devenir-chasseur/",
-        "icon": "learn"
-      },
-      {
-        "title": "Se former",
-        "text": "Découvrir les formations proposées par la Fédération.",
-        "url": "https://chasseur-vendeen.fr/je-suis-chasseur/se-former/",
-        "icon": "training"
-      }
+      { "title": "Valider mon permis", "text": "Accéder au service de validation du permis de chasser.", "url": "https://chasseur-vendeen.fr/je-valide-mon-permis/" },
+      { "title": "Voir les dates de chasse", "text": "Consulter les périodes d’ouverture et de fermeture.", "url": "chasser-en-vendee/dates-de-chasse/" },
+      { "title": "Trouver un formulaire", "text": "Retrouver les formulaires et imprimés utiles.", "url": "ressources/formulaires-et-imprimes/" },
+      { "title": "Ouvrir mon espace adhérent", "text": "Accéder aux services de l’espace RETRIEVER.", "url": "https://chasseur-vendeen.fr/espace-adherent-v2/" },
+      { "title": "Passer le permis", "text": "Comprendre les étapes et préparer l’examen.", "url": "https://chasseur-vendeen.fr/je-veux-devenir-chasseur/" },
+      { "title": "Contacter la Fédération", "text": "Voir le téléphone, le courriel, l’adresse et les horaires.", "url": "contact/" }
     ]
   },
-  "missions": {
-    "eyebrow": "Nos missions",
-    "title": "Agir avec et pour le territoire",
-    "intro": "La Fédération rassemble les chasseurs du département et participe à la gestion des espèces et des espaces de Vendée.",
-    "items": [
-      {
-        "number": "01",
-        "title": "Accompagner",
-        "text": "Informer les chasseurs, faciliter leurs démarches et proposer des formations adaptées."
-      },
-      {
-        "number": "02",
-        "title": "Gérer",
-        "text": "Contribuer à une gestion concertée de la faune sauvage et des territoires."
-      },
-      {
-        "number": "03",
-        "title": "Préserver",
-        "text": "Participer aux actions en faveur des milieux naturels et de la biodiversité."
-      }
-    ]
+  "news": {
+    "title": "Informations importantes",
+    "intro": "Les actualités pratiques sont séparées de la présentation institutionnelle.",
+    "action": { "label": "Voir toutes les actualités", "url": "actualites/" }
   },
-  "information": {
-    "eyebrow": "Prototype en cours",
-    "title": "Un nouveau site simple et utile",
-    "visualLabel": "Un site plus clair",
-    "text": "Cette première version présente les futurs principes du site : des démarches faciles à trouver, des contenus lisibles et une consultation confortable sur mobile comme sur ordinateur.",
-    "link": {
-      "label": "Donner un retour",
-      "url": "mailto:fdc85@chasse85.fr"
-    }
-  },
-  "contactCallout": {
-    "eyebrow": "Besoin d'aide ?",
-    "title": "L'équipe de la Fédération vous répond",
-    "text": "Une question sur une démarche, une formation ou la réglementation ? Retrouvez les coordonnées et horaires d'accueil.",
-    "actionLabel": "Écrire à la Fédération",
-    "actionUrl": "mailto:fdc85@chasse85.fr"
+  "institution": {
+    "title": "La Fédération agit en Vendée",
+    "text": "Elle accompagne les chasseurs, contribue à la connaissance de la faune sauvage et mène des actions en faveur des habitats.",
+    "action": { "label": "Découvrir la Fédération", "url": "la-federation/" }
   }
 }

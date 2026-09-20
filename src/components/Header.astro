@@ -1,46 +1,53 @@
 ---
 import site from "../content/site.json";
-import { getNavigationPages } from "../lib/pages";
+import SmartLink from "./SmartLink.astro";
+import { resolveUrl } from "../lib/urls";
 
 const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
-const localUrl = (path: string) => `${base}${path}`.replace(/\/{2,}/g, "/");
-const navigation = [
-  { label: "Accueil", url: "" },
-  ...(await getNavigationPages()).map(({ entry, slug }) => ({
-    label: entry.data.navigationLabel || entry.data.title,
-    url: `${slug}/`,
-  })),
-];
+const isCurrent = (url: string) => currentPath.startsWith(resolveUrl(url, base));
 ---
 
 <header class="site-header">
   <div class="header-inner container">
-    <a class="brand" href={localUrl("")} aria-label={`${site.shortName} — Accueil`}>
-      <img src={localUrl(site.logo)} width="400" height="111" alt={site.name} />
+    <a class="brand" href={base} aria-label={`${site.shortName} — Accueil`}>
+      <img src={resolveUrl(site.logo, base)} width="400" height="111" alt={site.name} />
     </a>
 
     <details class="mobile-menu">
-      <summary>
-        <span>Menu</span>
-        <span class="menu-icon" aria-hidden="true"></span>
-      </summary>
-      <nav aria-label="Navigation principale">
-        {navigation.map((item) => {
-          const href = localUrl(item.url);
-          const isCurrent = item.url === "" ? currentPath === base : currentPath.startsWith(href);
-          return <a href={href} aria-current={isCurrent ? "page" : undefined}>{item.label}</a>;
-        })}
-      </nav>
+      <summary><span class="menu-label">Ouvrir le menu</span><span class="menu-icon" aria-hidden="true"></span></summary>
+      <div class="mobile-menu-panel">
+        <nav aria-label="Navigation principale">
+          {site.navigation.map((item) => (
+            <SmartLink href={item.url} aria-current={isCurrent(item.url) ? "page" : undefined}>{item.label}</SmartLink>
+          ))}
+        </nav>
+        <div class="mobile-actions">
+          {site.primaryActions.map((item) => <SmartLink class="button button-dark" href={item.url}>{item.label}</SmartLink>)}
+        </div>
+      </div>
     </details>
 
-    <nav class="desktop-nav" aria-label="Navigation principale">
-      {navigation.map((item) => {
-        const href = localUrl(item.url);
-        const isCurrent = item.url === "" ? currentPath === base : currentPath.startsWith(href);
-        return <a href={href} aria-current={isCurrent ? "page" : undefined}>{item.label}</a>;
-      })}
-      <a class="nav-contact" href={site.headerAction.url}>{site.headerAction.label}</a>
-    </nav>
+    <div class="desktop-header">
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        {site.navigation.map((item) => (
+          <SmartLink href={item.url} aria-current={isCurrent(item.url) ? "page" : undefined}>{item.label}</SmartLink>
+        ))}
+      </nav>
+      <div class="header-actions" aria-label="Actions prioritaires">
+        {site.primaryActions.map((item, index) => (
+          <SmartLink class:list={["button", index === 0 ? "button-primary" : "button-dark"]} href={item.url}>{item.label}</SmartLink>
+        ))}
+      </div>
+    </div>
   </div>
 </header>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>(".mobile-menu").forEach((menu) => {
+    const label = menu.querySelector<HTMLElement>(".menu-label");
+    menu.addEventListener("toggle", () => {
+      if (label) label.textContent = menu.open ? "Fermer le menu" : "Ouvrir le menu";
+    });
+  });
+</script>

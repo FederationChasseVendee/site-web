@@ -1,85 +1,93 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { basename, join } from "node:path";
+import { extname, join, relative } from "node:path";
 
 const base = "/site-web/";
-const contentDirectory = "src/content/pages";
-const reserved = new Set(["404", "index"]);
-const pageFiles = readdirSync(contentDirectory).filter((file) => file.endsWith(".md"));
-const homeHtml = readFileSync("dist/index.html", "utf8");
-const slugs = new Set();
-const visibleSlugs = new Set();
+const distDirectory = "dist";
+const site = JSON.parse(readFileSync("src/content/site.json", "utf8"));
 
-for (const file of pageFiles) {
-  const slug = basename(file, ".md").toLowerCase();
-  if (reserved.has(slug)) {
-    throw new Error(`Slug réservé détecté : ${slug}`);
-  }
-  if (slugs.has(slug)) {
-    throw new Error(`Slug en double détecté : ${slug}`);
-  }
-  slugs.add(slug);
-
-  const source = readFileSync(join(contentDirectory, file), "utf8");
-  const visible = !/^showInNavigation:\s*false\s*$/m.test(source);
-  const href = `href="${base}${slug}/"`;
-  const route = join("dist", slug, "index.html");
-
-  if (!existsSync(route)) {
-    throw new Error(`Route manquante pour ${file} : ${route}`);
-  }
-  if (visible && !homeHtml.includes(href)) {
-    throw new Error(`Lien de navigation manquant pour ${file}`);
-  }
-  if (!visible && homeHtml.includes(href)) {
-    throw new Error(`La page masquée ${file} apparaît dans la navigation`);
-  }
-  if (visible) visibleSlugs.add(slug);
+function walk(directory) {
+  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(directory, entry.name);
+    return entry.isDirectory() ? walk(path) : [path];
+  });
 }
 
-const expectedNavigation = new Set([base, ...[...visibleSlugs].map((slug) => `${base}${slug}/`)]);
-const navigationBlocks = [...homeHtml.matchAll(/<nav[^>]*aria-label="Navigation principale"[^>]*>(.*?)<\/nav>/g)];
-
-if (navigationBlocks.length !== 2) {
-  throw new Error("Les navigations mobile et bureau n’ont pas été trouvées.");
+function targetFor(url) {
+  const withoutBase = url.slice(base.length).split(/[?#]/)[0];
+  if (!withoutBase) return join(distDirectory, "index.html");
+  return withoutBase.endsWith("/")
+    ? join(distDirectory, withoutBase, "index.html")
+    : join(distDirectory, withoutBase);
 }
 
-for (const [, navigationHtml] of navigationBlocks) {
-  const actualNavigation = new Set(
-    [...navigationHtml.matchAll(/href="(\/site-web\/[^"#?]*)"/g)].map((match) => match[1]),
-  );
-
-  for (const href of expectedNavigation) {
-    if (!actualNavigation.has(href)) {
-      throw new Error(`Lien attendu absent de la navigation : ${href}`);
-    }
-  }
-  for (const href of actualNavigation) {
-    if (!expectedNavigation.has(href)) {
-      throw new Error(`Lien obsolète ou inconnu dans la navigation : ${href}`);
-    }
-  }
-}
-
-const htmlFiles = [
-  "dist/index.html",
-  "dist/404.html",
-  ...[...slugs].map((slug) => join("dist", slug, "index.html")),
-];
+const htmlFiles = walk(distDirectory).filter((file) => extname(file) === ".html");
+const routeFiles = htmlFiles.filter((file) => !file.endsWith("404.html"));
 
 for (const htmlFile of htmlFiles) {
   const html = readFileSync(htmlFile, "utf8");
-  for (const match of html.matchAll(/(?:href|src)="(\/site-web\/[^"#?]*)"/g)) {
-    const relativePath = match[1].slice(base.length);
-    if (!relativePath) continue;
+  const displayPath = relative(distDirectory, htmlFile);
+  const h1Count = (html.match(/<h1(?:\s|>)/g) ?? []).length;
 
-    const target = relativePath.endsWith("/")
-      ? join("dist", relativePath, "index.html")
-      : join("dist", relativePath);
+  if (!html.includes('href="#contenu"') || !html.includes('<main id="contenu">')) {
+    throw new Error(`Lien d’évitement ou zone principale absent dans ${displayPath}`);
+  }
+  if (h1Count !== 1) {
+    throw new Error(`${displayPath} doit contenir exactement un titre h1 (trouvé : ${h1Count}).`);
+  }
 
+  for (const image of html.matchAll(/<img\b[^>]*>/g)) {
+    if (!/\salt="[^"]*"/.test(image[0])) {
+      throw new Error(`Image sans attribut alt dans ${displayPath}`);
+    }
+  }
+
+  for (const match of html.matchAll(/(?:href|src)="(\/site-web\/[^"]*)"/g)) {
+    const target = targetFor(match[1]);
     if (!existsSync(target)) {
-      throw new Error(`Cible locale absente dans ${htmlFile} : ${match[1]}`);
+      throw new Error(`Cible locale absente dans ${displayPath} : ${match[1]}`);
+    }
+  }
+
+  for (const anchor of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>.*?<\/a>/gs)) {
+    if (!/\srel="[^"]*noreferrer[^"]*"/.test(anchor[0]) || !anchor[0].includes("nouvel onglet")) {
+      throw new Error(`Lien externe non annoncé ou sans rel=noreferrer dans ${displayPath}`);
     }
   }
 }
 
-console.log(`Navigation et routes vérifiées pour ${pageFiles.length} page(s) secondaire(s).`);
+const homeHtml = readFileSync(join(distDirectory, "index.html"), "utf8");
+const navigationBlocks = [...homeHtml.matchAll(/<nav[^>]*aria-label="Navigation principale"[^>]*>(.*?)<\/nav>/gs)];
+if (navigationBlocks.length !== 2) {
+  throw new Error("Les navigations principale mobile et bureau n’ont pas été trouvées.");
+}
+
+const expectedNavigation = site.navigation.map(({ url }) => `${base}${url}`);
+for (const [, navigationHtml] of navigationBlocks) {
+  const links = [...navigationHtml.matchAll(/href="(\/site-web\/[^"#?]*)"/g)].map((match) => match[1]);
+  if (links.length !== 6 || expectedNavigation.some((href) => !links.includes(href))) {
+    throw new Error("La navigation principale doit contenir exactement les six rubriques configurées.");
+  }
+}
+
+for (const action of site.primaryActions) {
+  const href = /^https?:|^mailto:|^tel:/.test(action.url) ? action.url : `${base}${action.url}`;
+  if (!homeHtml.includes(`href="${href}"`)) {
+    throw new Error(`Action prioritaire absente de l’accueil : ${action.label}`);
+  }
+}
+
+if (!homeHtml.includes(`href="${base}" aria-label="${site.shortName} — Accueil"`)) {
+  throw new Error("Le logo ne fournit pas de retour explicite vers l’accueil.");
+}
+
+for (const htmlFile of routeFiles) {
+  if (htmlFile.endsWith(join(distDirectory, "index.html"))) continue;
+  const html = readFileSync(htmlFile, "utf8");
+  if (!html.includes('aria-label="Fil d’Ariane"')) {
+    throw new Error(`Fil d’Ariane absent dans ${relative(distDirectory, htmlFile)}`);
+  }
+}
+
+console.log(
+  `${routeFiles.length} routes, leurs liens, leurs médias et les repères d’accessibilité ont été vérifiés sous ${base}.`,
+);

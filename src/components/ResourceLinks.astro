@@ -1,0 +1,33 @@
+---
+import SmartLink from "./SmartLink.astro";
+
+interface Resource {
+  label: string;
+  url: string;
+  type?: string;
+  size?: string;
+}
+
+interface Props {
+  title: string;
+  items: Resource[];
+}
+
+const { title, items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <section class="resource-block" aria-labelledby={`resources-${title.toLowerCase().replace(/\s+/g, "-")}`}>
+    <h2 id={`resources-${title.toLowerCase().replace(/\s+/g, "-")}`}>{title}</h2>
+    <ul class="resource-list">
+      {items.map((item) => (
+        <li>
+          <SmartLink href={item.url}>
+            <strong>{item.label}</strong>
+            {(item.type || item.size) && <span>{[item.type, item.size].filter(Boolean).join(" · ")}</span>}
+          </SmartLink>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

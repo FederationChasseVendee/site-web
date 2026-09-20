@@ -1,0 +1,31 @@
+---
+import { getTemplateEntries, titleForEntry } from "../lib/content";
+import { resolveUrl } from "../lib/urls";
+
+interface Props {
+  slug: string;
+  title: string;
+}
+
+const { slug, title } = Astro.props;
+const segments = slug.split("/");
+const entries = await getTemplateEntries();
+const labels = new Map(entries.map((item) => [item.slug, titleForEntry(item)]));
+const crumbs = segments.map((_, index) => {
+  const path = segments.slice(0, index + 1).join("/");
+  return { path, label: index === segments.length - 1 ? title : labels.get(path) ?? segments[index] };
+});
+---
+
+<nav class="breadcrumbs container" aria-label="Fil d’Ariane">
+  <ol>
+    <li><a href={import.meta.env.BASE_URL}>Accueil</a></li>
+    {crumbs.map((crumb, index) => (
+      <li>
+        {index === crumbs.length - 1
+          ? <span aria-current="page">{crumb.label}</span>
+          : <a href={resolveUrl(`${crumb.path}/`, import.meta.env.BASE_URL)}>{crumb.label}</a>}
+      </li>
+    ))}
+  </ol>
+</nav>

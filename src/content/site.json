@@ -3,27 +3,28 @@
   "shortName": "FDC 85",
   "tagline": "Chasser, connaître et préserver la nature vendéenne",
   "logo": "/assets/logo-fdc85.png",
-  "headerAction": {
-    "label": "Écrire à la FDC",
-    "url": "mailto:fdc85@chasse85.fr"
+  "navigation": [
+    { "label": "Actualités", "url": "actualites/" },
+    { "label": "Chasser en Vendée", "url": "chasser-en-vendee/" },
+    { "label": "Permis et formations", "url": "permis-et-formations/" },
+    { "label": "Nature et territoires", "url": "nature-et-territoires/" },
+    { "label": "La Fédération", "url": "la-federation/" },
+    { "label": "Ressources", "url": "ressources/" }
+  ],
+  "primaryActions": [
+    { "label": "Valider mon permis", "url": "https://chasseur-vendeen.fr/je-valide-mon-permis/" },
+    { "label": "Contact", "url": "contact/" }
+  ],
+  "contact": {
+    "phoneLabel": "02 51 47 80 90",
+    "phoneUrl": "tel:+33251478090",
+    "email": "fdc85@chasse85.fr",
+    "address": "Les Minées – Route de Château-Fromage, 85010 La Roche-sur-Yon CEDEX"
   },
   "footerText": "Fédération Départementale des Chasseurs de la Vendée",
-  "sourceSite": {
-    "label": "Consulter le site actuel",
-    "url": "https://chasseur-vendeen.fr/"
-  },
   "socialLinks": [
-    {
-      "label": "Facebook",
-      "url": "https://www.facebook.com/chasse85"
-    },
-    {
-      "label": "Instagram",
-      "url": "https://www.instagram.com/fdcvendee/"
-    },
-    {
-      "label": "YouTube",
-      "url": "https://www.youtube.com/c/FdrationDpartementaledesChasseursdeVende/featured"
-    }
+    { "label": "Facebook", "url": "https://www.facebook.com/chasse85" },
+    { "label": "Instagram", "url": "https://www.instagram.com/fdcvendee/" },
+    { "label": "YouTube", "url": "https://www.youtube.com/c/FdrationDpartementaledesChasseursdeVende/featured" }
   ]
 }
