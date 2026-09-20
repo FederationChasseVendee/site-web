@@ -1,68 +1,73 @@
 # Site web — Fédération des Chasseurs de la Vendée
 
-Site statique réalisé avec [Astro](https://astro.build/) et administrable avec [Pages CMS](https://pagescms.org/), sans serveur, base de données, analytics ni cookies.
+Site statique [Astro](https://astro.build/) administrable dans [Pages CMS](https://pagescms.org/). Il fonctionne sans serveur, base de données, suivi d’audience, cookie publicitaire ni ressource externe nécessaire à l’exécution.
 
-## Développement local
+## Développement et validation
 
 Prérequis : Node.js 22 et npm.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Le serveur local indique l’URL à ouvrir. Pour vérifier la version de production :
+Le build de production exécute le contrôle TypeScript, génère le site puis vérifie les routes, les liens internes, les médias et plusieurs repères d’accessibilité :
 
 ```bash
 npm run build
 npm run preview
 ```
 
-Le site est configuré pour l’URL `https://federationchassevendee.github.io/site-web/` et le sous-chemin `/site-web/`.
+L’URL de production est `https://federationchassevendee.github.io/site-web/`. Astro génère donc tous les liens et médias sous le préfixe `/site-web/`.
 
-## Contenu et médias
+## Les 7 templates
 
-- `src/content/site.json` : identité, pied de page et réseaux sociaux.
-- `src/content/home.json` : tous les textes, cartes, liens, image et SEO de l’accueil.
-- `src/content/pages/*.md` : pages secondaires créées dans Pages CMS, avec métadonnées YAML et contenu Markdown.
-- `src/content.config.ts` : schéma de validation Astro des pages secondaires.
-- `public/assets/` : logo et images chargés dans Pages CMS.
-- `.pages.yml` : formulaires d’édition proposés par Pages CMS.
+L’architecture reste volontairement limitée. Il n’y a pas de constructeur de page universel.
 
-La page d’accueil est spéciale et protégée contre la suppression et le renommage. Toutes les autres pages utilisent une collection : Astro crée une route statique pour chaque fichier Markdown lors du déploiement.
+| Template | Collection | Usage |
+| --- | --- | --- |
+| Accueil | `src/content/home.json` | Démarches prioritaires, informations importantes, présentation et contact |
+| Page carrefour | `src/content/crossroads/` | Entrée de rubrique avec cartes ordonnées ou contenus enfants générés |
+| Page standard | `src/content/standard-pages/` | Contenu courant, contact et pages légales, avec documents, liens et appel à l’action facultatifs |
+| Article | `src/content/articles/` | Actualité datée, catégorisée et éventuellement archivée |
+| Fiche espèce | `src/content/species/` | Identification, habitat, alimentation, reproduction, répartition, statut et galerie |
+| Formation | `src/content/trainings/` | Objectifs, public, prérequis, programme, informations pratiques, dates et inscription |
+| Index générique | `src/content/indexes/` | Liste ou cartes provenant d’une collection choisie explicitement |
 
-## Modifier avec Pages CMS
+L’Index générique affiche les actualités, espèces, formations, documents, questions fréquentes, termes du glossaire ou entrées d’annuaire. Ces quatre dernières sources sont de simples collections de données dans `src/content/documents/`, `faqs/`, `glossary/` et `directories/` : elles ne créent pas de nouveaux templates.
 
-1. Aller sur [Pages CMS](https://app.pagescms.org/) et se connecter avec le compte GitHub autorisé à modifier ce dépôt.
-2. Choisir `FederationChasseVendee/site-web`, puis la branche `main`.
-3. Ouvrir **Page d’accueil**, **Pages secondaires** ou **Paramètres du site**.
-4. Modifier les champs, enregistrer puis publier. Pages CMS crée directement un commit GitHub : aucune commande Git n’est nécessaire.
+Les schémas typés et leurs valeurs par défaut sont définis dans `src/content.config.ts`. La route statique `src/pages/[...slug].astro` associe chaque collection à son template. Deux contenus ne peuvent pas produire la même URL.
 
-Les images ajoutées dans la médiathèque sont stockées dans `public/assets/`. Renseigner un texte alternatif utile pour chaque image informative.
+## Modifier le site avec Pages CMS
+
+1. Ouvrir [Pages CMS](https://app.pagescms.org/) et choisir le dépôt `FederationChasseVendee/site-web`.
+2. Choisir la branche de travail appropriée.
+3. Ouvrir la collection correspondant au besoin : **Pages standard**, **Pages carrefour**, **Actualités**, **Fiches espèces**, **Formations**, **Index et listes**, ou une collection de ressources.
+4. Modifier les champs en français, enregistrer puis publier. Aucun Git ni HTML n’est demandé.
+
+Les collections autorisent explicitement création, renommage et suppression. **Accueil** et **Paramètres du site** sont protégés contre ces trois opérations. Les images et documents chargés dans la médiathèque sont enregistrés dans `public/assets/`.
+
+Pour une image informative, renseigner une description utile. Pour une image purement décorative, activer **Image uniquement décorative** et laisser sa description vide. Le build refuse une image qui n’est ni décrite ni déclarée décorative.
 
 ### Créer une page
 
-1. Dans **Pages secondaires**, cliquer sur **Nouvelle entrée**.
-2. Saisir le titre : Pages CMS propose automatiquement un nom de fichier propre, par exemple `la-federation.md`, qui devient l’URL `/la-federation/`.
-3. Compléter la description SEO, l’introduction et le contenu principal.
-4. Activer **Afficher dans le menu**, choisir son libellé et son ordre si la page doit être visible dans la navigation.
-5. Les cartes, horaires et appel à l’action sont facultatifs.
-6. Enregistrer puis publier.
+Le nom de fichier devient l’URL. Par exemple :
 
-### Renommer, masquer ou supprimer une page
+- `src/content/standard-pages/contact.md` → `/contact/` ;
+- `src/content/articles/actualites/mon-article.md` → `/actualites/mon-article/`.
 
-- **Renommer et changer l’URL** : ouvrir la page, modifier son nom de fichier dans Pages CMS, puis publier. Le menu adopte automatiquement la nouvelle URL.
-- **Masquer du menu** : désactiver **Afficher dans le menu**. La page reste accessible par son URL.
-- **Supprimer** : utiliser l’action de suppression de Pages CMS. La route et son entrée de menu disparaissent au déploiement suivant.
+Les sous-dossiers servent à créer le fil d’Ariane. La page parente doit exister avant d’exposer un lien vers une page profonde.
 
-Les noms `index` et `404` sont réservés. Deux fichiers ne doivent pas produire le même nom d’URL. Le build refuse ces cas explicitement pour éviter d’écraser l’accueil ou la page d’erreur. Après publication, GitHub Actions reconstruit le site ; la mise en ligne prend généralement une à deux minutes. Les liens ajoutés manuellement dans le contenu ne sont pas réécrits lors d’un renommage : ils doivent être mis à jour par l’éditrice.
+Pour une page carrefour, saisir des cartes dans l’ordre souhaité. Lorsque la rubrique doit simplement reprendre tous les articles, espèces, formations ou index enfants, choisir **Ajouter automatiquement les contenus** plutôt que dupliquer les liens.
+
+Pour un index, choisir clairement sa **Collection à afficher**, sa présentation en liste ou en cartes et, si nécessaire, une catégorie. FAQ, glossaire et annuaire sont toujours affichés directement : aucun accordéon ou contenu indispensable masqué.
+
+## Navigation et accessibilité
+
+Le menu principal est limité aux six rubriques conservées dans `src/content/site.json`. Le logo fournit le retour à l’accueil. **Valider mon permis** et **Contact** restent séparés comme actions prioritaires.
+
+Le socle vise WCAG 2.2 AA : landmarks, titre unique, lien d’évitement, fils d’Ariane, focus visible, navigation clavier, cibles d’au moins 44 px, menu mobile à état explicite, alternatives d’images, annonce des nouveaux onglets, mise en page responsive et respect de `prefers-reduced-motion`. Les tests statiques ne remplacent pas un audit manuel avec clavier, lecteur d’écran et zoom à 200 %.
 
 ## Publication
 
-Chaque push sur `main` déclenche `.github/workflows/deploy-pages.yml` : installation, validation du contenu et des routes, build Astro, dépôt de l’artifact puis déploiement par `actions/deploy-pages`.
-
-Une seule activation peut être nécessaire dans GitHub : **Settings → Pages → Build and deployment → Source → GitHub Actions**. L’URL publiée est ensuite :
-
-<https://federationchassevendee.github.io/site-web/>
-
-Les liens vers les démarches du site actuel s’ouvrent dans un nouvel onglet tant que ces services n’ont pas été migrés.
+`.github/workflows/deploy-pages.yml` installe les dépendances avec `npm ci`, lance `npm run build`, puis publie `dist/` sur GitHub Pages après fusion dans `main`.

@@ -1,0 +1,18 @@
+---
+import { isExternalUrl, resolveUrl } from "../lib/urls";
+
+interface Props {
+  href: string;
+  class?: string;
+  "aria-current"?: "page";
+}
+
+const { href, class: className, "aria-current": ariaCurrent } = Astro.props;
+const external = isExternalUrl(href);
+const resolved = resolveUrl(href, import.meta.env.BASE_URL);
+---
+
+<a class={className} href={resolved} aria-current={ariaCurrent} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}>
+  <slot />
+  {external && <><span aria-hidden="true"> ↗</span><span class="sr-only"> (site externe, nouvel onglet)</span></>}
+</a>
