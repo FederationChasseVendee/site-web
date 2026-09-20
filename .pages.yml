@@ -457,6 +457,21 @@ content:
           - { name: email, label: Courriel, type: string, required: true }
           - { name: address, label: Adresse, type: text, required: true }
       - { name: footerText, label: Mention du pied de page, type: string, required: true }
+      - name: analytics
+        label: Analytics — Umami Cloud
+        type: object
+        description: Le Website ID est un identifiant public fourni par Umami, jamais un secret. Laissez le suivi désactivé tant que cet identifiant n’est pas renseigné.
+        fields:
+          - name: enabled
+            label: Activer la mesure d’audience Umami
+            type: boolean
+            default: false
+            description: Active le script Umami sur toutes les pages publiées. Le build échoue si le Website ID est absent ou invalide.
+          - name: websiteId
+            label: Website ID public
+            type: string
+            default: ""
+            description: Copiez exactement le Website ID affiché dans Umami Cloud. Cet identifiant est public et ne doit pas être remplacé par une clé API ou un secret.
       - name: socialLinks
         label: Réseaux sociaux
         type: object

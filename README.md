@@ -1,6 +1,6 @@
 # Site web — Fédération des Chasseurs de la Vendée
 
-Site statique [Astro](https://astro.build/) administrable dans [Pages CMS](https://pagescms.org/). Il fonctionne sans serveur, base de données, suivi d’audience, cookie publicitaire ni ressource externe nécessaire à l’exécution.
+Site statique [Astro](https://astro.build/) administrable dans [Pages CMS](https://pagescms.org/). Il fonctionne sans serveur ni base de données. La mesure d’audience Umami Cloud est prête mais désactivée par défaut : sans configuration, aucun script de suivi ni aucune requête vers Umami n’est généré.
 
 ## Développement et validation
 
@@ -101,8 +101,30 @@ contenus anciens ou temporaires expirés sont conservés dans les
 
 Le build génère `sitemap.xml`, `robots.txt` et un flux Atom `feed.xml` sous `/site-web/`. Chaque article
 possède une URL canonique, des métadonnées OpenGraph et `NewsArticle`. Les pages de redirection utilisent
-une canonique vers leur destination et `noindex, follow`. Le site n’utilise aucun outil de suivi et
-n’affiche donc pas de bannière de consentement inutile.
+une canonique vers leur destination et `noindex, follow`.
+
+## Mesure d’audience Umami Cloud
+
+L’intégration utilise exclusivement le script officiel `https://cloud.umami.is/script.js`, avec `defer`,
+le `data-website-id` public fourni par Umami et `data-do-not-track="true"` pour respecter la préférence
+Do Not Track du navigateur. Le script est injecté une seule fois par le layout global : il couvre toutes
+les pages Astro, dont toutes les pages indexables, les redirections gérées par Astro et la page 404. Trois
+redirections historiques à slug emoji sont des fichiers HTML statiques `noindex` à rafraîchissement
+immédiat ; elles sont volontairement exclues du suivi.
+
+Pour l’activer :
+
+1. Créer un compte ou se connecter à [Umami Cloud](https://cloud.umami.is/), puis ajouter un site pour le domaine publié.
+2. Dans les réglages de ce site Umami, copier son **Website ID**. Cet identifiant est public : ne jamais saisir ici de clé API, jeton ou secret.
+3. Ouvrir Pages CMS, puis **Paramètres du site > Analytics — Umami Cloud**.
+4. Coller le Website ID, puis activer **Activer la mesure d’audience Umami**.
+5. Publier la modification. Pages CMS crée un commit ; attendre la fin du nouveau build GitHub Actions et du déploiement GitHub Pages.
+6. Ouvrir le site publié, vérifier dans l’onglet Réseau du navigateur une requête vers `cloud.umami.is`, puis confirmer la visite dans le tableau de bord Umami.
+
+L’activation sans Website ID valide fait échouer le build avec un message actionnable, afin d’éviter une
+fausse impression de collecte. Umami est généralement utilisé ici dans sa configuration standard sans
+cookies ; aucune bannière n’est ajoutée sur cette hypothèse. Cela ne constitue pas un avis juridique :
+vérifier les réglages réellement activés dans Umami et faire confirmer les obligations applicables au site.
 
 ## Publication
 
