@@ -1,0 +1,34 @@
+---
+import site from "../content/site.json";
+
+const base = import.meta.env.BASE_URL;
+const localUrl = (path: string) => `${base}${path}`.replace(/\/{2,}/g, "/");
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-main">
+    <div class="footer-brand">
+      <img src={localUrl(site.logo)} width="400" height="111" alt="" />
+      <p>{site.tagline}</p>
+    </div>
+    <div>
+      <h2>Navigation</h2>
+      <ul>
+        {site.navigation.map((item) => <li><a href={localUrl(item.url)}>{item.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2>Suivre la Fédération</h2>
+      <ul>
+        {site.socialLinks.map((item) => (
+          <li><a href={item.url} target="_blank" rel="noreferrer">{item.label}<span class="sr-only"> (nouvel onglet)</span></a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© {year} {site.footerText}</p>
+    <a href={site.sourceSite.url} target="_blank" rel="noreferrer">{site.sourceSite.label}<span class="sr-only"> (nouvel onglet)</span></a>
+  </div>
+</footer>

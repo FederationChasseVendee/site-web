@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import home from "../content/home.json";
+
+const base = import.meta.env.BASE_URL;
+const localUrl = (path: string) => `${base}${path}`.replace(/\/{2,}/g, "/");
+const resolveUrl = (url: string) => /^https?:|^mailto:|^tel:/.test(url) ? url : localUrl(url);
+---
+
+<BaseLayout title={home.seo.title} description={home.seo.description}>
+  <section class="hero">
+    <img class="hero-image" src={localUrl(home.hero.image)} alt={home.hero.imageAlt} width="750" height="541" fetchpriority="high" />
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="eyebrow eyebrow-light">{home.hero.eyebrow}</p>
+      <h1>{home.hero.title}</h1>
+      <p class="hero-lead">{home.hero.text}</p>
+      <div class="button-row">
+        <a class="button button-primary" href={resolveUrl(home.hero.primaryAction.url)}>{home.hero.primaryAction.label}</a>
+        <a class="button button-ghost" href={resolveUrl(home.hero.secondaryAction.url)} target="_blank" rel="noreferrer">
+          {home.hero.secondaryAction.label}<span aria-hidden="true"> ↗</span>
+          <span class="sr-only"> (nouvel onglet)</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-marker" aria-hidden="true">
+      <span>{home.hero.badgeNumber}</span>
+      <small>{home.hero.badgeLabel}</small>
+    </div>
+  </section>
+
+  <section class="section quick-section" aria-labelledby="quick-title">
+    <div class="container">
+      <div class="section-heading section-heading-split">
+        <div>
+          <p class="eyebrow">{home.quickAccess.eyebrow}</p>
+          <h2 id="quick-title">{home.quickAccess.title}</h2>
+        </div>
+        <p>{home.quickAccess.intro}</p>
+      </div>
+      <div class="quick-grid">
+        {home.quickAccess.items.map((item) => (
+          <a class="quick-card" href={item.url} target="_blank" rel="noreferrer">
+            <span class="icon-wrap"><Icon name={item.icon} /></span>
+            <span class="quick-card-copy">
+              <strong>{item.title}</strong>
+              <span>{item.text}</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+            <span class="sr-only"> (service externe, nouvel onglet)</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section missions-section" aria-labelledby="missions-title">
+    <div class="container">
+      <div class="missions-intro">
+        <p class="eyebrow">{home.missions.eyebrow}</p>
+        <h2 id="missions-title">{home.missions.title}</h2>
+        <p>{home.missions.intro}</p>
+      </div>
+      <div class="mission-list">
+        {home.missions.items.map((item) => (
+          <article class="mission">
+            <span class="mission-number">{item.number}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section info-section">
+    <div class="container info-grid">
+      <div class="info-visual" aria-hidden="true">
+        <div class="landscape-lines"></div>
+        <span>{home.information.visualLabel}</span>
+      </div>
+      <div class="info-copy">
+        <p class="eyebrow">{home.information.eyebrow}</p>
+        <h2>{home.information.title}</h2>
+        <p>{home.information.text}</p>
+        <a class="text-link" href={resolveUrl(home.information.link.url)}>{home.information.link.label}<span aria-hidden="true"> →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-callout">
+    <div class="container callout-inner">
+      <div>
+        <p class="eyebrow eyebrow-light">{home.contactCallout.eyebrow}</p>
+        <h2>{home.contactCallout.title}</h2>
+        <p>{home.contactCallout.text}</p>
+      </div>
+      <a class="button button-light" href={localUrl("contact/")}>{home.contactCallout.actionLabel}<span aria-hidden="true"> →</span></a>
+    </div>
+  </section>
+</BaseLayout>
