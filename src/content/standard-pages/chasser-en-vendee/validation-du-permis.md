@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Accéder à la validation en ligne
-    url: https://chasseur-vendeen.fr/je-valide-mon-permis/
+    url: /chasser-en-vendee/validation-du-permis/
 cta:
   title: Besoin d’aide ?
   text: La Fédération peut vous accompagner dans votre démarche.

@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Présentation détaillée actuelle
-    url: https://chasseur-vendeen.fr/agir-pour-lenvironnement/les-territoires/la-lagune-de-bouin/
+    url: /nature-et-territoires/lagune-de-bouin/
 ---
 
 La lagune est une étendue d’eau salée entourée d’habitats halophiles et prairiaux. Elle constitue un reposoir important pour les oiseaux d’eau en hivernage et un site de reproduction, notamment grâce aux îlots restaurés.

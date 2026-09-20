@@ -27,9 +27,18 @@ const description = descriptionForEntry(item);
 const redirectTo = item.template === "redirect"
   ? `${import.meta.env.BASE_URL}${item.entry.data.destination.replace(/^\/+/, "")}`
   : undefined;
+const articleImage = item.template === "article" ? item.entry.data.image?.src : undefined;
+const publishedTime = item.template === "article" ? item.entry.data.date : undefined;
 ---
 
-<BaseLayout {title} {description} {redirectTo}>
+<BaseLayout
+  {title}
+  {description}
+  {redirectTo}
+  image={articleImage}
+  contentType={item.template === "article" ? "article" : "website"}
+  {publishedTime}
+>
   {item.template === "standard" && <StandardPage entry={item.entry} {slug} />}
   {item.template === "crossroads" && <CrossroadsPage entry={item.entry} {slug} />}
   {item.template === "article" && <ArticlePage entry={item.entry} {slug} />}

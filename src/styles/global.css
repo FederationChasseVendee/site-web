@@ -365,6 +365,24 @@ summary {
   background: var(--paper);
 }
 
+.alerts-section {
+  border-block: 1px solid #d79d3b;
+  background: #fff7df;
+}
+
+.alert-card {
+  border-color: #d79d3b;
+}
+
+.news-date {
+  font-size: .95rem;
+}
+
+.read-more-row {
+  margin-top: 1rem !important;
+  font-weight: 800;
+}
+
 .institution-section {
   background: var(--forest-900);
   color: var(--white);
@@ -552,6 +570,105 @@ summary {
   display: grid;
   gap: 1rem;
   max-width: 55rem;
+}
+
+.listing-header {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+  background: var(--cream);
+}
+
+.listing-header h1 {
+  max-width: 20ch;
+  margin: 0 0 1rem;
+  color: var(--forest-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.listing-header p {
+  max-width: 48rem;
+  margin: 0 0 1.5rem;
+}
+
+.news-listing {
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.news-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.news-card > img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.news-card-content {
+  padding: 1.4rem;
+}
+
+.news-card-content h2 {
+  margin: .4rem 0 .7rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.news-card-content p {
+  margin-block: .6rem 0;
+}
+
+.read-more {
+  font-weight: 800;
+}
+
+.pagination {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.pagination ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-flex;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  padding: .55rem .8rem;
+  border: 1px solid var(--forest-700);
+  border-radius: .4rem;
+  font-weight: 800;
+}
+
+.pagination span[aria-current="page"] {
+  background: var(--forest-900);
+  color: var(--white);
 }
 
 .species-details,
@@ -809,11 +926,17 @@ summary {
 
   .task-grid,
   .card-grid,
+  .news-grid,
   .species-details,
   .key-facts dl,
   .gallery,
   .footer-main {
     grid-template-columns: 1fr;
+  }
+
+  .pagination {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .section-heading-row,

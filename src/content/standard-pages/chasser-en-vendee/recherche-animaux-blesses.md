@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Trouver les contacts actualisés
-    url: https://chasseur-vendeen.fr/je-suis-chasseur/recherche-danimaux-blesses/
+    url: /chasser-en-vendee/recherche-animaux-blesses/
 ---
 
 Après le tir, observez la réaction de l’animal et mémorisez sa direction. Contrôlez l’emplacement du tir avec prudence, recherchez les indices sans les piétiner et marquez le lieu. Évitez de suivre longuement la piste ou d’engager immédiatement les chiens : cela peut éloigner l’animal et compromettre la recherche.

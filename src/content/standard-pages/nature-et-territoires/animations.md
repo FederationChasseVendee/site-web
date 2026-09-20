@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Voir la page actuelle des animations
-    url: https://chasseur-vendeen.fr/agir-pour-lenvironnement/animations/
+    url: /nature-et-territoires/animations/
 cta:
   title: Organiser une animation
   text: Les propositions dépendent du public, du lieu et de la période.

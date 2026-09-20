@@ -4,6 +4,7 @@ import { extname, join, relative } from "node:path";
 const base = "/site-web/";
 const distDirectory = "dist";
 const site = JSON.parse(readFileSync("src/content/site.json", "utf8"));
+const newsMigration = JSON.parse(readFileSync("docs/migration-actualites.json", "utf8"));
 
 function walk(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -39,6 +40,10 @@ for (const htmlFile of htmlFiles) {
   if (html.includes("\uFFFD")) {
     throw new Error(`Caractère de remplacement Unicode détecté dans ${displayPath}.`);
   }
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+  if (!canonical?.startsWith("https://federationchassevendee.github.io/site-web/")) {
+    throw new Error(`URL canonique absente ou hors de /site-web/ dans ${displayPath}.`);
+  }
 
   for (const image of html.matchAll(/<img\b[^>]*>/g)) {
     if (!/\salt="[^"]*"/.test(image[0])) {
@@ -68,11 +73,24 @@ for (const file of documentFiles) {
 
 const redirectDirectory = join("src", "content", "redirects");
 const redirectFiles = walk(redirectDirectory).filter((file) => extname(file) === ".md");
+const unicodeRedirects = [
+  "📢-securite-et-chasse-une-convention-renforcee-avec-la-gendarmerie",
+  "🟢-ouverture-des-validations-du-permis-de-chasser-2026-2027-🟢",
+  "🕊️-tourterelle-des-bois-ouverture-dimanche-30-aout",
+];
 for (const file of redirectFiles) {
   const source = readFileSync(file, "utf8");
   const destination = source.match(/^destination:\s*(.+)$/m)?.[1]?.trim();
   if (!destination) {
     throw new Error(`Destination absente dans ${file}.`);
+  }
+
+  for (const route of unicodeRedirects) {
+    const html = readFileSync(join(distDirectory, route, "index.html"), "utf8");
+    if (!html.includes('<meta name="robots" content="noindex, follow">')
+      || !html.includes('<link rel="canonical" href="https://federationchassevendee.github.io/site-web/')) {
+      throw new Error(`Redirection Unicode incomplète pour /${route}/.`);
+    }
   }
 
   const route = relative(redirectDirectory, file).replace(/\\/g, "/").replace(/\.md$/, "");
@@ -89,6 +107,51 @@ for (const file of redirectFiles) {
   if (!html.includes(`href="${resolvedDestination}"`)) {
     throw new Error(`Lien de secours visible absent pour /${route}/.`);
   }
+  if (!html.includes('<meta name="robots" content="noindex, follow">')) {
+    throw new Error(`Directive noindex absente pour la redirection /${route}/.`);
+  }
+}
+
+if (newsMigration.sitemapUrlCount !== 86 || newsMigration.articleCount !== 85
+  || newsMigration.importedCount !== 85 || newsMigration.errorCount !== 0) {
+  throw new Error("Le rapport de migration doit confirmer 86 URL, 85 articles importés et aucune erreur.");
+}
+
+const articleSources = walk(join("src", "content", "articles")).filter((file) => extname(file) === ".md");
+if (articleSources.length < 85) {
+  throw new Error(`La collection Articles doit conserver les 85 migrations (trouvé : ${articleSources.length}).`);
+}
+
+for (const article of newsMigration.articles) {
+  const route = article.file.replace(/^src\/content\/articles\//, "").replace(/\.md$/, "");
+  if (!existsSync(join(distDirectory, ...route.split("/"), "index.html"))) {
+    throw new Error(`Route d’article absente pour ${article.source} : /${route}/.`);
+  }
+}
+
+for (const xmlFile of ["sitemap.xml", "feed.xml"]) {
+  const xml = readFileSync(join(distDirectory, xmlFile), "utf8");
+  if (!xml.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || xml.includes("\uFFFD")) {
+    throw new Error(`${xmlFile} n’est pas un document XML UTF-8 exploitable.`);
+  }
+}
+
+const sitemap = readFileSync(join(distDirectory, "sitemap.xml"), "utf8");
+for (const article of newsMigration.articles) {
+  const route = article.file.replace(/^src\/content\/articles\//, "").replace(/\.md$/, "");
+  const url = `https://federationchassevendee.github.io${base}${route}/`;
+  if (!sitemap.includes(`<loc>${url}</loc>`)) {
+    throw new Error(`Article absent du sitemap : ${url}`);
+  }
+}
+if (sitemap.includes("📢") || sitemap.includes("🟢") || sitemap.includes("🕊")) {
+  throw new Error("Les pages de redirection ne doivent pas être indexées dans le sitemap.");
+}
+
+const robots = readFileSync(join(distDirectory, "robots.txt"), "utf8");
+if (!robots.includes("Allow: /site-web/")
+  || !robots.includes("Sitemap: https://federationchassevendee.github.io/site-web/sitemap.xml")) {
+  throw new Error("robots.txt ne référence pas correctement la base de production et le sitemap.");
 }
 
 const homeHtml = readFileSync(join(distDirectory, "index.html"), "utf8");
@@ -125,5 +188,5 @@ for (const htmlFile of routeFiles) {
 }
 
 console.log(
-  `${routeFiles.length} routes, ${redirectFiles.length} redirections, ${documentFiles.length} PDF, leurs liens, leurs médias et les repères d’accessibilité ont été vérifiés sous ${base}.`,
+  `${routeFiles.length} routes, 85 articles, ${redirectFiles.length + unicodeRedirects.length} redirections, ${documentFiles.length} PDF, leurs liens, leurs médias, le sitemap, le flux et les repères d’accessibilité ont été vérifiés sous ${base}.`,
 );

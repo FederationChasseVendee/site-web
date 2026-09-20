@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Consulter les consignes détaillées
-    url: https://chasseur-vendeen.fr/connaitre-la-reglementation/que-faire-en-cas-de-collision/
+    url: /chasser-en-vendee/collision-avec-la-faune/
 ---
 
 ## Les premiers réflexes

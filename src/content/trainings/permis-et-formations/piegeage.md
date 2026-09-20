@@ -24,7 +24,7 @@ documents:
     url: /assets/documents/reglementation/memento-reglementation-esod.pdf
     type: PDF
     size: 1,4 Mo
-registrationUrl: https://chasseur-vendeen.fr/formation-piegeage/
+registrationUrl: /contact/
 ---
 
 La formation est dispensée par la FDC 85 avec l’Association départementale des piégeurs et déterreurs de Vendée. Les prochaines sessions seront publiées par la Fédération.

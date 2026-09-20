@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Présentation détaillée actuelle
-    url: https://chasseur-vendeen.fr/agir-pour-lenvironnement/les-territoires/la-borderie-du-marais/
+    url: /nature-et-territoires/borderie-du-marais/
 ---
 
 Les prairies naturelles humides, le réseau hydraulique d’eau douce, les mares, plans d’eau et roselières accueillent une faune et une flore diversifiées. Le site est particulièrement important pour la reproduction des oiseaux d’eau.

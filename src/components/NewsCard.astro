@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { normalizeSlug } from "../lib/content";
+import { formatFrenchDate } from "../lib/news";
+import { resolveUrl } from "../lib/urls";
+
+interface Props {
+  article: CollectionEntry<"articles">;
+}
+
+const { article } = Astro.props;
+const { title, summary, date, category, image } = article.data;
+const articleUrl = resolveUrl(`${normalizeSlug(article.id)}/`, import.meta.env.BASE_URL);
+const imageUrl = image ? resolveUrl(image.src, import.meta.env.BASE_URL) : "";
+---
+
+<article class="news-card">
+  {image && (
+    <img
+      src={imageUrl}
+      alt={image.decorative ? "" : image.alt}
+      width={image.width ?? 640}
+      height={image.height ?? 360}
+      loading="lazy"
+      decoding="async"
+    />
+  )}
+  <div class="news-card-content">
+    <p class="eyebrow">{category}</p>
+    <h2><a href={articleUrl}>{title}</a></h2>
+    <p class="news-date">Publié le <time datetime={date.toISOString()}>{formatFrenchDate(date)}</time></p>
+    <p>{summary}</p>
+    <p><a class="read-more" href={articleUrl}>Lire l’article : {title}</a></p>
+  </div>
+</article>

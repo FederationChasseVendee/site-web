@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import NewsListing from "../../../components/NewsListing.astro";
+import { getArticlesByStatus, pageCount, pageItems } from "../../../lib/news";
+
+const articles = await getArticlesByStatus(true);
+const totalPages = pageCount(articles);
+---
+
+<BaseLayout
+  title="Archives des actualités"
+  description="Archives des actualités et informations arrivées à expiration de la Fédération des Chasseurs de la Vendée."
+>
+  <NewsListing articles={pageItems(articles, 1)} page={1} {totalPages} archived />
+</BaseLayout>

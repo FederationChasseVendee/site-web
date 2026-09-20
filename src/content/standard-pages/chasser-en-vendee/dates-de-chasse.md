@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Consulter la page officielle des dates
-    url: https://chasseur-vendeen.fr/connaitre-la-reglementation/les-dates-de-chasse/
+    url: /chasser-en-vendee/dates-de-chasse/
   - label: Textes réglementaires
     url: /ressources/reglementation/
 cta:

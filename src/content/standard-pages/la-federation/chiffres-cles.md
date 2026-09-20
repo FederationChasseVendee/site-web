@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Consulter la page source
-    url: https://chasseur-vendeen.fr/la-federation/en-quelques-chiffres/
+    url: /la-federation/chiffres-cles/
 ---
 
 L’étude nationale BIPE 1 citée par la Fédération évaluait la filière chasse à **3,9 milliards d’euros de chiffre d’affaires**, **2,3 milliards d’euros de contribution au PIB** et près de **23 000 emplois permanents**. Elle estimait également le bénévolat à l’équivalent de **57 000 emplois à temps plein**.

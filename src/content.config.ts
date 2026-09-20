@@ -11,6 +11,8 @@ const imageSchema = z.object({
   src: z.string().min(1),
   alt: z.string().default(""),
   decorative: z.boolean().default(false),
+  width: z.number().int().positive().optional(),
+  height: z.number().int().positive().optional(),
 }).refine((image) => image.decorative || image.alt.trim().length > 0, {
   message: "Renseignez le texte alternatif ou indiquez que l’image est décorative.",
   path: ["alt"],
@@ -73,7 +75,7 @@ const articles = defineCollection({
     title: z.string().min(1),
     description: z.string().min(1),
     date: z.coerce.date(),
-    category: z.string().min(1),
+    category: z.enum(["Chasse", "Environnement", "Fédération", "Alertes"]),
     summary: z.string().min(1),
     image: imageSchema.optional(),
     documents: z.array(documentSchema).default([]),

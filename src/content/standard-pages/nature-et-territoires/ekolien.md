@@ -7,7 +7,7 @@ navigation:
   order: 100
 links:
   - label: Découvrir Ekolien
-    url: https://chasseur-vendeen.fr/agir-pour-lenvironnement/ekolien/
+    url: /nature-et-territoires/ekolien/
 ---
 
 Le dispositif propose des informations et activités pédagogiques pour observer et comprendre les espèces, leurs traces et leurs milieux. Il complète les animations de terrain conduites par les fédérations.

@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import NewsListing from "../../../components/NewsListing.astro";
+import { getArticlesByStatus, pageCount, pageItems } from "../../../lib/news";
+
+export async function getStaticPaths() {
+  const articles = await getArticlesByStatus(false);
+  const totalPages = pageCount(articles);
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => index + 2).map((page) => ({
+    params: { page: String(page) },
+    props: { articles: pageItems(articles, page), page, totalPages },
+  }));
+}
+
+const { articles, page, totalPages } = Astro.props;
+---
+
+<BaseLayout
+  title={`Actualités — page ${page}`}
+  description={`Actualités de la Fédération des Chasseurs de la Vendée, page ${page} sur ${totalPages}.`}
+>
+  <NewsListing {articles} {page} {totalPages} />
+</BaseLayout>
