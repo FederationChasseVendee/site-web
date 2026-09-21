@@ -4,16 +4,40 @@
   "tagline": "Chasser, connaître et préserver la nature vendéenne",
   "logo": "/assets/logo-fdc85.png",
   "navigation": [
-    { "label": "Actualités", "url": "actualites/" },
-    { "label": "Chasser en Vendée", "url": "chasser-en-vendee/" },
-    { "label": "Permis et formations", "url": "permis-et-formations/" },
-    { "label": "Nature et territoires", "url": "nature-et-territoires/" },
-    { "label": "La Fédération", "url": "la-federation/" },
-    { "label": "Ressources", "url": "ressources/" }
+    {
+      "label": "Actualités",
+      "url": "actualites/"
+    },
+    {
+      "label": "Chasser en Vendée",
+      "url": "chasser-en-vendee/"
+    },
+    {
+      "label": "Permis et formations",
+      "url": "permis-et-formations/"
+    },
+    {
+      "label": "Nature et territoires",
+      "url": "nature-et-territoires/"
+    },
+    {
+      "label": "La Fédération",
+      "url": "la-federation/"
+    },
+    {
+      "label": "Ressources",
+      "url": "ressources/"
+    }
   ],
   "primaryActions": [
-    { "label": "Valider mon permis", "url": "chasser-en-vendee/validation-du-permis/" },
-    { "label": "Contact", "url": "contact/" }
+    {
+      "label": "Valider mon permis",
+      "url": "chasser-en-vendee/validation-du-permis/"
+    },
+    {
+      "label": "Contact",
+      "url": "contact/"
+    }
   ],
   "contact": {
     "phoneLabel": "02 51 47 80 90",
@@ -23,12 +47,21 @@
   },
   "footerText": "Fédération Départementale des Chasseurs de la Vendée",
   "analytics": {
-    "enabled": false,
-    "websiteId": ""
+    "enabled": true,
+    "websiteId": "84521895-28f7-4ad2-9ced-6a41a0893080"
   },
   "socialLinks": [
-    { "label": "Facebook", "url": "https://www.facebook.com/chasse85" },
-    { "label": "Instagram", "url": "https://www.instagram.com/fdcvendee/" },
-    { "label": "YouTube", "url": "https://www.youtube.com/c/FdrationDpartementaledesChasseursdeVende/featured" }
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/chasse85"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/fdcvendee/"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/c/FdrationDpartementaledesChasseursdeVende/featured"
+    }
   ]
 }
