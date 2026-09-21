@@ -1,3 +1,9 @@
+actions:
+  - name: open-preview
+    label: Ouvrir la preview Cloudflare
+    workflow: pages-cms-preview.yml
+    ref: current
+
 media:
   input: public/assets
   output: /assets

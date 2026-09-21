@@ -137,3 +137,11 @@ répertoire de sortie `dist`, version Node.js `22`, et variables de build
 `ASTRO_SITE=https://fdc85.maury.app` et `ASTRO_BASE_PATH=/`. Le domaine personnalisé
 `fdc85.maury.app` doit être ajouté au projet Pages et pointer par CNAME vers
 `fdc85.pages.dev` dans la zone DNS `maury.app`.
+
+Cloudflare Pages publie aussi chaque branche de travail sur un alias de preview. Pour
+l’obtenir depuis Pages CMS, sélectionner la branche concernée puis lancer l’action
+**Ouvrir la preview Cloudflare**. Le lien apparaît dans le résumé du run
+**PagesCMS Cloudflare preview** dans l’onglet Actions de GitHub. Si une pull request
+est ouverte pour cette branche, le workflow crée ou met également à jour un
+commentaire contenant ce lien. La preview devient accessible une fois le déploiement
+Cloudflare Pages de la branche terminé.
