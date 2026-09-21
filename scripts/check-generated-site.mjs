@@ -1,12 +1,12 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { extname, join, relative } from "node:path";
 
-const base = process.env.ASTRO_BASE_PATH
-  ? `${process.env.ASTRO_BASE_PATH.replace(/^\/+|\/+$/g, "")}/`
-  : "/site-web/";
+const configuredBase = process.env.ASTRO_BASE_PATH?.replace(/^\/+|\/+$/g, "");
+const base = configuredBase ? `/${configuredBase}/` : "/site-web/";
 const siteUrl = process.env.ASTRO_SITE ?? "https://federationchassevendee.github.io";
 const siteRoot = new URL(base, `${siteUrl.replace(/\/+$/, "")}/`).href;
 const absoluteRoot = siteRoot.endsWith("/") ? siteRoot : `${siteRoot}/`;
+const basePath = new URL(base, `${siteUrl.replace(/\/+$/, "")}/`).pathname;
 const legacyCanonicalRoot = "https://federationchassevendee.github.io/site-web/";
 const basePathPattern = base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const internalAttributePattern = new RegExp(`(?:href|src)="(${basePathPattern}[^"]*)"`, "g");
@@ -23,8 +23,10 @@ function walk(directory) {
 }
 
 function targetFor(url) {
-  const normalizedUrl = url.startsWith("/site-web/") ? `/${url.slice("/site-web/".length)}` : url;
-  const withoutBase = normalizedUrl.slice(base.length).split(/[?#]/)[0];
+  const pathname = new URL(url, siteRoot).pathname;
+  const withoutBase = pathname.startsWith(basePath)
+    ? pathname.slice(basePath.length)
+    : pathname.replace(/^\/+/, "");
   if (!withoutBase) return join(distDirectory, "index.html");
   return withoutBase.endsWith("/")
     ? join(distDirectory, withoutBase, "index.html")
