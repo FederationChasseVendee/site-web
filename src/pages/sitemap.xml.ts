@@ -11,7 +11,7 @@ const escapeXml = (value: string) => value
 
 export const GET: APIRoute = async ({ site }) => {
   if (!site) throw new Error("L’URL de production Astro est requise pour générer le sitemap.");
-  const root = new URL("/site-web/", site);
+  const root = new URL(import.meta.env.BASE_URL, site);
   const entries = (await getTemplateEntries()).filter((entry) => entry.template !== "redirect");
   const activeArticles = await getArticlesByStatus(false);
   const archivedArticles = await getArticlesByStatus(true);

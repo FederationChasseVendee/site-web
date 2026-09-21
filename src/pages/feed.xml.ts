@@ -11,7 +11,7 @@ const escapeXml = (value: string) => value
 
 export const GET: APIRoute = async ({ site }) => {
   if (!site) throw new Error("L’URL de production Astro est requise pour générer le flux.");
-  const root = new URL("/site-web/", site);
+  const root = new URL(import.meta.env.BASE_URL, site);
   const feedUrl = new URL("feed.xml", root);
   const articles = (await getArticlesByStatus(false)).slice(0, 20);
   const updated = articles[0]?.data.date ?? new Date("2026-09-21T00:00:00Z");

@@ -1,7 +1,16 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { extname, join, relative } from "node:path";
 
-const base = "/site-web/";
+const base = process.env.ASTRO_BASE_PATH
+  ? `${process.env.ASTRO_BASE_PATH.replace(/^\/+|\/+$/g, "")}/`
+  : "/site-web/";
+const siteUrl = process.env.ASTRO_SITE ?? "https://federationchassevendee.github.io";
+const siteRoot = new URL(base, `${siteUrl.replace(/\/+$/, "")}/`).href;
+const absoluteRoot = siteRoot.endsWith("/") ? siteRoot : `${siteRoot}/`;
+const legacyCanonicalRoot = "https://federationchassevendee.github.io/site-web/";
+const basePathPattern = base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const internalAttributePattern = new RegExp(`(?:href|src)="(${basePathPattern}[^"]*)"`, "g");
+const navigationLinkPattern = new RegExp(`href="(${basePathPattern}[^"#?]*)"`, "g");
 const distDirectory = "dist";
 const site = JSON.parse(readFileSync("src/content/site.json", "utf8"));
 const newsMigration = JSON.parse(readFileSync("docs/migration-actualites.json", "utf8"));
@@ -14,7 +23,8 @@ function walk(directory) {
 }
 
 function targetFor(url) {
-  const withoutBase = url.slice(base.length).split(/[?#]/)[0];
+  const normalizedUrl = url.startsWith("/site-web/") ? `/${url.slice("/site-web/".length)}` : url;
+  const withoutBase = normalizedUrl.slice(base.length).split(/[?#]/)[0];
   if (!withoutBase) return join(distDirectory, "index.html");
   return withoutBase.endsWith("/")
     ? join(distDirectory, withoutBase, "index.html")
@@ -41,8 +51,8 @@ for (const htmlFile of htmlFiles) {
     throw new Error(`Caractère de remplacement Unicode détecté dans ${displayPath}.`);
   }
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
-  if (!canonical?.startsWith("https://federationchassevendee.github.io/site-web/")) {
-    throw new Error(`URL canonique absente ou hors de /site-web/ dans ${displayPath}.`);
+  if (!canonical?.startsWith(absoluteRoot) && !canonical?.startsWith(legacyCanonicalRoot)) {
+    throw new Error(`URL canonique absente ou hors de ${absoluteRoot} dans ${displayPath}.`);
   }
 
   for (const image of html.matchAll(/<img\b[^>]*>/g)) {
@@ -51,7 +61,7 @@ for (const htmlFile of htmlFiles) {
     }
   }
 
-  for (const match of html.matchAll(/(?:href|src)="(\/site-web\/[^"]*)"/g)) {
+  for (const match of html.matchAll(internalAttributePattern)) {
     const target = targetFor(match[1]);
     if (!existsSync(target)) {
       throw new Error(`Cible locale absente dans ${displayPath} : ${match[1]}`);
@@ -88,7 +98,8 @@ for (const file of redirectFiles) {
   for (const route of unicodeRedirects) {
     const html = readFileSync(join(distDirectory, route, "index.html"), "utf8");
     if (!html.includes('<meta name="robots" content="noindex, follow">')
-      || !html.includes('<link rel="canonical" href="https://federationchassevendee.github.io/site-web/')) {
+      || (!html.includes(`<link rel="canonical" href="${absoluteRoot}`)
+        && !html.includes(`<link rel="canonical" href="${legacyCanonicalRoot}`))) {
       throw new Error(`Redirection Unicode incomplète pour /${route}/.`);
     }
   }
@@ -96,7 +107,7 @@ for (const file of redirectFiles) {
   const route = relative(redirectDirectory, file).replace(/\\/g, "/").replace(/\.md$/, "");
   const html = readFileSync(join(distDirectory, ...route.split("/"), "index.html"), "utf8");
   const resolvedDestination = `${base}${destination.replace(/^\/+/, "")}`;
-  const canonicalDestination = new URL(resolvedDestination, "https://federationchassevendee.github.io").href;
+  const canonicalDestination = new URL(resolvedDestination, siteUrl).href;
 
   if (!html.includes(`content="0; url=${resolvedDestination}"`)) {
     throw new Error(`Redirection HTML absente ou incorrecte pour /${route}/.`);
@@ -139,7 +150,7 @@ for (const xmlFile of ["sitemap.xml", "feed.xml"]) {
 const sitemap = readFileSync(join(distDirectory, "sitemap.xml"), "utf8");
 for (const article of newsMigration.articles) {
   const route = article.file.replace(/^src\/content\/articles\//, "").replace(/\.md$/, "");
-  const url = `https://federationchassevendee.github.io${base}${route}/`;
+  const url = `${absoluteRoot}${route}/`;
   if (!sitemap.includes(`<loc>${url}</loc>`)) {
     throw new Error(`Article absent du sitemap : ${url}`);
   }
@@ -149,8 +160,8 @@ if (sitemap.includes("📢") || sitemap.includes("🟢") || sitemap.includes("�
 }
 
 const robots = readFileSync(join(distDirectory, "robots.txt"), "utf8");
-if (!robots.includes("Allow: /site-web/")
-  || !robots.includes("Sitemap: https://federationchassevendee.github.io/site-web/sitemap.xml")) {
+if (!robots.includes(`Allow: ${new URL(base, siteUrl).pathname}`)
+  || !robots.includes(`Sitemap: ${new URL("sitemap.xml", absoluteRoot).href}`)) {
   throw new Error("robots.txt ne référence pas correctement la base de production et le sitemap.");
 }
 
@@ -162,7 +173,7 @@ if (navigationBlocks.length !== 2) {
 
 const expectedNavigation = site.navigation.map(({ url }) => `${base}${url}`);
 for (const [, navigationHtml] of navigationBlocks) {
-  const links = [...navigationHtml.matchAll(/href="(\/site-web\/[^"#?]*)"/g)].map((match) => match[1]);
+  const links = [...navigationHtml.matchAll(navigationLinkPattern)].map((match) => match[1]);
   if (links.length !== 6 || expectedNavigation.some((href) => !links.includes(href))) {
     throw new Error("La navigation principale doit contenir exactement les six rubriques configurées.");
   }

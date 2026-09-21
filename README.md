@@ -128,4 +128,12 @@ vérifier les réglages réellement activés dans Umami et faire confirmer les o
 
 ## Publication
 
-`.github/workflows/deploy-pages.yml` installe les dépendances avec `npm ci`, lance `npm run build`, puis publie `dist/` sur GitHub Pages après fusion dans `main`.
+Le projet Cloudflare Pages `fdc85` doit être connecté directement au dépôt GitHub
+`FederationChasseVendee/site-web-fdc85` avec `main` comme branche de production.
+Cette intégration Cloudflare évite de stocker un jeton de déploiement dans GitHub.
+
+Paramètres Pages : **Framework preset** `Astro`, commande de build `npm run build`,
+répertoire de sortie `dist`, version Node.js `22`, et variables de build
+`ASTRO_SITE=https://fdc85.maury.app` et `ASTRO_BASE_PATH=/`. Le domaine personnalisé
+`fdc85.maury.app` doit être ajouté au projet Pages et pointer par CNAME vers
+`fdc85.pages.dev` dans la zone DNS `maury.app`.
